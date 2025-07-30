@@ -24,7 +24,6 @@
                     <path d="M21 15V18.3333C21 18.7754 20.7659 19.1993 20.3491 19.5118C19.9324 19.8244 19.3671 20 18.7778 20H3.22222C2.63285 20 2.06762 19.8244 1.65087 19.5118C1.23413 19.1993 1 18.7754 1 18.3333V15" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-            <!-- Botón de usuario (SVG copiado de Figma) -->
             <button class="icon-btn" aria-label="User">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="11" cy="11" r="10" stroke="#333333" stroke-width="1.5"/>
@@ -272,61 +271,150 @@
     </section>
 
     <section class="plans">
-        <h2>Plans i tarifes</h2>
+    <h2>Plans i tarifes</h2>
+    <div class="plans-container">
 
-        <div class="plans-container">
-            <div class="plan-column info">
-            <h3>QUÈ INCLOU LA PROVA GRATUÏTA?</h3>
-            <ul>
-                <li>Processar 2 imatges tipogràfiques reals</li>
-                <li>Vista prèvia del text alineat amb la imatge original</li>
-                <li>Descarrega un exemple amb sortida estructurada en Excel</li>
-                <li>Accés complet al panell amb funcions avançades visibles</li>
-                <li>Usar una IA que sap què fas, sense instruir ni explicar res</li>
-                <li>Sense targeta, sense compromís</li>
-            </ul>
-            </div>
+        <!-- Columna 1: Info -->
+        <div class="plan-column info">
+        <h3>QUÈ INCLOU LA PROVA GRATUÏTA?</h3>
+        <div class="free-description">
+            <p>
+            Fes la teva primera transcripció gratis i sent el què és tenir el control.<br>
+            Descobreix el poder d’una IA entrenada per entendre els teus documents.<br><br>
+            No necessites saber usar IA, OCR ni programació.
+            </p>
+        </div>
+        <ul class="check-list">
+            <li>Processar 2 imatges tipogràfiques reals</li>
+            <li>Vista prèvia del text alineat amb la imatge original</li>
+            <li>Descarregar un exemple amb sortida estructurada en Excel</li>
+            <li>Accés complet al panell amb funcions avançades visibles</li>
+            <li>Usar una IA que sap què fas, sense instruir ni explicar res</li>
+            <li>Sense targeta, sense compromís</li>
+        </ul>
+        </div>
 
-            <div class="plan-column free">
-            <h4>GRATUÏT</h4>
-            <p class="price">0€<span>/al mes</span></p>
-            <a href="#">Crear compte</a>
-            <ul>
-                <li>✓ Transcripció bàsica</li>
-            </ul>
-            </div>
+        <!-- Columna 2: Gratuït -->
+        <div class="plan-column free">
+        <h3>GRATUÏT</h3>
+        <p class="price">
+            0€ <span class="price-period">al mes</span>
+        </p>
+        <a href="#">Crear compte</a>
+        <div class="separator"></div>
+        <ul class="check-list">
+            <li>Transcripció bàsica</li>
+        </ul>
+        </div>
 
-            <div class="plan-column pro">
-            <h4>PRO</h4>
-            <p class="price">X€<span>/al mes</span></p>
-            <a href="#">Crear compte</a>
-            <ul>
-                <li>✓ Transcripció bàsica</li>
-                <li>✓ Exportació a Excel/CSV</li>
-                <li>✓ Classificació automàtica per camps</li>
-                <li>✓ Correcció d’errors d’OCR</li>
-                <li>✓ Pujada per lots</li>
-                <li>✓ Organització i etiquetatge de documents</li>
-                <li>✓ Suport prioritari</li>
-                <li>✓ Historial i recuperació</li>
-            </ul>
-            </div>
+        <!-- Columna 3: Pro -->
+        <div class="plan-column pro">
+        <h3>PRO</h3>
+        <p class="price">
+            X€ <span class="price-period">al mes</span>
+        </p>
+        <a href="#">Crear compte</a>
+        <div class="separator"></div>
+        <ul class="check-list">
+            <li>Transcripció bàsica</li>
+            <li>Exportació a Excel/CSV</li>
+            <li>Classificació automàtica per camps</li>
+            <li>Correcció d’errors d’OCR</li>
+            <li>Pujada per lots</li>
+            <li>Organització i etiquetatge de documents</li>
+            <li>Suport prioritari</li>
+            <li>Historial i recuperació</li>
+        </ul>
+        </div>
 
-            <div class="plan-column utils">
-            <h3>UTILITATS</h3>
-            <p>Descobreix tot el que pots fer amb aquesta eina</p>
-            <ul>
-                <li>Converteix imatges en text sense esforç</li>
-                <li>Treballa amb dades en eines conegudes</li>
-                <li>Extreu el que importa: noms, dates, llocs, professors, etc.</li>
-                <li>Obté resultats nets fins i tot de digitalitzats difícils</li>
-                <li>Centenars de documents de cop, sense reenviar-ho manual</li>
-                <li>Ideal per a arxius i investigadors. Manté l’arxiu digital ordenat i accessible</li>
-                <li>Traducció i adaptació al flux a les teves necessitats. Resdi dubtes reals amb persones, no formularis</li>
-                <li>Revisa el que has fet i no perdràs res</li>
-            </ul>
+        <!-- Columna 4: Utilitats -->
+        <div class="plan-column utils">
+        <h3>UTILITATS<br><br></h3>
+        <p class="utils-intro">Descobreix tot el que pots fer amb aquesta eina</p>
+        <a class="utils-link" style="opacity: 0;"><br>Fake link</a> <!-- Oculto pero mantiene espacio -->
+        <div class="separator"></div>
+        <ul>
+            <li>Convertir imatges en text sense esforç</li>
+            <li>Treballar amb dades en eines conegudes</li>
+            <li>Extreure i unificar noms, dates, llocs, professors, etc.</li>
+            <li>Obté resultats nets fins i tot de digitalitzats difícils</li>
+            <li>Centenars de documents de cop, sense teclejar manual</li>
+            <li>Ideal per a arxius i investigadors. Manté l’arxiu digital ordenat i accessible</li>
+            <li>Transcriu i adapta el flux a les teves necessitats. Resolt dubtes reals amb persones, no formularis.</li>
+            <li>Revisa el que has fet i no perdràs res</li>
+        </ul>
+        </div>
+
+    </div>
+    </section>
+
+    <section class="how-it-works">
+    <h2>Així funciona la nostra plataforma</h2>
+
+    <div class="steps-container">
+        <div class="step-card">
+        <img src="../assets/img/pas.png" alt="Pas 1" />
+            <div class="step-content">
+                <strong>PAS 1</strong>
+                <div class="step-content-text">
+                    <h3>Puja la teva imatge o document</h3>
+                    <p>
+                    Admet imatges antigues, una foto des del mòbil o un escaneig en PDF.
+                    L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly.
+                    La nostra IA s’adapta. Admet JPG, PNG i PDFs
+                    </p>
+                </div>
             </div>
         </div>
+
+        <div class="step-card">
+        <img src="../assets/img/pas.png" alt="Pas 2" />
+        <div class="step-content">
+            <strong>PAS 1</strong>
+            <div class="step-content-text">
+                <h3>Puja la teva imatge o document</h3>
+                <p>
+                Admet imatges antigues, una foto des del mòbil o un escaneig en PDF.
+                L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly.
+                La nostra IA s’adapta. Admet JPG, PNG i PDFs
+                </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-card">
+        <img src="../assets/img/pas.png" alt="Pas 3" />
+        <div class="step-content">
+            <strong>PAS 1</strong>
+            <div class="step-content-text">
+                <h3>Puja la teva imatge o document</h3>
+                <p>
+                Admet imatges antigues, una foto des del mòbil o un escaneig en PDF.
+                L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly.
+                La nostra IA s’adapta. Admet JPG, PNG i PDFs
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-text">
+        <h3>Tens molts documents per digitalitzar o necessites adaptar el flux a la teva organització?</h3>
+        <p>Oferim solucions a mida per a arxius, investigadors i administracions.</p>
+    </div>
+
+    <div class="cta-buttons">
+        <a href="#" class="btn btn-demo">
+            <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.907 6.13859H25.8916V1.66871C25.8916 0.830394 25.2118 0.150635 24.3735 0.150635H3.62651C2.78819 0.150635 2.10843 0.830394 2.10843 1.66871V6.13859H1.09301C0.489153 6.13859 0 6.62774 0 7.2316V12.1299C0 12.7338 0.489153 13.2229 1.09301 13.2229H2.10843V15.3314C2.10843 16.1697 2.78819 16.8494 3.62651 16.8494H24.3735C25.2118 16.8494 25.8916 16.1697 25.8916 15.3314V13.2229H26.907C27.5108 13.2229 28 12.7338 28 12.1299V7.2316C28 6.62774 27.5108 6.13859 26.907 6.13859ZM24.9639 14.9097C24.9639 15.468 24.5101 15.9217 23.9518 15.9217H4.04819C3.48988 15.9217 3.03614 15.468 3.03614 14.9097V2.09039C3.03614 1.53208 3.48988 1.07835 4.04819 1.07835H23.9518C24.5101 1.07835 24.9639 1.53208 24.9639 2.09039V14.9097Z" fill="white"/>
+                <path d="M23.277 2.25903H17.4324C17.2132 2.25903 17.0361 2.43614 17.0361 2.65541C17.0361 3.64722 16.2315 4.4518 15.2397 4.4518H12.0871C11.0953 4.4518 10.2908 3.64722 10.2908 2.65541C10.2908 2.43614 10.1137 2.25903 9.89438 2.25903H4.7245C4.35173 2.25903 4.0498 2.56096 4.0498 2.93373V14.0663C4.0498 14.439 4.35173 14.741 4.7245 14.741H23.2787C23.6515 14.741 23.9534 14.439 23.9534 14.0663V2.93373C23.9534 2.56096 23.6515 2.25903 23.2787 2.25903H23.277ZM7.42161 8.5C6.3033 8.5 5.39751 7.59421 5.39751 6.4759C5.39751 5.35759 6.3033 4.4518 7.42161 4.4518C8.53992 4.4518 9.44571 5.35759 9.44571 6.4759C9.44571 7.59421 8.53992 8.5 7.42161 8.5ZM18.3197 12.5364C17.8137 12.9429 15.9481 13.5214 13.752 13.54C13.7368 13.54 13.7233 13.54 13.7081 13.54C13.6929 13.54 13.6794 13.54 13.6643 13.54C11.4681 13.5198 9.60257 12.9412 9.09655 12.5347C8.69173 12.0793 9.14041 11.3084 9.71053 11.5243C10.2638 11.7335 11.7819 12.2496 13.7064 12.28C15.631 12.2496 17.1491 11.7352 17.7023 11.5243C18.2725 11.3084 18.7211 12.0793 18.3163 12.5347L18.3197 12.5364ZM20.2409 8.5C19.1226 8.5 18.2168 7.59421 18.2168 6.4759C18.2168 5.35759 19.1226 4.4518 20.2409 4.4518C21.3592 4.4518 22.265 5.35759 22.265 6.4759C22.265 7.59421 21.3592 8.5 20.2409 8.5Z" fill="white"/>
+            </svg>
+        </svg>
+        SOL·LICITA UNA DEMO GRATUITA
+        </a>
+        <a href="#" class="btn btn-contacte">CONTACTE DIRECTE</a>
+    </div>
     </section>
+
 </body>
 </html>
