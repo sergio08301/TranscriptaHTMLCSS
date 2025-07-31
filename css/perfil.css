@@ -1,0 +1,155 @@
+:root {
+  --agora-blau: #39A9E2;
+  --gris-fosc: #333333;
+  --blanc: #FFFFFF;
+  --gris-clar: #F4F4F4;
+  --buttons: #16BAC5;
+  --gris-mitja: #666666;
+  --gris-suau: #ECECEC;
+  --blau-mitja: #01151F;
+  --blau-fosc: #1C9EE0;
+  --button-hover: #14CFDB;
+  --turquesa-clar: #14CFDB;
+  --groc: #EAB308;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 80px;
+  font-family: Arial, sans-serif;
+  color: var(--gris-fosc);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blanc);
+  padding: 1rem 2rem;
+  border-bottom: 0.0625rem var(--blanc);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.logo-icon {
+  width: 4.875rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.site-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.developed-by {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--blanc);
+  border-radius: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gris-fosc);
+  z-index: 1000;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+  align-items: center;
+}
+
+.developed-by svg {
+  height: 2rem;
+  width: auto;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+html, body {
+  position: relative;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: var(--gris-fosc);
+  padding-top: 80px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--blanc); /* Fondo blanco para tapar contenido al hacer scroll */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05); /* Opcional: sombra para visibilidad */
+}
+
+  .header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .logo-icon {
+    width: 3.5rem;
+  }
+
+  .site-title {
+    font-size: 1rem;
+  }
+
+  
+  .header-right {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+    gap: 1rem;
+  }
+
+  .menu-btn {
+    font-size: 1rem;
+  }
+
+  .developed-by {
+    position: static;
+    margin: 1rem auto 0 auto;
+    font-size: 0.8rem;
+    flex-direction: column;
+    text-align: center;
+    z-index: 500;
+  }
+
+  .developed-by svg {
+    height: 1.5rem;
+  }
+}
