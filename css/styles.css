@@ -871,26 +871,47 @@ header {
     margin: 0;
     color: var(--gris-mitja); /* asegúrate de tener este color definido */
   }
+
   .audiencias{
     background-color: var(--gris-suau);
+    margin: 0;
+    padding-top: 2rem;
   }
+  
   
   .audiencia-cards {
     flex-direction: column;
     width: auto; /* <-- Quita el forzado de 100vw */
     padding: 0 1rem; /* Opcional: margen interno */
     overflow: hidden;
+    gap:3rem;
   }
 
-  .audiencia-card {
+.audiencia-card{
+  margin: 0 1rem 0 1rem;
+  background-color: transparent;
+}
+
+  .audiencia-card-first{
     width: 100%;
     max-width: 100%;
     flex: none;
-    border-radius: 1rem;
+    border-radius: 3rem;
     overflow: hidden;
-    margin-bottom: 2rem;
-    overflow: hidden;
-    
+    background-color: red;
+  }
+
+  .audiencia-card-last{
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    gap: 0.75rem;
+    background-color: var(--gris-suau);
+  }
+
+  .audiencia-footer{
+    background-color: var(--gris-suau);
+    padding: 1rem 2rem 0 2rem;
   }
 
   .audiencia-header {
@@ -901,19 +922,11 @@ header {
     height: 180px; /* o lo que prefieras: 150px, 200px... */
     aspect-ratio: auto; /* anula la proporción forzada */
     border-radius: 1.5rem; /* opcional */
-    margin: 2rem 3rem 2rem 3rem;
-
+    margin: 2rem 3rem 0rem 3rem;
   }
 
   .audiencia-overlay {
     display: none;
-  }
-
-  .audiencia-footer {
-    font-size: 0.85rem;
-    padding: 1rem;
-    gap: 0.75rem;
-    background-color: var(--gris-suau);
   }
 
   .audiencia-footer svg {
@@ -921,12 +934,75 @@ header {
     height: 3rem;
   }
 
-.audiencia-card.color-1 { background-color: var(--buttons); }
-.audiencia-card.color-2 { background-color: var(--blau-fosc); }
-.audiencia-card.color-3 { background-color: var(--groc); }
-.audiencia-card.color-4 { background-color: var(--buttons); }
-.audiencia-card.color-5 { background-color: var(--blau-fosc); }
+.audiencia-card-first.color-1 { background-color: var(--buttons); }
+.audiencia-card-first.color-2 { background-color: var(--blau-fosc); }
+.audiencia-card-first.color-3 { background-color: var(--groc); }
+.audiencia-card-first.color-4 { background-color: var(--buttons); }
+.audiencia-card-first.color-5 { background-color: var(--blau-fosc); }
 
+.mobile-only {
+    display: block;
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem; /* bordes inferiores redondeados */
+  }
+
+  .mobile-only h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--blanc);
+  }
+
+  .mobile-only p {
+    font-size: 0.9rem;
+    color: var(--blanc);
+    line-height: 1.4;
+  }
+
+  .plans-container {
+    display: flex;
+    flex-direction: column; /* Pone los elementos en columna */
+    gap: 3; /* Espacio entre los bloques */
+  }
+
+  .plan-column {
+        margin: 0; /* elimina márgenes individuales */
+    max-width: 100%; /* que ocupen todo el ancho disponible */
+    border-radius: 0; /* opcional, si quieres bordes uniformes */
+  }
+
+  /* Opcional: orden si quieres que "free" vaya arriba */
+  .plan-column.free {
+    order: -1; /* Mueve "GRATUÏT" antes que "info" */
+    padding-left: 1;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -2.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+  }
+
+  .plan-column.info {
+    border-radius: 1rem;
+    max-width: auto;
+  }
+
+    .plan-column.pro{
+    border-radius: 1rem;
+    max-width: auto;
+  }
+
+    .plan-column.utils {
+    border-radius: 1rem;
+    max-width: auto;
+  }
+
+  .plan-column.info + .plan-column.free{
+    margin-left: 0;
+    gap: -6rem;
+  }
+  .plan-column.pro + .plan-column.utils {
+    margin-left: 0; /* anula el desplazamiento lateral */
+  }
 
 }
 
