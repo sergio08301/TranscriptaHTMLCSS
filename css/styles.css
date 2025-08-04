@@ -756,6 +756,15 @@ header {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05); /* Opcional: sombra para visibilidad */
 }
 
+  .developed-by span{
+    display: none;
+  }
+
+
+  .header-right .icon-btn{
+    display: none;
+  }
+
 .hero-buttons {
   display: flex;
   flex-direction: column;
@@ -967,8 +976,12 @@ header {
 
   .plan-column {
         margin: 0; /* elimina márgenes individuales */
-    max-width: 100%; /* que ocupen todo el ancho disponible */
     border-radius: 0; /* opcional, si quieres bordes uniformes */
+    padding: 2rem 1.5rem;
+    padding-left: 3rem;
+    width: 100%;
+    max-width: 100% !important; /* fuerza full width */
+    box-sizing: border-box; /* asegura que padding cuente en el ancho */
   }
 
   /* Opcional: orden si quieres que "free" vaya arriba */
@@ -978,7 +991,8 @@ header {
     position: relative;
     z-index: 2;
     margin-bottom: -2.5rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    max-width: auto;
   }
 
   .plan-column.info {
@@ -989,11 +1003,15 @@ header {
     .plan-column.pro{
     border-radius: 1rem;
     max-width: auto;
+    margin-bottom: -2.5rem;
+    border-width: 3px;
   }
 
     .plan-column.utils {
     border-radius: 1rem;
     max-width: auto;
+    height: auto;
+    padding-bottom: 2rem; 
   }
 
   .plan-column.info + .plan-column.free{
@@ -1003,6 +1021,86 @@ header {
   .plan-column.pro + .plan-column.utils {
     margin-left: 0; /* anula el desplazamiento lateral */
   }
+
+  .how-it-works{
+    margin: 0;
+    padding-top: 1rem;
+    background-color: var(--blanc);
+  }
+  .how-it-works h2{
+    font-size: 1.2rem;
+  }
+
+  .step-content {
+    flex-direction: column; /* uno encima del otro */
+    align-items: flex-start; /* alineación izquierda */
+  }
+
+  .step-content strong {
+    width: auto; 
+    height: auto;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+
+  .step-content-text {
+    width: 100%;
+    
+  }
+  .step-content-text h3{
+    font-size: 1rem;
+  }
+  .step-content-text p{
+    font-size: 0.9rem;
+  }
+
+  .solucions-section{
+    background-color:var(--gris-clar);
+  }
+
+  .cta-text{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    
+  }
+
+  .cta-text h3{
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+  }
+
+  .cta-text p{
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+  }
+
+  .btn-demo{
+    padding: auto;
+    margin: auto;
+  }
+
+
+
+  .btn svg {
+  height: 1em;
+  width: auto;
+}
+
+.btn-demo,
+.btn-contacte {
+  height: 3rem; /* fija altura igual para ambos */
+}
+
+  .cta-buttons{
+    margin-bottom: 3rem;
+  }
+
 
 }
 
