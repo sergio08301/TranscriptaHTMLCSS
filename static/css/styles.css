@@ -151,7 +151,7 @@ header {
 }
 
 .hero {
-  background-image: url('../assets/img/textura-fondo.png');
+  background-image: url('../img/textura-fondo.png');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -718,20 +718,25 @@ header {
 }
 
 .cta-text {
+    margin-up: 3rem;
   max-width: 720px;
   margin: 0 auto 2rem auto;
+  text-align: center;
 }
 
 .cta-text h3 {
   font-size: 1.3rem;
   font-weight: bold;
   color: var(--gris-fosc);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top:3rem;
+
 }
 
 .cta-text p {
   color: var(--gris-mitja);
   font-size: 0.9rem;
+  margin-bottom: 2rem;
 }
 
 .cta-buttons {
@@ -739,6 +744,7 @@ header {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  padding-bottom: 3rem;
 }
 
 .btn {

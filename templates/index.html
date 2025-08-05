@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transcripta</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     
 </head>
 <body>
@@ -47,10 +47,10 @@
 
             <!-- Menú Desktop -->
             <div class="menu-dropdown desktop-menu" id="desktop-menu">
-                <a href="#">Utilitats de la plataforma</a>
-                <a href="#">Exemples d’ús</a>
-                <a href="#">Plans free i premium</a>
-                <a href="#">Funcionament i contacte</a>
+                <a href="#">{{ _("Utilitats de la plataforma") }}</a>
+                <a href="#">{{ _("Exemples d’ús") }}</a>
+                <a href="#">{{ _("Plans free i premium") }}</a>
+                <a href="#">{{ _("Funcionament i contacte") }}</a>
             </div>
 
             <!-- Menú Móvil -->
@@ -233,7 +233,7 @@
             <div class="audiencia-card color-1">
             <div class="audiencia-card-first color-1">
                 <div class="audiencia-header color-1">ARXIUS MUNICIPALS</div>
-                <div class="audiencia-image" style="background-image: url('../assets/img/municipals.png');">
+                <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/municipals.png') }}');">
                     <div class="audiencia-overlay">
                         Digitalitza padrons i censos, classificats per camp i precisió verificable
                     </div>
@@ -260,7 +260,7 @@
             <div class="audiencia-card color-2">
             <div class="audiencia-card-first color-2">
                 <div class="audiencia-header color-2">GENEALOGISTES I HISTORIADORS</div>
-                <div class="audiencia-image" style="background-image: url('../assets/img/genealogistes.png');">
+                <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/genealogistes.png') }}');">
                     <div class="audiencia-overlay">
                     Troba noms, cognoms, dates clau i relacions entre persones en minuts
                     </div>
@@ -290,7 +290,7 @@
             <div class="audiencia-card color-3">
             <div class="audiencia-card-first color-3">
                 <div class="audiencia-header color-3">ESCOLES I UNIVERSITATS</div>
-                <div class="audiencia-image" style="background-image: url('../assets/img/escoles.png');">
+                <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/escoles.png') }}');">
                     <div class="audiencia-overlay">
                     Estructura expedients antics o material d’arxiu sense personal tècnic
                     </div>
@@ -315,7 +315,7 @@
             <div class="audiencia-card color-4">
             <div class="audiencia-card-first color-4">
                 <div class="audiencia-header color-4">ADMINISTRACIÓ PÚBLICA</div>
-                <div class="audiencia-image" style="background-image: url('../assets/img/publica.png');">
+                <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/publica.png') }}');">
                     <div class="audiencia-overlay">
                     Converteix documents antics en bases de dades reutilitzables
                     </div>
@@ -342,7 +342,7 @@
             <div class="audiencia-card color-5">
             <div class="audiencia-card-first color-5">
                 <div class="audiencia-header color-5">ENTITATS MEMÒRIA HISTÒRICA</div>
-                <div class="audiencia-image" style="background-image: url('../assets/img/memoria.png');">
+                <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/memoria.png') }}');">
                     <div class="audiencia-overlay">
                     Preserva el patrimoni documental amb precisió i sense barreres tècniques.
                     </div>
@@ -453,7 +453,7 @@
 
     <div class="steps-container">
         <div class="step-card">
-        <img src="../assets/img/pas.png" alt="Pas 1" />
+        <img src="{{ url_for('static', filename='img/pas.png') }}" alt="Pas 1" />
             <div class="step-content">
                 <strong>PAS 1</strong>
                 <div class="step-content-text">
@@ -468,7 +468,7 @@
         </div>
 
         <div class="step-card">
-        <img src="../assets/img/pas.png" alt="Pas 2" />
+        <img src="{{ url_for('static', filename='img/pas.png') }}" alt="Pas 2" />
         <div class="step-content">
             <strong>PAS 1</strong>
             <div class="step-content-text">
@@ -483,7 +483,7 @@
         </div>
 
         <div class="step-card">
-        <img src="../assets/img/pas.png" alt="Pas 3" />
+        <img src="{{ url_for('static', filename='img/pas.png') }}" alt="Pas 3" />
         <div class="step-content">
             <strong>PAS 1</strong>
             <div class="step-content-text">
@@ -518,6 +518,7 @@
         <a href="#" class="btn btn-contacte">CONTACTE DIRECTE</a>
     </div>
     </section>
-    <script src="../js/home.js"></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>
+
