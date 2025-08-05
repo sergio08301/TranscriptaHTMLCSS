@@ -34,6 +34,7 @@ header {
   z-index: 999;
   display: flex;
   justify-content: space-between;
+  position: fixed;
   align-items: center;
   background-color: var(--blanc);
   padding: 1rem 2rem;
@@ -63,6 +64,44 @@ header {
   align-items: center;
   gap: 2rem;
 }
+
+.menu-btn .menu-icon {
+  display: none;
+}
+
+.menu-btn .menu-text,
+.menu-btn .arrow-down {
+  display: inline;
+}
+
+
+.menu-dropdown.open {
+  display: block;
+}
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* debajo del botón */
+  right: 5rem;
+  background-color: var(--agora-blau);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 220px;
+}
+
+.menu-dropdown a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+
 
 .developed-by {
   position: fixed;
@@ -738,23 +777,130 @@ header {
 
 @media (max-width: 768px) {
 
-body {
-  font-family: Arial, sans-serif;
-  color: var(--gris-fosc);
-}
+  body {
+    font-family: Arial, sans-serif;
+    color: var(--gris-fosc);
+  }
 
-.desktop-only { display: none; }
-.mobile-only { display: block; }
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
 
-header {
-  position: fixed ;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: red; /* Saber cuando esta en mobile */
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05); /* Opcional: sombra para visibilidad */
-}
+  header {
+    position: fixed ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05); 
+  }
+
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: white; 
+      border: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 0.5rem;
+    }
+
+    .menu-btn .menu-icon {
+      display: inline-block;
+      stroke: black; 
+    }
+
+    /* Mostrar icono y ocultar texto */
+    .menu-btn .menu-icon {
+      display: inline-block;
+    }
+    
+
+    .menu-btn .menu-text,
+    .menu-btn .arrow-down {
+      display: none;
+    }
+
+  .menu-dropdown {
+      position: fixed;
+      top: var(--header-height, 80px);
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1ca9e0; /* Agora blau */
+      padding: 4rem 2rem;
+      display: none; /* oculto por defecto */
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      z-index: 1500;
+      border-radius: 0;
+    }
+
+    .menu-dropdown a {
+      color: white;
+      font-size: 1.3rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Botón visible y con fondo blanco */
+    .menu-btn {
+      background: white;
+      color: black;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      z-index: 3000; /* sobre el menú */
+      position: relative;
+    }
+
+    /* Estado abierto: ocultar hamburguesa y flecha, mostrar cruz */
+    .menu-btn.open .menu-icon,
+    .menu-btn.open .arrow-down {
+      display: none;
+    }
+
+    .menu-btn.open::after {
+      content: "✖";
+      font-size: 1.5rem;
+      color: black;
+    }
+
+  .mobile-menu {
+    display: flex; /* o block si no quieres flexbox */
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+    .developed-by{
+      z-index: 3500;
+    }
+
+  .upload-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--button-hover);
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+
+    .profile-btn {
+      background-color: transparent;
+      justify-content: center;
+    }
+
+    
+  .menu-dropdown svg {
+    stroke: white !important; /* fuerza el color de la línea */
+    fill: none !important;    /* asegura que no hay relleno */
+  }
 
   .developed-by span{
     display: none;
@@ -765,342 +911,349 @@ header {
     display: none;
   }
 
-.hero-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-.hero-buttons button {
-  width: 280px;
-  max-width: 90%;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: bold;
-  padding: 0.9rem 2rem;
-  border-radius: 999px;
-  box-sizing: border-box;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.btn-primary {
-  background-color: var(--buttons);
-  color: white;
-  border: 2px solid var(--buttons); /* igual que el secondary */
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--buttons);
-  border: 2px solid var(--buttons);
-}
-
-  .hero-content h1 {
-    font-size: 2rem;
-    padding: 0 1rem;
-    word-break: break-word;
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-    padding: 0 1rem;
-    word-break: break-word;
-  }
-
-  .descobreix-section {
-    display: none;
-  }
-  .generica-section p{
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
-  .features-description{
-    display: none;
-  }
-  .audiencias h2{
-    font-size: 1.2rem;
-  }
-
-  .features {
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
-  }
-
-  .row {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .feature-card {
-    width: 100%;
-    max-width: 100%;
-    text-align: left;
-    padding: 1rem;
+  .hero-buttons {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     align-items: center;
-    border-radius: 0;
-    border: none;
-    margin: 0;
-    padding-bottom: 0;
-    height: auto;
-
   }
 
-  .feature-icon {
-    flex-shrink: 0;
-    margin-bottom: 0; /* quita espacio vertical innecesario */
-    margin-top: 0.2rem;
-  }
-
-  .feature-icon svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .feature-text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .feature-text h3 {
-    font-size: 1rem;
-    margin: 0;
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-    
-  }
-
-  .feature-text p {
+  .hero-buttons button {
+    width: 280px;
+    max-width: 90%;
+    text-align: center;
     font-size: 0.9rem;
-    margin: 0;
-    color: var(--gris-mitja); /* asegúrate de tener este color definido */
-  }
-
-  .audiencias{
-    background-color: var(--gris-suau);
-    margin: 0;
-    padding-top: 2rem;
-  }
-  
-  
-  .audiencia-cards {
-    flex-direction: column;
-    width: auto; /* <-- Quita el forzado de 100vw */
-    padding: 0 1rem; /* Opcional: margen interno */
-    overflow: hidden;
-    gap:3rem;
-  }
-
-.audiencia-card{
-  margin: 0 1rem 0 1rem;
-  background-color: transparent;
-}
-
-  .audiencia-card-first{
-    width: 100%;
-    max-width: 100%;
-    flex: none;
-    border-radius: 3rem;
-    overflow: hidden;
-    background-color: red;
-  }
-
-  .audiencia-card-last{
-    display: flex;
-    align-items: flex-start;
-    font-size: 0.85rem;
-    gap: 0.75rem;
-    background-color: var(--gris-suau);
-  }
-
-  .audiencia-footer{
-    background-color: var(--gris-suau);
-    padding: 1rem 2rem 0 2rem;
-  }
-
-  .audiencia-header {
-    display: none;
-  }
-
-  .audiencia-image {
-    height: 180px; /* o lo que prefieras: 150px, 200px... */
-    aspect-ratio: auto; /* anula la proporción forzada */
-    border-radius: 1.5rem; /* opcional */
-    margin: 2rem 3rem 0rem 3rem;
-  }
-
-  .audiencia-overlay {
-    display: none;
-  }
-
-  .audiencia-footer svg {
-    width: 3rem;
-    height: 3rem;
-  }
-
-.audiencia-card-first.color-1 { background-color: var(--buttons); }
-.audiencia-card-first.color-2 { background-color: var(--blau-fosc); }
-.audiencia-card-first.color-3 { background-color: var(--groc); }
-.audiencia-card-first.color-4 { background-color: var(--buttons); }
-.audiencia-card-first.color-5 { background-color: var(--blau-fosc); }
-
-.mobile-only {
-    display: block;
-    padding: 1rem;
-    border-radius: 0 0 1rem 1rem; /* bordes inferiores redondeados */
-  }
-
-  .mobile-only h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
     font-weight: bold;
-    color: var(--blanc);
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .mobile-only p {
-    font-size: 0.9rem;
-    color: var(--blanc);
-    line-height: 1.4;
+  .btn-primary {
+    background-color: var(--buttons);
+    color: white;
+    border: 2px solid var(--buttons); /* igual que el secondary */
   }
 
-  .plans-container {
-    display: flex;
-    flex-direction: column; /* Pone los elementos en columna */
-    gap: 3; /* Espacio entre los bloques */
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--buttons);
+    border: 2px solid var(--buttons);
   }
 
-  .plan-column {
-        margin: 0; /* elimina márgenes individuales */
-    border-radius: 0; /* opcional, si quieres bordes uniformes */
-    padding: 2rem 1.5rem;
-    padding-left: 3rem;
-    width: 100%;
-    max-width: 100% !important; /* fuerza full width */
-    box-sizing: border-box; /* asegura que padding cuente en el ancho */
-  }
+    .hero-content h1 {
+      font-size: 2rem;
+      padding: 0 1rem;
+      word-break: break-word;
+    }
 
-  /* Opcional: orden si quieres que "free" vaya arriba */
-  .plan-column.free {
-    order: -1; /* Mueve "GRATUÏT" antes que "info" */
-    padding-left: 1;
-    position: relative;
-    z-index: 2;
-    margin-bottom: -2.5rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    max-width: auto;
-  }
+    .subtitle {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+      word-break: break-word;
+    }
 
-  .plan-column.info {
-    border-radius: 1rem;
-    max-width: auto;
-  }
+    .descobreix-section {
+      display: none;
+    }
+    .generica-section p{
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
 
-    .plan-column.pro{
-    border-radius: 1rem;
-    max-width: auto;
-    margin-bottom: -2.5rem;
-    border-width: 3px;
-  }
+    .features-description{
+      display: none;
+    }
+    .audiencias h2{
+      font-size: 1.2rem;
+    }
 
-    .plan-column.utils {
-    border-radius: 1rem;
-    max-width: auto;
-    height: auto;
-    padding-bottom: 2rem; 
-  }
+    .features {
+      padding: 1.5rem 1rem;
+      gap: 1.5rem;
+    }
 
-  .plan-column.info + .plan-column.free{
-    margin-left: 0;
-    gap: -6rem;
-  }
-  .plan-column.pro + .plan-column.utils {
-    margin-left: 0; /* anula el desplazamiento lateral */
-  }
+    .row {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-  .how-it-works{
-    margin: 0;
-    padding-top: 1rem;
-    background-color: var(--blanc);
-  }
-  .how-it-works h2{
-    font-size: 1.2rem;
-  }
+    .feature-card {
+      width: 100%;
+      max-width: 100%;
+      text-align: left;
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      border-radius: 0;
+      border: none;
+      margin: 0;
+      padding-bottom: 0;
+      height: auto;
+    }
 
-  .step-content {
-    flex-direction: column; /* uno encima del otro */
-    align-items: flex-start; /* alineación izquierda */
-  }
+    .feature-icon {
+      flex-shrink: 0;
+      margin-bottom: 0; /* quita espacio vertical innecesario */
+      margin-top: 0.2rem;
+    }
 
-  .step-content strong {
-    width: auto; 
-    height: auto;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
-    font-size: 1.2rem;
-  }
+    .feature-icon svg {
+      width: 40px;
+      height: 40px;
+    }
 
-  .step-content-text {
-    width: 100%;
+    .feature-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-text h3 {
+      font-size: 1rem;
+      margin: 0;
+      margin-left: 1rem;
+      margin-bottom: 0.5rem;
+      
+    }
+
+    .feature-text p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: var(--gris-mitja); /* asegúrate de tener este color definido */
+    }
+
+    .audiencias{
+      background-color: var(--gris-suau);
+      margin: 0;
+      padding-top: 2rem;
+    }
     
-  }
-  .step-content-text h3{
-    font-size: 1rem;
-  }
-  .step-content-text p{
-    font-size: 0.9rem;
-  }
-
-  .solucions-section{
-    background-color:var(--gris-clar);
-  }
-
-  .cta-text{
-    margin-top: 2rem;
-    margin-bottom: 3rem;
     
+    .audiencia-cards {
+      flex-direction: column;
+      width: auto; /* <-- Quita el forzado de 100vw */
+      padding: 0 1rem; /* Opcional: margen interno */
+      overflow: hidden;
+      gap:3rem;
+    }
+
+  .audiencia-card{
+    margin: 0 1rem 0 1rem;
+    background-color: transparent;
   }
 
-  .cta-text h3{
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    text-align: center;
+    .audiencia-card-first{
+      width: 100%;
+      max-width: 100%;
+      flex: none;
+      border-radius: 3rem;
+      overflow: hidden;
+      background-color: red;
+    }
+
+    .audiencia-card-last{
+      display: flex;
+      align-items: flex-start;
+      font-size: 0.85rem;
+      gap: 0.75rem;
+      background-color: var(--gris-suau);
+    }
+
+    .audiencia-footer{
+      background-color: var(--gris-suau);
+      padding: 1rem 2rem 0 2rem;
+    }
+
+    .audiencia-header {
+      display: none;
+    }
+
+    .audiencia-image {
+      height: 180px; /* o lo que prefieras: 150px, 200px... */
+      aspect-ratio: auto; /* anula la proporción forzada */
+      border-radius: 1.5rem; /* opcional */
+      margin: 2rem 3rem 0rem 3rem;
+    }
+
+    .audiencia-overlay {
+      display: none;
+    }
+
+    .audiencia-footer svg {
+      width: 3rem;
+      height: 3rem;
+    }
+
+  .audiencia-card-first.color-1 { background-color: var(--buttons); }
+  .audiencia-card-first.color-2 { background-color: var(--blau-fosc); }
+  .audiencia-card-first.color-3 { background-color: var(--groc); }
+  .audiencia-card-first.color-4 { background-color: var(--buttons); }
+  .audiencia-card-first.color-5 { background-color: var(--blau-fosc); }
+
+  .mobile-only {
+      display: block;
+      padding: 1rem;
+      border-radius: 0 0 1rem 1rem; /* bordes inferiores redondeados */
+    }
+
+    .mobile-only h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: var(--blanc);
+    }
+
+    .mobile-only p {
+      font-size: 0.9rem;
+      color: var(--blanc);
+      line-height: 1.4;
+    }
+
+    .plans-container {
+      display: flex;
+      flex-direction: column; /* Pone los elementos en columna */
+      gap: 3; /* Espacio entre los bloques */
+    }
+
+    .plan-column {
+          margin: 0; /* elimina márgenes individuales */
+      border-radius: 0; /* opcional, si quieres bordes uniformes */
+      padding: 2rem 1.5rem;
+      padding-left: 3rem;
+      width: 100%;
+      max-width: 100% !important; /* fuerza full width */
+      box-sizing: border-box; /* asegura que padding cuente en el ancho */
+    }
+
+    /* Opcional: orden si quieres que "free" vaya arriba */
+    .plan-column.free {
+      order: -1; /* Mueve "GRATUÏT" antes que "info" */
+      padding-left: 1;
+      position: relative;
+      z-index: 2;
+      margin-bottom: -2.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      max-width: auto;
+    }
+
+    .plan-column.info {
+      border-radius: 1rem;
+      max-width: auto;
+    }
+
+      .plan-column.pro{
+      border-radius: 1rem;
+      max-width: auto;
+      margin-bottom: -2.5rem;
+      border-width: 3px;
+    }
+
+      .plan-column.utils {
+      border-radius: 1rem;
+      max-width: auto;
+      height: auto;
+      padding-bottom: 2rem; 
+    }
+
+    .plan-column.info + .plan-column.free{
+      margin-left: 0;
+      gap: -6rem;
+    }
+    .plan-column.pro + .plan-column.utils {
+      margin-left: 0; /* anula el desplazamiento lateral */
+    }
+
+    .how-it-works{
+      margin: 0;
+      padding-top: 1rem;
+      background-color: var(--blanc);
+    }
+    .how-it-works h2{
+      font-size: 1.2rem;
+    }
+
+    .step-content {
+      flex-direction: column; /* uno encima del otro */
+      align-items: flex-start; /* alineación izquierda */
+    }
+
+    .step-content strong {
+      width: auto; 
+      height: auto;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+      font-size: 1.2rem;
+    }
+
+    .step-content-text {
+      width: 100%;
+      
+    }
+    .step-content-text h3{
+      font-size: 1rem;
+    }
+    .step-content-text p{
+      font-size: 0.9rem;
+    }
+
+    .solucions-section{
+      background-color:var(--gris-clar);
+    }
+
+    .cta-text{
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      
+    }
+
+    .cta-text h3{
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      text-align: center;
+    }
+
+    .cta-text p{
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      text-align: center;
+    }
+
+    .btn-demo{
+      padding: auto;
+      margin: auto;
+    }
+
+    .btn svg {
+    height: 1em;
+    width: auto;
   }
 
-  .cta-text p{
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    text-align: center;
+  .btn-demo,
+  .btn-contacte {
+    height: 3rem; /* fija altura igual para ambos */
   }
 
-  .btn-demo{
-    padding: auto;
-    margin: auto;
+    .mobile-menu {
+    display: none; 
+    flex-direction: column;
   }
 
+  .mobile-menu.open {
+    display: flex; 
+  }
 
+  .menu-dropdown.mobile-menu {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-  .btn svg {
-  height: 1em;
-  width: auto;
 }
 
-.btn-demo,
-.btn-contacte {
-  height: 3rem; /* fija altura igual para ambos */
-}
-
-  .cta-buttons{
-    margin-bottom: 3rem;
-  }
-
-
-}
 
