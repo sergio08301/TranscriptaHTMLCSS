@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transcripta</title>
+    <title>TranscriData</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     
 </head>
@@ -41,7 +41,7 @@
                         <line x1="3" y1="12" x2="21" y2="12"/>
                         <line x1="3" y1="18" x2="21" y2="18"/>
                     </svg>
-                    <span class="menu-text">Menú</span>
+                    <span class="menu-text">{{ _("Menú") }}</span>
                     <span class="arrow-down">▼</span>
             </button>
 
@@ -55,10 +55,10 @@
 
             <!-- Menú Móvil -->
             <div class="menu-dropdown mobile-menu" id="mobile-menu">
-                <a href="#">Utilitats de la plataforma</a>
-                <a href="#">Exemples d’ús</a>
-                <a href="#">Plans free i premium</a>
-                <a href="#">Funcionament i contacte</a>
+                <a href="#">{{ _("Utilitats de la plataforma") }}</a>
+                <a href="#">{{ _("Exemples d’ús") }}</a>
+                <a href="#">{{ _("Plans free i premium") }}</a>
+                <a href="#">{{ _("Funcionament i contacte") }}</a>
 
                 <a href="#" id="mobile-upload-btn" class="upload-btn">
                     <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@
                         <path d="M11 13L11 3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M21 15V18.3333C21 18.7754 20.7659 19.1993 20.3491 19.5118C19.9324 19.8244 19.3671 20 18.7778 20H3.22222C2.63285 20 2.06762 19.8244 1.65087 19.5118C1.23413 19.1993 1 18.7754 1 18.3333V15" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    CARREGA UN DOCUMENT
+                    {{ _("CARREGA UN DOCUMENT") }}
                 </a>
 
                 <a href="#" id="mobile-profile-btn" class="profile-btn">
@@ -75,13 +75,13 @@
                         <circle cx="11" cy="8" r="3" fill="#FFFFFF"/>
                         <path d="M4 18C4 15 8 13 11 13C14 13 18 15 18 18" fill="#FFFFFF"/>
                     </svg>
-                    Perfil d’usuari
+                    {{ _("Perfil d’usuari") }}
                 </a>
             </div>
         </div>
 
         <div class="developed-by">
-            <span>Eina desenvolupada per</span>
+            <span>{{ _("Eina desenvolupada per") }}</span>
                 <svg width="41" height="36" viewBox="0 0 41 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.0641 11.295C11.1786 12.1388 11.3003 12.2528 12.0265 12.2528C13.2025 12.2528 14.3784 12.2471 15.5544 12.2569C15.8195 12.259 15.9386 12.1847 15.9371 11.8995C15.9283 10.2418 15.9334 8.58416 15.9303 6.92649C15.9303 6.83108 15.9009 6.73566 15.8803 6.60981H15.1196C15.2098 6.43445 15.265 6.31377 15.3326 6.19978C15.9443 5.1631 16.5508 4.12332 17.178 3.09644C17.2894 2.91385 17.4663 2.7452 17.6525 2.63895C18.9316 1.91018 20.2246 1.20513 21.5052 0.477906C21.7296 0.350513 21.8982 0.343807 22.1257 0.472748C23.4182 1.20668 24.7215 1.92307 26.0182 2.64978C26.1388 2.71735 26.2791 2.79523 26.3462 2.90715C27.0688 4.10475 27.779 5.31009 28.5253 6.56907C28.2463 6.58764 28.0291 6.60156 27.7692 6.61858V12.2533C28.0008 12.2533 28.222 12.2533 28.4438 12.2533C29.4779 12.2533 30.5125 12.2533 31.5466 12.2533C32.3239 12.2533 32.4255 12.1625 32.5549 11.295C32.0443 11.295 31.541 11.2945 31.0376 11.295C30.6265 11.2955 30.2149 11.2847 29.8049 11.3043C29.4635 11.3203 29.3515 11.1903 29.399 10.8525C29.5718 9.61929 29.7249 8.38404 29.8993 7.15085C29.9153 7.03635 30.0272 6.93526 30.0942 6.82798C30.1603 6.94093 30.2686 7.04821 30.2846 7.16787C30.3867 7.92501 30.4666 8.68524 30.5574 9.44342C30.5718 9.56359 30.6064 9.6817 30.7142 9.79775C30.8091 9.08032 30.9055 8.36289 30.9994 7.64547C31.0855 6.98632 31.1619 6.32511 31.2619 5.66803C31.2789 5.55611 31.3919 5.45863 31.461 5.35496C31.5255 5.46482 31.6333 5.569 31.6482 5.68505C31.8097 6.93217 31.9561 8.18083 32.1929 9.4331C32.2491 8.62748 32.3084 7.82186 32.3615 7.01624C32.4693 5.39158 32.572 3.76641 32.687 2.14227C32.6952 2.02313 32.7875 1.90966 32.8407 1.79362C32.9284 1.8911 33.0496 1.97362 33.098 2.0876C36.2958 9.55998 32.0825 18.1464 23.8612 19.5854C17.1414 20.7618 10.766 16.1844 9.6468 9.44806C9.23007 6.93939 9.54726 4.51427 10.5112 2.16806C10.5329 2.11597 10.5484 2.05717 10.5834 2.0154C10.6505 1.93494 10.7299 1.86428 10.8037 1.78949C10.864 1.88749 10.9677 1.98187 10.977 2.08451C11.0234 2.59202 11.0435 3.10159 11.0755 3.61013C11.1977 5.54528 11.3215 7.47991 11.5262 9.42691C11.5835 9.00966 11.6469 8.59344 11.6975 8.17567C11.7944 7.37521 11.877 6.57268 11.9853 5.77325C12.0049 5.6278 12.1189 5.49525 12.1895 5.35651C12.2684 5.50247 12.3969 5.64173 12.418 5.79542C12.581 6.98684 12.7213 8.18135 12.8729 9.37431C12.894 9.53935 12.9369 9.7013 13.039 9.86428C13.1334 9.05969 13.2164 8.25355 13.3299 7.45206C13.3603 7.23801 13.4851 7.0379 13.5661 6.83107C13.6445 7.04099 13.7641 7.24472 13.7946 7.46134C13.9514 8.56817 14.0746 9.67912 14.233 10.7854C14.2897 11.18 14.1768 11.3213 13.7698 11.3074C13.0055 11.2811 12.2401 11.2966 11.4747 11.295C11.3395 11.295 11.2044 11.295 11.0631 11.295H11.0641ZM26.831 12.2296C26.8501 12.1197 26.8764 12.0377 26.8764 11.9552C26.879 10.2836 26.8841 8.61201 26.8712 6.94093C26.8697 6.77176 26.7851 6.58403 26.6897 6.43703C26.1636 5.6309 25.6282 4.82992 25.0795 4.03925C24.9639 3.87266 24.7958 3.72206 24.6194 3.622C23.7937 3.15575 22.9623 2.69878 22.1174 2.26812C21.9622 2.18921 21.7007 2.17786 21.5491 2.25523C20.6785 2.69672 19.8228 3.16864 18.9703 3.64521C18.8171 3.73082 18.6747 3.8675 18.5747 4.01243C18.0207 4.81702 17.4756 5.62832 16.9428 6.44683C16.8484 6.59176 16.7788 6.7826 16.7777 6.95228C16.7659 8.60943 16.77 10.2671 16.7721 11.9242C16.7721 12.0202 16.7932 12.1161 16.8066 12.227C16.9995 12.2419 17.1759 12.2554 17.4797 12.2786C15.689 12.8346 14.0251 13.3514 12.2839 13.8919C12.6367 14.3318 12.9379 14.6867 13.2143 15.0596C13.4077 15.3205 13.581 15.32 13.8508 15.1524C15.0535 14.4056 16.2867 13.7072 17.4751 12.9393C18.209 12.4648 18.9455 12.1109 19.844 12.2487C19.9234 12.261 20.0095 12.2316 20.1333 12.2172C20.1441 12.046 20.1622 11.8809 20.1632 11.7154C20.1679 11.0495 20.1534 10.3837 20.173 9.71832C20.1931 9.04989 20.565 8.61871 21.2216 8.54083C21.6259 8.49286 22.0457 8.49235 22.4491 8.54289C23.1185 8.62696 23.4878 9.08857 23.4925 9.76938C23.4966 10.4208 23.5229 11.0743 23.4832 11.7236C23.4564 12.1661 23.6075 12.3147 24.0304 12.2543C24.7535 12.1512 25.3642 12.3936 25.9738 12.7861C27.2472 13.6056 28.5583 14.3664 29.8606 15.14C29.9694 15.2045 30.2005 15.2478 30.2552 15.189C30.5992 14.8213 30.9091 14.4221 31.2805 13.9728C29.5377 13.4004 27.8837 12.8567 26.2296 12.3131C26.2348 12.2971 26.2404 12.2811 26.2456 12.2657C26.4385 12.2538 26.6314 12.2414 26.831 12.2291V12.2296ZM22.7152 12.4194C22.9241 12.8701 23.117 13.2905 23.3125 13.7098C23.9695 15.1215 24.6225 16.5346 25.293 17.9396C25.3564 18.0732 25.5787 18.2686 25.6484 18.2403C26.3756 17.9463 27.0868 17.6126 27.8563 17.2655C27.6815 17.0566 27.585 16.9369 27.4834 16.8219C26.2931 15.4727 25.0826 14.14 23.9226 12.7649C23.5765 12.3544 23.2155 12.3374 22.7152 12.4189V12.4194ZM15.8226 17.2928C16.5219 17.6157 17.1393 17.889 17.7458 18.1846C18.0764 18.3455 18.2337 18.2573 18.3859 17.9236C19.1657 16.2149 19.9713 14.518 20.7667 12.816C20.8244 12.6927 20.8698 12.5633 20.9255 12.425C20.4386 12.3121 20.1008 12.3905 19.7733 12.7763C18.6025 14.1559 17.3879 15.498 16.1903 16.8544C16.0902 16.9679 15.9958 17.086 15.8231 17.2923L15.8226 17.2928Z" fill="#39A9E2"/>
                 <path d="M23.7473 21.6663C26.0141 21.6735 27.6104 23.2435 27.5996 25.4546C27.5887 27.6718 25.9631 29.2248 23.6638 29.2129C21.4507 29.2016 19.8523 27.6068 19.8569 25.4143C19.8616 23.2105 21.4723 21.6591 23.7473 21.6663ZM23.7087 23.4338C22.6519 23.4436 21.9288 24.2884 21.9437 25.4953C21.9576 26.6346 22.7205 27.4552 23.7468 27.4356C24.7902 27.4155 25.5463 26.5583 25.5288 25.4149C25.5107 24.2539 24.749 23.424 23.7092 23.4338H23.7087Z" fill="#39A9E2"/>
@@ -110,61 +110,58 @@
 
     <main class="hero">
         <div class="hero-content">
-            <h1>L’única plataforma de transcripció dissenyada per a documents reals</h1>
+            <h1>{{ _("L’única plataforma de transcripció dissenyada per a documents reals") }}</h1>
             <p class="subtitle">
-                Converteix imatges tipogràfiques en text editable, classificat i exportable, sense necessitat de saber usar intel·ligència
-                artificial. Transcriu, classifica i transforma imatges tipogràfiques en dades útils amb la màxima confiança i sense 
-                coneixements tècnics.
+                {{ _("Converteix imatges tipogràfiques en text editable, classificat i exportable, sense necessitat de saber usar intel·ligència artificial. Transcriu, classifica i transforma imatges tipogràfiques en dades útils amb la màxima confiança i sense coneixements tècnics.") }}
             </p>
             <div class="hero-buttons">
-                <button class="btn-primary">TRANSCRIU GRATIS</button>
-                <button class="btn-secondary">DEMO PERSONALITZADA</button>
+                <button class="btn-primary">{{ _("TRANSCRIU GRATIS") }}</button>
+                <button class="btn-secondary">{{ _("DEMO PERSONALITZADA") }}</button>
             </div>
         </div>
     </main>
 
     <section class="descobreix-section">
-        <p>Oblida’t de copiar i enganxar o d’escriure instruccions a ChatGPT. Nosaltres ens encarreguem de tot.</p>
-        <h2>DESCOBREIX LES SEVES UTILITATS</h2>
+        <p>{{ _("Oblida’t de copiar i enganxar o d’escriure instruccions a ChatGPT. Nosaltres ens encarreguem de tot.") }}</p>
+        <h2>{{ _("DESCOBREIX LES SEVES UTILITATS") }}</h2>
         <div class="arrow">▼</div>
     </section>
 
     <section class="generica-section">
-        <p class="desktop-only"> La nostra IA no és genèrica: ha après a llegir padrons, expedients, actes
-            i documents antics, com ho faria un lector humà expert</p>
-        <p class="mobile-only">Cada dada està vinculada amb el seu origen visual. Tu tens el control total sobre què entra a la teva base de dades.</p>
+        <p class="desktop-only">{{ _("La nostra IA no és genèrica: ha après a llegir padrons, expedients, actes i documents antics, com ho faria un lector humà expert") }}</p>
+        <p class="mobile-only">{{ _("Cada dada està vinculada amb el seu origen visual. Tu tens el control total sobre què entra a la teva base de dades.") }}</p>
     </section>
     
 
 <section class="features">
     <div class="row row-top">
-    <div class="feature-card"data-card="1">
+    <div class="feature-card" data-card="1">
         <div class="feature-icon">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M44.95 15.9983C41.47 15.9983 38.1833 17.3516 35.8392 19.6958L18.85 34.7758C17.3033 36.3225 15.2492 37.1683 13.05 37.1683C8.53083 37.1683 4.8575 33.5191 4.8575 29C4.8575 24.4808 8.53083 20.8316 13.05 20.8316C15.2492 20.8316 17.3033 21.6775 18.9467 23.3208L21.6775 25.7375L25.3267 22.4991L22.2817 19.8166C19.8167 17.3516 16.53 15.9983 13.05 15.9983C5.84833 15.9983 0 21.8466 0 29C0 36.1533 5.84833 42.0016 13.05 42.0016C16.53 42.0016 19.8167 40.6483 22.1608 38.3041L39.15 23.2241C40.6967 21.6775 42.7508 20.8316 44.95 20.8316C49.4692 20.8316 53.1425 24.4808 53.1425 29C53.1425 33.5191 49.4692 37.1683 44.95 37.1683C42.775 37.1683 40.6967 36.3225 39.0533 34.6791L36.2983 32.2383L32.6492 35.4766L35.7183 38.1833C38.1833 40.6241 41.4458 41.9775 44.95 41.9775C52.1517 41.9775 58 36.1533 58 28.9758C58 21.7983 52.1517 15.9983 44.95 15.9983Z" fill="#14CFDB"/>
             </svg>
         </div>
         <div class="feature-text">
-            <h3>La nostra IA no és genèrica</h3>
-            <p>Ha après a llegir padrons, expedients, actes i documents antics com ho faria un lector humà expert
+            <h3>{{ _("La nostra IA no és genèrica") }}</h3>
+            <p>{{ _("Ha après a llegir padrons, expedients, actes i documents antics com ho faria un lector humà expert") }}
         </p></div>
     </div>
 
-    <div class="feature-card"data-card="2">
+    <div class="feature-card" data-card="2">
         <div class="feature-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.99998 28C7.62151 28.0013 7.25045 27.8951 6.92989 27.6939C6.60934 27.4927 6.35245 27.2047 6.18908 26.8633C6.02572 26.5219 5.96257 26.1411 6.00698 25.7653C6.0514 25.3894 6.20154 25.0339 6.43998 24.74L26.24 4.33996C26.3885 4.16852 26.5909 4.05267 26.8139 4.01143C27.037 3.97018 27.2674 4.00598 27.4674 4.11297C27.6675 4.21995 27.8252 4.39175 27.9147 4.60018C28.0042 4.8086 28.0201 5.04126 27.96 5.25996L24.12 17.3C24.0068 17.603 23.9687 17.929 24.0092 18.25C24.0496 18.5709 24.1673 18.8773 24.3522 19.1428C24.537 19.4083 24.7835 19.625 25.0705 19.7743C25.3575 19.9236 25.6765 20.001 26 20H40C40.3785 19.9987 40.7495 20.1048 41.0701 20.306C41.3906 20.5072 41.6475 20.7952 41.8109 21.1366C41.9743 21.478 42.0374 21.8588 41.993 22.2346C41.9486 22.6105 41.7984 22.966 41.56 23.26L21.76 43.66C21.6115 43.8314 21.4091 43.9472 21.186 43.9885C20.963 44.0297 20.7325 43.9939 20.5325 43.887C20.3325 43.78 20.1748 43.6082 20.0853 43.3997C19.9958 43.1913 19.9798 42.9587 20.04 42.74L23.88 30.7C23.9932 30.3969 24.0312 30.0709 23.9908 29.7499C23.9504 29.429 23.8327 29.1226 23.6478 28.8571C23.4629 28.5916 23.2164 28.3749 22.9294 28.2256C22.6424 28.0763 22.3235 27.9989 22 28H7.99998Z" stroke="#EAB308" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
         <div class="feature-text">
-            <h3>Sensen Prompts</h3>
+            <h3>{{ _("Sensen Prompts") }}</h3>
             <p>
-            No cal escriure instruccions ni copiar i enganxar. Nosaltres ens encarreguem de tot: estructura, format, correcció i utilitat real.
+            {{ _("No cal escriure instruccions ni copiar i enganxar. Nosaltres ens encarreguem de tot: estructura, format, correcció i utilitat real.") }}
         </p></div>
     </div>
 
     <div class="feature-card">
-        <div class="feature-icon"data-card="3">
+        <div class="feature-icon" data-card="3">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M30 4H12C10.9391 4 9.92172 4.42143 9.17157 5.17157C8.42143 5.92172 8 6.93913 8 8V40C8 41.0609 8.42143 42.0783 9.17157 42.8284C9.92172 43.5786 10.9391 44 12 44H36C37.0609 44 38.0783 43.5786 38.8284 42.8284C39.5786 42.0783 40 41.0609 40 40V14L30 4Z" stroke="#39A9E2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M28 4V12C28 13.0609 28.4214 14.0783 29.1716 14.8284C29.9217 15.5786 30.9391 16 32 16H40" stroke="#39A9E2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -174,27 +171,27 @@
             </svg>
         </div>
         <div class="feature-text">
-            <h3>Conserva l’Origen Visual</h3>
+            <h3>{{ _("Conserva l’Origen Visual") }}</h3>
             <p>
-            Cada dada està vinculada amb el seu origen visual. Tu tens el control total sobre què entra a la teva base de dades.
+            {{ _("Cada dada està vinculada amb el seu origen visual. Tu tens el control total sobre què entra a la teva base de dades.") }}
         </p></div>
     </div>
     </div>
 
     <div class="row row-bottom">
-    <div class="feature-card"data-card="4">
+    <div class="feature-card" data-card="4">
         <div class="feature-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M40 26C40 36 33 41 24.68 43.9C24.2443 44.0477 23.7711 44.0406 23.34 43.88C15 41 8 36 8 26V12C8 11.4696 8.21071 10.9609 8.58579 10.5858C8.96086 10.2108 9.46957 10 10 10C14 10 19 7.60004 22.48 4.56004C22.9037 4.19804 23.4427 3.99915 24 3.99915C24.5573 3.99915 25.0963 4.19804 25.52 4.56004C29.02 7.62004 34 10 38 10C38.5304 10 39.0391 10.2108 39.4142 10.5858C39.7893 10.9609 40 11.4696 40 12V26Z" stroke="#14CFDB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
         <div class="feature-text">
-            <h3>Detecta Informació Rellevant</h3>
-            <p>Identifica automàticament persones, dates i relacions clau sense necessitat de configurar res
+            <h3>{{ _("Detecta Informació Rellevant") }}</h3>
+            <p>{{ _("Identifica automàticament persones, dates i relacions clau sense necessitat de configurar res") }}
         </p></div>
     </div>
 
-    <div class="feature-card"data-card="5">
+    <div class="feature-card" data-card="5">
         <div class="feature-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="#39A9E2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -203,9 +200,9 @@
             </svg>
         </div>
         <div class="feature-text">
-        <h3>Gestió completa d’arxius</h3>
+        <h3>{{ _("Gestió completa d’arxius") }}</h3>
         <p>
-        Organitza, etiqueta i cerca fàcilment entre lots de documents. Tot connectat entre dades, imatge i text
+        {{ _("Organitza, etiqueta i cerca fàcilment entre lots de documents. Tot connectat entre dades, imatge i text") }}
         </p></div>
     </div>
     </div>
@@ -214,35 +211,29 @@
     <section class="features-description">
         <div class="features-description-inner">
             <p>
-            Cada dada que veus està vinculada amb el seu origen visual. Tu tens el control total
-            sobre què entra a la teva base de dades.<br><br>
-            No cal escriure instruccions ni copiar i enganxar.<br>
-            Nosaltres ens encarreguem de tot: estructura, format, correcció i utilitat real.
+            {{ _("Cada dada que veus està vinculada amb el seu origen visual. Tu tens el control total sobre què entra a la teva base de dades.<br><br>No cal escriure instruccions ni copiar i enganxar.<br>Nosaltres ens encarreguem de tot: estructura, format, correcció i utilitat real.") }}
             </p>
         </div>
     </section>
 
     <section class="audiencias">
         <h2>
-            La nostra plataforma està pensada<br>
-            per a qui necessita processar documents reals,<br>
-            no només jugar amb la IA.
+            {{ _("La nostra plataforma està pensada<br>per a qui necessita processar documents reals,<br>no només jugar amb la IA.") }}
         </h2>
 
         <div class="audiencia-cards">
             <div class="audiencia-card color-1">
             <div class="audiencia-card-first color-1">
-                <div class="audiencia-header color-1">ARXIUS MUNICIPALS</div>
+                <div class="audiencia-header color-1">{{ _("ARXIUS MUNICIPALS") }}</div>
                 <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/municipals.png') }}');">
                     <div class="audiencia-overlay">
-                        Digitalitza padrons i censos, classificats per camp i precisió verificable
+                        {{ _("Digitalitza padrons i censos, classificats per camp i precisió verificable") }}
                     </div>
                 </div>
                 <div class="audiencia-mobile-text mobile-only">
-                    <h3>ARXIUS MUNICIPALS</h3>
+                    <h3>{{ _("ARXIUS MUNICIPALS") }}</h3>
                     <p>
-                        Digitalitza padrons i censos antics amb classificació automàtica i
-                        precisió verificable, pensat per a arxius i administracions locals.
+                        {{ _("Digitalitza padrons i censos antics amb classificació automàtica i precisió verificable, pensat per a arxius i administracions locals.") }}
                     </p>
                 </div>
             </div>
@@ -252,23 +243,23 @@
                         <path d="M8.5 10.625H12.75V17H34V10.625H38.25V21.25H42.5V10.625C42.5 8.2875 40.5875 6.375 38.25 6.375H29.3675C28.475 3.91 26.1375 2.125 23.375 2.125C20.6125 2.125 18.275 3.91 17.3825 6.375H8.5C6.1625 6.375 4.25 8.2875 4.25 10.625V40.375C4.25 42.7125 6.1625 44.625 8.5 44.625H19.125V40.375H8.5V10.625ZM23.375 6.375C24.5438 6.375 25.5 7.33125 25.5 8.5C25.5 9.66875 24.5438 10.625 23.375 10.625C22.2062 10.625 21.25 9.66875 21.25 8.5C21.25 7.33125 22.2062 6.375 23.375 6.375Z" fill="#14CFDB"/>
                         <path d="M41.0125 40.1625C41.8625 38.675 42.5 36.975 42.5 35.0625C42.5 29.75 38.25 25.5 32.9375 25.5C27.625 25.5 23.375 29.75 23.375 35.0625C23.375 40.375 27.625 44.625 32.9375 44.625C34.85 44.625 36.55 43.9875 38.0375 43.1375L43.775 48.875L46.75 45.9L41.0125 40.1625ZM32.9375 40.375C29.9625 40.375 27.625 38.0375 27.625 35.0625C27.625 32.0875 29.9625 29.75 32.9375 29.75C35.9125 29.75 38.25 32.0875 38.25 35.0625C38.25 38.0375 35.9125 40.375 32.9375 40.375Z" fill="#14CFDB"/>
                     </svg>
-                    <p>Cada dada es pot rastrejar fins a la imatge original. Així es treballa bé.</p>
+                    <p>{{ _("Cada dada es pot rastrejar fins a la imatge original. Així es treballa bé.") }}</p>
                 </div>
             </div>
             </div>
 
             <div class="audiencia-card color-2">
             <div class="audiencia-card-first color-2">
-                <div class="audiencia-header color-2">GENEALOGISTES I HISTORIADORS</div>
+                <div class="audiencia-header color-2">{{ _("GENEALOGISTES I HISTORIADORS") }}</div>
                 <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/genealogistes.png') }}');">
                     <div class="audiencia-overlay">
-                    Troba noms, cognoms, dates clau i relacions entre persones en minuts
+                    {{ _("Troba noms, cognoms, dates clau i relacions entre persones en minuts") }}
                     </div>
                 </div>
                 <div class="audiencia-mobile-text mobile-only">
-                    <h3>GENEALOGISTES I HISTORIADORS</h3>
+                    <h3>{{ _("GENEALOGISTES I HISTORIADORS") }}</h3>
                     <p>
-                        Troba noms, cognoms, dates clau i relacions entre persones en minuts
+                        {{ _("Troba noms, cognoms, dates clau i relacions entre persones en minuts") }}
                     </p>
                 </div>
             </div>
@@ -282,23 +273,23 @@
                         <path d="M32.6667 31.6355C34.0762 31.6355 35.2188 30.4929 35.2188 29.0834C35.2188 27.6739 34.0762 26.5313 32.6667 26.5313C31.2572 26.5313 30.1146 27.6739 30.1146 29.0834C30.1146 30.4929 31.2572 31.6355 32.6667 31.6355Z" fill="#1C9EE0"/>
                         <path d="M32.6667 31.6355C34.0762 31.6355 35.2188 30.4929 35.2188 29.0834C35.2188 27.6739 34.0762 26.5313 32.6667 26.5313C31.2572 26.5313 30.1146 27.6739 30.1146 29.0834C30.1146 30.4929 31.2572 31.6355 32.6667 31.6355Z" fill="black" fill-opacity="0.2"/>
                     </svg>
-                    <p>Una vida sencera en paper, ara llegible, ordenada i accessible.</p>
+                    <p>{{ _("Una vida sencera en paper, ara llegible, ordenada i accessible.") }}</p>
                 </div>
             </div>
             </div>
 
             <div class="audiencia-card color-3">
             <div class="audiencia-card-first color-3">
-                <div class="audiencia-header color-3">ESCOLES I UNIVERSITATS</div>
+                <div class="audiencia-header color-3">{{ _("ESCOLES I UNIVERSITATS") }}</div>
                 <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/escoles.png') }}');">
                     <div class="audiencia-overlay">
-                    Estructura expedients antics o material d’arxiu sense personal tècnic
+                    {{ _("Estructura expedients antics o material d’arxiu sense personal tècnic") }}
                     </div>
                 </div>
                 <div class="audiencia-mobile-text mobile-only">
-                    <h3>ESCOLES I UNIVERSITATS</h3>
+                    <h3>{{ _("ESCOLES I UNIVERSITATS") }}</h3>
                     <p>
-                        Estructura expedients antics o material d’arxiu sense personal tècnic
+                        {{ _("Estructura expedients antics o material d’arxiu sense personal tècnic") }}
                     </p>
                 </div>
             </div>
@@ -307,23 +298,23 @@
                     <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M37.5 12.6875H31.875V8.9375C31.875 6.85625 30.2062 5.1875 28.125 5.1875H16.875C14.7937 5.1875 13.125 6.85625 13.125 8.9375V12.6875H7.5C5.41875 12.6875 3.75 14.3562 3.75 16.4375V37.0625C3.75 39.1437 5.41875 40.8125 7.5 40.8125H37.5C39.5812 40.8125 41.25 39.1437 41.25 37.0625V16.4375C41.25 14.3562 39.5812 12.6875 37.5 12.6875ZM16.875 8.9375H28.125V12.6875H16.875V8.9375ZM37.5 37.0625H7.5V33.3125H37.5V37.0625ZM37.5 27.6875H7.5V16.4375H13.125V20.1875H16.875V16.4375H28.125V20.1875H31.875V16.4375H37.5V27.6875Z" fill="#EAB308"/>
                     </svg>
-                    <p>El teu equip pot transcriure sense saber programació ni IA</p>
+                    <p>{{ _("El teu equip pot transcriure sense saber programació ni IA") }}</p>
                 </div>
             </div>
             </div>
 
             <div class="audiencia-card color-4">
             <div class="audiencia-card-first color-4">
-                <div class="audiencia-header color-4">ADMINISTRACIÓ PÚBLICA</div>
+                <div class="audiencia-header color-4">{{ _("ADMINISTRACIÓ PÚBLICA") }}</div>
                 <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/publica.png') }}');">
                     <div class="audiencia-overlay">
-                    Converteix documents antics en bases de dades reutilitzables
+                    {{ _("Converteix documents antics en bases de dades reutilitzables") }}
                     </div>
                 </div>
                 <div class="audiencia-mobile-text mobile-only">
-                    <h3>ADMINISTRACIÓ PÚBLICA</h3>
+                    <h3>{{ _("ADMINISTRACIÓ PÚBLICA") }}</h3>
                     <p>
-                        Converteix documents antics en bases de dades reutilitzables
+                        {{ _("Converteix documents antics en bases de dades reutilitzables") }}
                     </p>
                 </div>
             </div>
@@ -333,7 +324,7 @@
                     <svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.7084 22.0417H9.79171V35.7501H13.7084V22.0417ZM25.4584 22.0417H21.5417V35.7501H25.4584V22.0417ZM42.1042 39.6667H4.89587V43.5834H42.1042V39.6667ZM37.2084 22.0417H33.2917V35.7501H37.2084V22.0417ZM23.5 8.84258L33.703 14.2084H13.2971L23.5 8.84258ZM23.5 4.41675L4.89587 14.2084V18.1251H42.1042V14.2084L23.5 4.41675Z" fill="#14CFDB"/>
                     </svg>
-                    <p>Transparència, arxiu i reutilització en un sol clic.</p>
+                    <p>{{ _("Transparència, arxiu i reutilització en un sol clic.") }}</p>
                 </div>
             </div>
             </div>
@@ -341,19 +332,20 @@
 
             <div class="audiencia-card color-5">
             <div class="audiencia-card-first color-5">
-                <div class="audiencia-header color-5">ENTITATS MEMÒRIA HISTÒRICA</div>
+                <div class="audiencia-header color-5">{{ _("ENTITATS MEMÒRIA HISTÒRICA") }}</div>
                 <div class="audiencia-image" style="background-image: url('{{ url_for('static', filename='img/memoria.png') }}');">
                     <div class="audiencia-overlay">
-                    Preserva el patrimoni documental amb precisió i sense barreres tècniques.
+                    {{ _("Preserva el patrimoni documental amb precisió i sense barreres tècniques.") }}
                     </div>
                 </div>
                 <div class="audiencia-mobile-text mobile-only">
-                    <h3>ENTITATS MEMÒRIA HISTÒRICA</h3>
+                    <h3>{{ _("ENTITATS MEMÒRIA HISTÒRICA") }}</h3>
                     <p>
-                        Preserva el patrimoni documental amb precisió i sense barreres tècniques.
+                        {{ _("Preserva el patrimoni documental amb precisió i sense barreres tècniques.") }}
                     </p>
                 </div>
             </div>
+
             <div class="audiencia-card-last">
                 <div class="audiencia-footer">
                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -362,8 +354,9 @@
                         <path d="M34.125 27.5625H30.625C30.625 25.4625 29.3125 23.5725 27.3525 22.8375L16.5725 18.8125H2.625V38.0625H13.125V35.5425L25.375 38.9375L39.375 34.5625V32.8125C39.375 29.9075 37.03 27.5625 34.125 27.5625ZM6.125 34.5625V22.3125H9.625V34.5625H6.125ZM25.3225 35.28L13.125 31.9025V22.3125H15.9425L26.1275 26.11C26.7225 26.3375 27.125 26.915 27.125 27.5625C27.125 27.5625 23.6425 27.475 23.1 27.3L18.935 25.9175L17.8325 29.2425L21.9975 30.625C22.89 30.9225 23.8175 31.08 24.7625 31.08H34.125C34.8075 31.08 35.42 31.4825 35.7 32.06L25.3225 35.28Z" fill="#1C9EE0"/>
                         <path d="M34.125 27.5625H30.625C30.625 25.4625 29.3125 23.5725 27.3525 22.8375L16.5725 18.8125H2.625V38.0625H13.125V35.5425L25.375 38.9375L39.375 34.5625V32.8125C39.375 29.9075 37.03 27.5625 34.125 27.5625ZM6.125 34.5625V22.3125H9.625V34.5625H6.125ZM25.3225 35.28L13.125 31.9025V22.3125H15.9425L26.1275 26.11C26.7225 26.3375 27.125 26.915 27.125 27.5625C27.125 27.5625 23.6425 27.475 23.1 27.3L18.935 25.9175L17.8325 29.2425L21.9975 30.625C22.89 30.9225 23.8175 31.08 24.7625 31.08H34.125C34.8075 31.08 35.42 31.4825 35.7 32.06L25.3225 35.28Z" fill="black" fill-opacity="0.2"/>
                     </svg>
-                    <p>Donem forma digital al passat per protegir-lo en el futur.</p>
+                    <p>{{ _("Donem forma digital al passat per protegir-lo en el futur.") }}</p>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -371,77 +364,75 @@
 
 
     <section class="plans">
-    <h2>Plans i tarifes</h2>
+    <h2>{{ _("Plans i tarifes") }}</h2>
     <div class="plans-container">
 
         <!-- Columna 1: Info -->
         <div class="plan-column info">
-        <h3>QUÈ INCLOU LA PROVA GRATUÏTA?</h3>
+        <h3>{{ _("QUÈ INCLOU LA PROVA GRATUÏTA?") }}</h3>
         <div class="free-description">
             <p>
-            Fes la teva primera transcripció gratis i sent el què és tenir el control.<br>
-            Descobreix el poder d’una IA entrenada per entendre els teus documents.<br><br>
-            No necessites saber usar IA, OCR ni programació.
+            {{ _("Fes la teva primera transcripció gratis i sent el què és tenir el control.<br>Descobreix el poder d’una IA entrenada per entendre els teus documents.<br><br>No necessites saber usar IA, OCR ni programació.") }}
             </p>
         </div>
         <ul class="check-list">
-            <li>Processar 2 imatges tipogràfiques reals</li>
-            <li>Vista prèvia del text alineat amb la imatge original</li>
-            <li>Descarregar un exemple amb sortida estructurada en Excel</li>
-            <li>Accés complet al panell amb funcions avançades visibles</li>
-            <li>Usar una IA que sap què fas, sense instruir ni explicar res</li>
-            <li>Sense targeta, sense compromís</li>
+            <li>{{ _("Processar 2 imatges tipogràfiques reals") }}</li>
+            <li>{{ _("Vista prèvia del text alineat amb la imatge original") }}</li>
+            <li>{{ _("Descarregar un exemple amb sortida estructurada en Excel") }}</li>
+            <li>{{ _("Accés complet al panell amb funcions avançades visibles") }}</li>
+            <li>{{ _("Usar una IA que sap què fas, sense instruir ni explicar res") }}</li>
+            <li>{{ _("Sense targeta, sense compromís") }}</li>
         </ul>
         </div>
 
         <!-- Columna 2: Gratuït -->
         <div class="plan-column free">
-        <h3>GRATUÏT</h3>
+        <h3>{{ _("GRATUÏT") }}</h3>
         <p class="price">
-            0€ <span class="price-period">al mes</span>
+            0€ <span class="price-period">{{ _("al mes") }}</span>
         </p>
-        <a href="#">Crear compte</a>
+        <a href="#">{{ _("Crear compte") }}</a>
         <div class="separator"></div>
         <ul class="check-list">
-            <li>Transcripció bàsica</li>
+            <li>{{ _("Transcripció bàsica") }}</li>
         </ul>
         </div>
 
         <!-- Columna 3: Pro -->
         <div class="plan-column pro">
-        <h3>PRO</h3>
+        <h3>{{ _("PRO") }}</h3>
         <p class="price">
-            X€ <span class="price-period">al mes</span>
+            X€ <span class="price-period">{{ _("al mes") }}</span>
         </p>
-        <a href="#">Crear compte</a>
+        <a href="#">{{ _("Crear compte") }}</a>
         <div class="separator"></div>
         <ul class="check-list">
-            <li>Transcripció bàsica</li>
-            <li>Exportació a Excel/CSV</li>
-            <li>Classificació automàtica per camps</li>
-            <li>Correcció d’errors d’OCR</li>
-            <li>Pujada per lots</li>
-            <li>Organització i etiquetatge de documents</li>
-            <li>Suport prioritari</li>
-            <li>Historial i recuperació</li>
+            <li>{{ _("Transcripció bàsica") }}</li>
+            <li>{{ _("Exportació a Excel/CSV") }}</li>
+            <li>{{ _("Classificació automàtica per camps") }}</li>
+            <li>{{ _("Correcció d’errors d’OCR") }}</li>
+            <li>{{ _("Pujada per lots") }}</li>
+            <li>{{ _("Organització i etiquetatge de documents") }}</li>
+            <li>{{ _("Suport prioritari") }}</li>
+            <li>{{ _("Historial i recuperació") }}</li>
         </ul>
         </div>
 
         <!-- Columna 4: Utilitats -->
         <div class="plan-column utils">
-        <h3>UTILITATS<br><br></h3>
-        <p class="utils-intro">Descobreix tot el que pots fer amb aquesta eina</p>
+        <h3>{{ _("UTILITATS") }}<br><br></h3>
+        <p class="utils-intro">{{ _("Descobreix tot el que pots fer amb aquesta eina") }}</p>
         <a class="utils-link" style="opacity: 0;"><br>Fake link</a> <!-- Oculto pero mantiene espacio -->
         <div class="separator"></div>
         <ul>
-            <li>Convertir imatges en text sense esforç</li>
-            <li>Treballar amb dades en eines conegudes</li>
-            <li>Extreure i unificar noms, dates, llocs, professors, etc.</li>
-            <li>Obté resultats nets fins i tot de digitalitzats difícils</li>
-            <li>Centenars de documents de cop, sense teclejar manual</li>
-            <li>Ideal per a arxius i investigadors. Manté l’arxiu digital ordenat i accessible</li>
-            <li>Transcriu i adapta el flux a les teves necessitats. Resolt dubtes reals amb persones, no formularis.</li>
-            <li>Revisa el que has fet i no perdràs res</li>
+            <li>{{ _("Convertir imatges en text sense esforç") }}</li>
+            <li>{{ _("Treballar amb dades en eines conegudes") }}</li>
+            <li>{{ _("Extreure i unificar noms, dates, llocs, professors, etc.") }}</li>
+            <li>{{ _("Obté resultats nets fins i tot de digitalitzats difícils") }}</li>
+            <li>{{ _("Centenars de documents de cop, sense teclejar manual") }}</li>
+            <li>{{ _("Ideal per a arxius i investigadors. Manté l’arxiu digital ordenat i accessible") }}</li>
+            <li>{{ _("Transcriu i adapta el flux a les teves necessitats. Resolt dubtes reals amb persones, no formularis.") }}</li>
+            <li>{{ _("Revisa el que has fet i no perdràs res") }}</li>
         </ul>
         </div>
 
@@ -449,19 +440,17 @@
     </section>
 
     <section class="how-it-works">
-    <h2>Així funciona la nostra plataforma</h2>
+    <h2>{{ _("Així funciona la nostra plataforma") }}</h2>
 
     <div class="steps-container">
         <div class="step-card">
         <img src="{{ url_for('static', filename='img/pas.png') }}" alt="Pas 1" />
             <div class="step-content">
-                <strong>PAS 1</strong>
+                <strong>{{ _("PAS 1") }}</strong>
                 <div class="step-content-text">
-                    <h3>Puja la teva imatge o document</h3>
+                    <h3>{{ _("Puja la teva imatge o document") }}</h3>
                     <p>
-                    Admet imatges antigues, una foto des del mòbil o un escaneig en PDF.
-                    L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly.
-                    La nostra IA s’adapta. Admet JPG, PNG i PDFs
+                    {{ _("Admet imatges antigues, una foto des del mòbil o un escaneig en PDF. L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly. La nostra IA s’adapta. Admet JPG, PNG i PDFs") }}
                     </p>
                 </div>
             </div>
@@ -470,13 +459,11 @@
         <div class="step-card">
         <img src="{{ url_for('static', filename='img/pas.png') }}" alt="Pas 2" />
         <div class="step-content">
-            <strong>PAS 1</strong>
+            <strong>{{ _("PAS 1") }}</strong>
             <div class="step-content-text">
-                <h3>Puja la teva imatge o document</h3>
+                <h3>{{ _("Puja la teva imatge o document") }}</h3>
                 <p>
-                Admet imatges antigues, una foto des del mòbil o un escaneig en PDF.
-                L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly.
-                La nostra IA s’adapta. Admet JPG, PNG i PDFs
+                {{ _("Admet imatges antigues, una foto des del mòbil o un escaneig en PDF. L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly. La nostra IA s’adapta. Admet JPG, PNG i PDFs") }}
                 </p>
                 </div>
             </div>
@@ -485,13 +472,11 @@
         <div class="step-card">
         <img src="{{ url_for('static', filename='img/pas.png') }}" alt="Pas 3" />
         <div class="step-content">
-            <strong>PAS 1</strong>
+            <strong>{{ _("PAS 1") }}</strong>
             <div class="step-content-text">
-                <h3>Puja la teva imatge o document</h3>
+                <h3>{{ _("Puja la teva imatge o document") }}</h3>
                 <p>
-                Admet imatges antigues, una foto des del mòbil o un escaneig en PDF.
-                L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly.
-                La nostra IA s’adapta. Admet JPG, PNG i PDFs
+                {{ _("Admet imatges antigues, una foto des del mòbil o un escaneig en PDF. L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és OCR-friendly. La nostra IA s’adapta. Admet JPG, PNG i PDFs") }}
                 </p>
                 </div>
             </div>
@@ -501,8 +486,8 @@
 
     <section class="solucions">
     <div class="cta-text">
-        <h3>Tens molts documents per digitalitzar o necessites adaptar el flux a la teva organització?</h3>
-        <p>Oferim solucions a mida per a arxius, investigadors i administracions.</p>
+        <h3>{{ _("Tens molts documents per digitalitzar o necessites adaptar el flux a la teva organització?") }}</h3>
+        <p>{{ _("Oferim solucions a mida per a arxius, investigadors i administracions.") }}</p>
     </div>
 
     <div class="cta-buttons">
@@ -511,11 +496,10 @@
                 <path d="M26.907 6.13859H25.8916V1.66871C25.8916 0.830394 25.2118 0.150635 24.3735 0.150635H3.62651C2.78819 0.150635 2.10843 0.830394 2.10843 1.66871V6.13859H1.09301C0.489153 6.13859 0 6.62774 0 7.2316V12.1299C0 12.7338 0.489153 13.2229 1.09301 13.2229H2.10843V15.3314C2.10843 16.1697 2.78819 16.8494 3.62651 16.8494H24.3735C25.2118 16.8494 25.8916 16.1697 25.8916 15.3314V13.2229H26.907C27.5108 13.2229 28 12.7338 28 12.1299V7.2316C28 6.62774 27.5108 6.13859 26.907 6.13859ZM24.9639 14.9097C24.9639 15.468 24.5101 15.9217 23.9518 15.9217H4.04819C3.48988 15.9217 3.03614 15.468 3.03614 14.9097V2.09039C3.03614 1.53208 3.48988 1.07835 4.04819 1.07835H23.9518C24.5101 1.07835 24.9639 1.53208 24.9639 2.09039V14.9097Z" fill="white"/>
                 <path d="M23.277 2.25903H17.4324C17.2132 2.25903 17.0361 2.43614 17.0361 2.65541C17.0361 3.64722 16.2315 4.4518 15.2397 4.4518H12.0871C11.0953 4.4518 10.2908 3.64722 10.2908 2.65541C10.2908 2.43614 10.1137 2.25903 9.89438 2.25903H4.7245C4.35173 2.25903 4.0498 2.56096 4.0498 2.93373V14.0663C4.0498 14.439 4.35173 14.741 4.7245 14.741H23.2787C23.6515 14.741 23.9534 14.439 23.9534 14.0663V2.93373C23.9534 2.56096 23.6515 2.25903 23.2787 2.25903H23.277ZM7.42161 8.5C6.3033 8.5 5.39751 7.59421 5.39751 6.4759C5.39751 5.35759 6.3033 4.4518 7.42161 4.4518C8.53992 4.4518 9.44571 5.35759 9.44571 6.4759C9.44571 7.59421 8.53992 8.5 7.42161 8.5ZM18.3197 12.5364C17.8137 12.9429 15.9481 13.5214 13.752 13.54C13.7368 13.54 13.7233 13.54 13.7081 13.54C13.6929 13.54 13.6794 13.54 13.6643 13.54C11.4681 13.5198 9.60257 12.9412 9.09655 12.5347C8.69173 12.0793 9.14041 11.3084 9.71053 11.5243C10.2638 11.7335 11.7819 12.2496 13.7064 12.28C15.631 12.2496 17.1491 11.7352 17.7023 11.5243C18.2725 11.3084 18.7211 12.0793 18.3163 12.5347L18.3197 12.5364ZM20.2409 8.5C19.1226 8.5 18.2168 7.59421 18.2168 6.4759C18.2168 5.35759 19.1226 4.4518 20.2409 4.4518C21.3592 4.4518 22.265 5.35759 22.265 6.4759C22.265 7.59421 21.3592 8.5 20.2409 8.5Z" fill="white"/>
             </svg>
-        </svg>
-            <span class="desktop-only">SOL·LICITA UNA DEMO GRATUITA</span>
-            <span class="mobile-only">DEMO GRATUITA</span>
+            <span class="desktop-only">{{ _("SOL·LICITA UNA DEMO GRATUITA") }}</span>
+            <span class="mobile-only">{{ _("DEMO GRATUITA") }}</span>
         </a>
-        <a href="#" class="btn btn-contacte">CONTACTE DIRECTE</a>
+        <a href="#" class="btn btn-contacte">{{ _("CONTACTE DIRECTE") }}</a>
     </div>
     </section>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>

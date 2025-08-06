@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-05 15:00+0200\n"
+"POT-Creation-Date: 2025-08-05 16:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,321 +17,373 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/index.html:50
+#: templates/index.html:44
+msgid "Menú"
+msgstr ""
+
+#: templates/index.html:50 templates/index.html:58
 msgid "Utilitats de la plataforma"
 msgstr ""
 
-#: templates/index.html:51
+#: templates/index.html:51 templates/index.html:59
 msgid "Exemples d’ús"
 msgstr ""
 
-#: templates/index.html:52
+#: templates/index.html:52 templates/index.html:60
 msgid "Plans free i premium"
 msgstr ""
 
-#: templates/index.html:53
+#: templates/index.html:53 templates/index.html:61
 msgid "Funcionament i contacte"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/_termui_impl.py:600
-#, python-brace-format
-msgid "{editor}: Editing failed"
+#: templates/index.html:69
+msgid "CARREGA UN DOCUMENT"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/_termui_impl.py:604
-#, python-brace-format
-msgid "{editor}: Editing failed: {e}"
+#: templates/index.html:78
+msgid "Perfil d’usuari"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/core.py:1084
-#: venv/lib/python3.10/site-packages/click/core.py:1121
-#, python-brace-format
-msgid "{text} {deprecated_message}"
+#: templates/index.html:84
+msgid "Eina desenvolupada per"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/core.py:1140
-msgid "Options"
+#: templates/index.html:113
+msgid "L’única plataforma de transcripció dissenyada per a documents reals"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/core.py:1202
-#, python-brace-format
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1221
-#, python-brace-format
-msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1405
-msgid "Aborted!"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1779
-msgid "Commands"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1810
-msgid "Missing command."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1888
-#, python-brace-format
-msgid "No such command {name!r}."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2303
-msgid "Value must be an iterable."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2324
-#, python-brace-format
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2404
-#, python-brace-format
+#: templates/index.html:115
 msgid ""
-"DeprecationWarning: The {param_type} {name!r} is "
-"deprecated.{extra_message}"
+"Converteix imatges tipogràfiques en text editable, classificat i "
+"exportable, sense necessitat de saber usar intel·ligència artificial. "
+"Transcriu, classifica i transforma imatges tipogràfiques en dades útils "
+"amb la màxima confiança i sense coneixements tècnics."
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/core.py:2807
-#, python-brace-format
-msgid "env var: {var}"
+#: templates/index.html:118
+msgid "TRANSCRIU GRATIS"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/core.py:2810
-#, python-brace-format
-msgid "default: {default}"
+#: templates/index.html:119
+msgid "DEMO PERSONALITZADA"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/core.py:2814
-msgid "required"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2870
-msgid "(dynamic)"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/decorators.py:465
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/decorators.py:522
-msgid "Show the version and exit."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/decorators.py:548
-msgid "Show this message and exit."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:50
-#: venv/lib/python3.10/site-packages/click/exceptions.py:89
-#, python-brace-format
-msgid "Error: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:81
-#, python-brace-format
-msgid "Try '{command} {option}' for help."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:130
-#, python-brace-format
-msgid "Invalid value: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:132
-#, python-brace-format
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:190
-msgid "Missing argument"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:192
-msgid "Missing option"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:194
-msgid "Missing parameter"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:196
-#, python-brace-format
-msgid "Missing {param_type}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:203
-#, python-brace-format
-msgid "Missing parameter: {param_name}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:223
-#, python-brace-format
-msgid "No such option: {name}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:235
-#, python-brace-format
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:282
-msgid "unknown error"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:289
-#, python-brace-format
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/parser.py:200
-#, python-brace-format
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/parser.py:383
-#, python-brace-format
-msgid "Option {name!r} does not take a value."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/parser.py:444
-#, python-brace-format
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.10/site-packages/click/shell_completion.py:326
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/shell_completion.py:333
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:162
-msgid "Repeat for confirmation"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:178
-msgid "Error: The value you entered was invalid."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:180
-#, python-brace-format
-msgid "Error: {e.message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:191
-msgid "Error: The two entered values do not match."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:247
-msgid "Error: invalid input"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:866
-msgid "Press any key to continue..."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:332
-#, python-brace-format
+#: templates/index.html:125
 msgid ""
-"Choose from:\n"
-"\t{choices}"
+"Oblida’t de copiar i enganxar o d’escriure instruccions a ChatGPT. "
+"Nosaltres ens encarreguem de tot."
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:369
-#, python-brace-format
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:460
-#, python-brace-format
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:482
-#, python-brace-format
-msgid "{value!r} is not a valid {number_type}."
+#: templates/index.html:126
+msgid "DESCOBREIX LES SEVES UTILITATS"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:538
-#, python-brace-format
-msgid "{value} is not in the range {range}."
+#: templates/index.html:131
+msgid ""
+"La nostra IA no és genèrica: ha après a llegir padrons, expedients, actes"
+" i documents antics, com ho faria un lector humà expert"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:679
-#, python-brace-format
-msgid "{value!r} is not a valid boolean."
+#: templates/index.html:132 templates/index.html:176
+msgid ""
+"Cada dada està vinculada amb el seu origen visual. Tu tens el control "
+"total sobre què entra a la teva base de dades."
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:703
-#, python-brace-format
-msgid "{value!r} is not a valid UUID."
+#: templates/index.html:145
+msgid "La nostra IA no és genèrica"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:893
-msgid "file"
+#: templates/index.html:146
+msgid ""
+"Ha après a llegir padrons, expedients, actes i documents antics com ho "
+"faria un lector humà expert"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:895
-msgid "directory"
+#: templates/index.html:157
+msgid "Sensen Prompts"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:897
-msgid "path"
+#: templates/index.html:159
+msgid ""
+"No cal escriure instruccions ni copiar i enganxar. Nosaltres ens "
+"encarreguem de tot: estructura, format, correcció i utilitat real."
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:944
-#, python-brace-format
-msgid "{name} {filename!r} does not exist."
+#: templates/index.html:174
+msgid "Conserva l’Origen Visual"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:953
-#, python-brace-format
-msgid "{name} {filename!r} is a file."
+#: templates/index.html:189
+msgid "Detecta Informació Rellevant"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:961
-#, python-brace-format
-msgid "{name} {filename!r} is a directory."
+#: templates/index.html:190
+msgid ""
+"Identifica automàticament persones, dates i relacions clau sense "
+"necessitat de configurar res"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:970
-#, python-brace-format
-msgid "{name} {filename!r} is not readable."
+#: templates/index.html:203
+msgid "Gestió completa d’arxius"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:979
-#, python-brace-format
-msgid "{name} {filename!r} is not writable."
+#: templates/index.html:205
+msgid ""
+"Organitza, etiqueta i cerca fàcilment entre lots de documents. Tot "
+"connectat entre dades, imatge i text"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:988
-#, python-brace-format
-msgid "{name} {filename!r} is not executable."
+#: templates/index.html:214
+msgid ""
+"Cada dada que veus està vinculada amb el seu origen visual. Tu tens el "
+"control total sobre què entra a la teva base de dades.<br><br>No cal "
+"escriure instruccions ni copiar i enganxar.<br>Nosaltres ens encarreguem "
+"de tot: estructura, format, correcció i utilitat real."
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/click/types.py:1055
-#, python-brace-format
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-msgstr[1] ""
+#: templates/index.html:221
+msgid ""
+"La nostra plataforma està pensada<br>per a qui necessita processar "
+"documents reals,<br>no només jugar amb la IA."
+msgstr ""
+
+#: templates/index.html:227 templates/index.html:234
+msgid "ARXIUS MUNICIPALS"
+msgstr ""
+
+#: templates/index.html:230
+msgid "Digitalitza padrons i censos, classificats per camp i precisió verificable"
+msgstr ""
+
+#: templates/index.html:236
+msgid ""
+"Digitalitza padrons i censos antics amb classificació automàtica i "
+"precisió verificable, pensat per a arxius i administracions locals."
+msgstr ""
+
+#: templates/index.html:246
+msgid "Cada dada es pot rastrejar fins a la imatge original. Així es treballa bé."
+msgstr ""
+
+#: templates/index.html:253 templates/index.html:260
+msgid "GENEALOGISTES I HISTORIADORS"
+msgstr ""
+
+#: templates/index.html:256 templates/index.html:262
+msgid "Troba noms, cognoms, dates clau i relacions entre persones en minuts"
+msgstr ""
+
+#: templates/index.html:276
+msgid "Una vida sencera en paper, ara llegible, ordenada i accessible."
+msgstr ""
+
+#: templates/index.html:283 templates/index.html:290
+msgid "ESCOLES I UNIVERSITATS"
+msgstr ""
+
+#: templates/index.html:286 templates/index.html:292
+msgid "Estructura expedients antics o material d’arxiu sense personal tècnic"
+msgstr ""
+
+#: templates/index.html:301
+msgid "El teu equip pot transcriure sense saber programació ni IA"
+msgstr ""
+
+#: templates/index.html:308 templates/index.html:315
+msgid "ADMINISTRACIÓ PÚBLICA"
+msgstr ""
+
+#: templates/index.html:311 templates/index.html:317
+msgid "Converteix documents antics en bases de dades reutilitzables"
+msgstr ""
+
+#: templates/index.html:327
+msgid "Transparència, arxiu i reutilització en un sol clic."
+msgstr ""
+
+#: templates/index.html:335 templates/index.html:342
+msgid "ENTITATS MEMÒRIA HISTÒRICA"
+msgstr ""
+
+#: templates/index.html:338 templates/index.html:344
+msgid "Preserva el patrimoni documental amb precisió i sense barreres tècniques."
+msgstr ""
+
+#: templates/index.html:357
+msgid "Donem forma digital al passat per protegir-lo en el futur."
+msgstr ""
+
+#: templates/index.html:367
+msgid "Plans i tarifes"
+msgstr ""
+
+#: templates/index.html:372
+msgid "QUÈ INCLOU LA PROVA GRATUÏTA?"
+msgstr ""
+
+#: templates/index.html:375
+msgid ""
+"Fes la teva primera transcripció gratis i sent el què és tenir el "
+"control.<br>Descobreix el poder d’una IA entrenada per entendre els teus "
+"documents.<br><br>No necessites saber usar IA, OCR ni programació."
+msgstr ""
+
+#: templates/index.html:379
+msgid "Processar 2 imatges tipogràfiques reals"
+msgstr ""
+
+#: templates/index.html:380
+msgid "Vista prèvia del text alineat amb la imatge original"
+msgstr ""
+
+#: templates/index.html:381
+msgid "Descarregar un exemple amb sortida estructurada en Excel"
+msgstr ""
+
+#: templates/index.html:382
+msgid "Accés complet al panell amb funcions avançades visibles"
+msgstr ""
+
+#: templates/index.html:383
+msgid "Usar una IA que sap què fas, sense instruir ni explicar res"
+msgstr ""
+
+#: templates/index.html:384
+msgid "Sense targeta, sense compromís"
+msgstr ""
+
+#: templates/index.html:390
+msgid "GRATUÏT"
+msgstr ""
+
+#: templates/index.html:392 templates/index.html:405
+msgid "al mes"
+msgstr ""
+
+#: templates/index.html:394 templates/index.html:407
+msgid "Crear compte"
+msgstr ""
+
+#: templates/index.html:397 templates/index.html:410
+msgid "Transcripció bàsica"
+msgstr ""
+
+#: templates/index.html:403
+msgid "PRO"
+msgstr ""
+
+#: templates/index.html:411
+msgid "Exportació a Excel/CSV"
+msgstr ""
+
+#: templates/index.html:412
+msgid "Classificació automàtica per camps"
+msgstr ""
+
+#: templates/index.html:413
+msgid "Correcció d’errors d’OCR"
+msgstr ""
+
+#: templates/index.html:414
+msgid "Pujada per lots"
+msgstr ""
+
+#: templates/index.html:415
+msgid "Organització i etiquetatge de documents"
+msgstr ""
+
+#: templates/index.html:416
+msgid "Suport prioritari"
+msgstr ""
+
+#: templates/index.html:417
+msgid "Historial i recuperació"
+msgstr ""
+
+#: templates/index.html:423
+msgid "UTILITATS"
+msgstr ""
+
+#: templates/index.html:424
+msgid "Descobreix tot el que pots fer amb aquesta eina"
+msgstr ""
+
+#: templates/index.html:428
+msgid "Convertir imatges en text sense esforç"
+msgstr ""
+
+#: templates/index.html:429
+msgid "Treballar amb dades en eines conegudes"
+msgstr ""
+
+#: templates/index.html:430
+msgid "Extreure i unificar noms, dates, llocs, professors, etc."
+msgstr ""
+
+#: templates/index.html:431
+msgid "Obté resultats nets fins i tot de digitalitzats difícils"
+msgstr ""
+
+#: templates/index.html:432
+msgid "Centenars de documents de cop, sense teclejar manual"
+msgstr ""
+
+#: templates/index.html:433
+msgid ""
+"Ideal per a arxius i investigadors. Manté l’arxiu digital ordenat i "
+"accessible"
+msgstr ""
+
+#: templates/index.html:434
+msgid ""
+"Transcriu i adapta el flux a les teves necessitats. Resolt dubtes reals "
+"amb persones, no formularis."
+msgstr ""
+
+#: templates/index.html:435
+msgid "Revisa el que has fet i no perdràs res"
+msgstr ""
+
+#: templates/index.html:443
+msgid "Així funciona la nostra plataforma"
+msgstr ""
+
+#: templates/index.html:449 templates/index.html:462 templates/index.html:475
+msgid "PAS 1"
+msgstr ""
+
+#: templates/index.html:451 templates/index.html:464 templates/index.html:477
+msgid "Puja la teva imatge o document"
+msgstr ""
+
+#: templates/index.html:453 templates/index.html:466 templates/index.html:479
+msgid ""
+"Admet imatges antigues, una foto des del mòbil o un escaneig en PDF. "
+"L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és "
+"OCR-friendly. La nostra IA s’adapta. Admet JPG, PNG i PDFs"
+msgstr ""
+
+#: templates/index.html:489
+msgid ""
+"Tens molts documents per digitalitzar o necessites adaptar el flux a la "
+"teva organització?"
+msgstr ""
+
+#: templates/index.html:490
+msgid "Oferim solucions a mida per a arxius, investigadors i administracions."
+msgstr ""
+
+#: templates/index.html:499
+msgid "SOL·LICITA UNA DEMO GRATUITA"
+msgstr ""
+
+#: templates/index.html:500
+msgid "DEMO GRATUITA"
+msgstr ""
+
+#: templates/index.html:502
+msgid "CONTACTE DIRECTE"
+msgstr ""
 
