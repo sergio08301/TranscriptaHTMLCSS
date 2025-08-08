@@ -499,7 +499,7 @@
             <span class="desktop-only">{{ _("SOL·LICITA UNA DEMO GRATUITA") }}</span>
             <span class="mobile-only">{{ _("DEMO GRATUITA") }}</span>
         </a>
-        <a href="#" class="btn btn-contacte">{{ _("CONTACTE DIRECTE") }}</a>
+        <a href="{{ url_for('contacto') }}" class="btn btn-contacte">{{ _("CONTACTE DIRECTE") }}</a>
     </div>
     </section>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
