@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-05 16:28+0200\n"
+"POT-Creation-Date: 2025-08-08 15:03+0200\n"
 "PO-Revision-Date: 2025-08-05 16:40+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ca\n"
@@ -18,36 +18,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/index.html:44
+#: templates/contacto.html:6
+msgid "Contacte"
+msgstr ""
+
+#: templates/contacto.html:45 templates/index.html:44
 msgid "Menú"
 msgstr ""
 
+#: templates/contacto.html:51 templates/contacto.html:59
 #: templates/index.html:50 templates/index.html:58
 msgid "Utilitats de la plataforma"
 msgstr ""
 
+#: templates/contacto.html:52 templates/contacto.html:60
 #: templates/index.html:51 templates/index.html:59
 msgid "Exemples d’ús"
 msgstr ""
 
+#: templates/contacto.html:53 templates/contacto.html:61
 #: templates/index.html:52 templates/index.html:60
 msgid "Plans free i premium"
 msgstr ""
 
+#: templates/contacto.html:54 templates/contacto.html:62
 #: templates/index.html:53 templates/index.html:61
 msgid "Funcionament i contacte"
 msgstr ""
 
-#: templates/index.html:69
+#: templates/contacto.html:70 templates/index.html:69
 msgid "CARREGA UN DOCUMENT"
 msgstr ""
 
-#: templates/index.html:78
+#: templates/contacto.html:79 templates/index.html:78
 msgid "Perfil d’usuari"
 msgstr ""
 
-#: templates/index.html:84
+#: templates/contacto.html:85 templates/index.html:84
 msgid "Eina desenvolupada per"
+msgstr ""
+
+#: templates/contacto.html:113
+msgid "Formulari de contacte"
+msgstr ""
+
+#: templates/contacto.html:126
+msgid "Nom"
+msgstr ""
+
+#: templates/contacto.html:131
+msgid "Cognoms"
+msgstr ""
+
+#: templates/contacto.html:138
+msgid "Correu electrònic"
+msgstr ""
+
+#: templates/contacto.html:143
+msgid "Idioma de resposta"
+msgstr ""
+
+#: templates/contacto.html:153
+msgid "Missatge"
+msgstr ""
+
+#: templates/contacto.html:158
+msgid "Arxiu adjunt (opcional)"
+msgstr ""
+
+#: templates/contacto.html:163
+msgid "Enviar"
 msgstr ""
 
 #: templates/index.html:113

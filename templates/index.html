@@ -116,7 +116,10 @@
             </p>
             <div class="hero-buttons">
                 <button class="btn-primary">{{ _("TRANSCRIU GRATIS") }}</button>
-                <button class="btn-secondary">{{ _("DEMO PERSONALITZADA") }}</button>
+                <a href="{{ url_for('contacto') }}" class="btn-secondary">
+                    {{ _("DEMO PERSONALITZADA") }}
+                </a>
+
             </div>
         </div>
     </main>
