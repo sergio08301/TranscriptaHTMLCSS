@@ -169,7 +169,35 @@ body {
 .alt-link a:hover {
   opacity: 0.9;
 }
+/* Oculta el icono solo en el campo de teléfono */
+.input-group--telefono .icon { display: none; }
 
+/* El contenedor que inyecta la librería */
+.input-group--telefono .iti { width: 100%; }
+
+/* Asegura clics sobre la bandera y que el menú no quede tapado */
+.input-group { position: relative; overflow: visible; }
+.input-group--telefono .iti__flag-container { z-index: 5; }
+.iti__country-list { z-index: 9999; } /* por si hay overlays cercanos */
+
+/* Select con el mismo look que los inputs */
+.input-group select{
+  width:100%;
+  border:none;
+  background:transparent;
+  font-size:0.875rem;
+  color:var(--gris-fosc);
+  height:1.75rem;
+  padding:0 0.875rem 0 0.875rem;
+  appearance:none;
+}
+
+/* Teléfono con plugin */
+.input-group--telefono .icon{ display:none; }
+.input-group--telefono .iti{ width:100%; }
+.input-group{ position:relative; overflow:visible; }
+.input-group--telefono .iti__flag-container{ z-index:5; }
+.iti__country-list{ z-index:9999; }
 
 
 

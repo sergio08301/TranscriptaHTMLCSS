@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_babel import Babel, get_locale
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
+
 import os
 
 app = Flask(__name__)
@@ -86,6 +87,14 @@ def contacto():
 @app.route("/registro")
 def registro():
     return render_template("registro.html")
+
+
+@app.context_processor
+def utility_processor():
+    def url_for_lang(endpoint, **values):
+        values.setdefault('lang', request.args.get('lang', 'es'))
+        return url_for(endpoint, **values)
+    return dict(url_for_lang=url_for_lang)
 
 if __name__ == "__main__":
     app.run(debug=True)
