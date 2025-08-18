@@ -53,7 +53,7 @@ body {
   margin-bottom: 1.5rem;
   color: var(--gris-fosc);
   line-height: 1.2;
-  max-width: 40rem;
+  max-width: 60rem;
 }
 
 .subtitle {
@@ -79,6 +79,8 @@ body {
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .btn-secondary {
@@ -220,7 +222,7 @@ body {
   font-size: 0.9rem;
   color: var(--gris-mitja);
   line-height: 1.4;
-  padding: 0rem 0rem 1.5rem 1rem;
+  padding: 0rem 0rem 1.5rem;
 }
 
 .row {
@@ -249,7 +251,7 @@ body {
   padding: 0 1rem;
   font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
   color: var(--gris-fosc);
 }
 
@@ -270,16 +272,17 @@ body {
 
 .audiencia-cards {
   display: flex;
-  width: 100vw;              
+  width: 100vw;
   margin: 0;
   padding: 0;
 }
 
 .audiencia-card {
-  flex: 1;                    
-  /*min-width: 0;      */   
+  flex: 1;
   display: flex;
   flex-direction: column;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
 }
 
 .audiencia-header {
@@ -287,11 +290,9 @@ body {
   text-align: center;
   font-weight: bold;
   color: white;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+
 
 }
-
 .audiencia-image {
   background-size: cover;
   background-position: center;
@@ -304,9 +305,8 @@ body {
   position: absolute;
   bottom: 0;
   padding: 2rem 2rem;
-  text-align: left;  
+  text-align: left;
   color: white;
-  font-weight: bold;
   font-size: 1.5rem;
   background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
 }
@@ -316,17 +316,20 @@ body {
   align-items: flex-start;
   gap: 0.5rem;
   padding: 1rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--gris-mitja);
   background: white;
-  border: 1px solid var(--gris-suau);  /* línea nueva */
+  border: 1px solid var(--gris-suau);
+}
 
+.audiencia-footer p{
+  padding: 1rem;
 }
 
 .audiencia-footer svg {
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .color-1 { background-color: var(--buttons); }
@@ -360,7 +363,7 @@ body {
 .plan-column {
   background: white;
   border-radius: 10px;
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   flex: 1 1 220px;
   max-width: 350px;
   height: 600px;
@@ -447,12 +450,13 @@ body {
 
 .free-description {
   background-color: var(--button-hover);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 8px;
   font-size: 0.8rem;
   color: var(--gris-fosc);
   margin-bottom: 1rem;
 }
+
 .plan-column.utils{
   padding-left: 2.5rem;
   background-color: var(--gris-suau);
@@ -579,6 +583,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  padding: 1rem;
   
 }
 
@@ -597,26 +602,35 @@ body {
   margin: 0;
   text-align: left;
 }
+.how-it-works {
+  background-color: var(--gris-clar);
+}
+.how-it-works {
+  margin-bottom: 0;   /* o menos margen */
+  padding-bottom: 2rem; /* controlado */
+}
+    .solucions{
+      background-color:var(--gris-clar);
+    }
 
 .cta-text {
-    margin-up: 3rem;
+  margin-up: 3rem;
   max-width: 720px;
   margin: 0 auto 2rem auto;
   text-align: center;
 }
 
 .cta-text h3 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: var(--gris-fosc);
   margin-bottom: 1rem;
-  margin-top:3rem;
 
 }
 
 .cta-text p {
   color: var(--gris-mitja);
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -949,7 +963,7 @@ body {
       height: auto;
       justify-content: flex-start;
       margin: 0;
-      padding: 0;
+      padding-left: 1rem;
       font-size: 1.2rem;
     }
 
@@ -964,12 +978,9 @@ body {
       font-size: 0.9rem;
     }
 
-    .solucions-section{
-      background-color:var(--gris-clar);
-    }
 
     .cta-text{
-      margin-top: 2rem;
+      padding-top: 12rem;
       margin-bottom: 3rem;
       
     }
