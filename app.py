@@ -92,6 +92,9 @@ def registro():
 def login():
     return render_template("login.html")
 
+@app.route("/recupera")
+def recupera():
+    return render_template("recupera.html")
 
 @app.context_processor
 def utility_processor():

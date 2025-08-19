@@ -1,0 +1,157 @@
+:root{
+	--agora-blau:#39A9E2;
+	--gris-fosc:#333333;
+	--blanc:#FFFFFF;
+	--gris-clar:#F4F4F4;
+	--buttons:#16BAC5;
+	--gris-mitja:#666666;
+	--gris-suau:#ECECEC;
+	--blau-mitja:#01151F;
+	--blau-fosc:#1C9EE0;
+	--button-hover:#14CFDB;
+	--turquesa-clar:#14CFDB;
+	--groc:#EAB308;
+
+	--radius-campo:8px;
+	--sombra-suave:0 4px 10px rgba(0,0,0,.06);
+	--sombra-media:0 8px 20px rgba(0,0,0,.08);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{
+	padding-top:80px; /* header fijo */
+	font-family:Arial, sans-serif;
+	color:var(--gris-fosc);
+}
+
+/* helpers */
+.desktop-only{ display:block; }
+.mobile-only{ display:none; }
+
+/* ===== Layout (misma base que login) ===== */
+.auth{
+	min-height:calc(100vh - 80px);
+	display:flex;
+	justify-content:center;
+	align-items:flex-start;
+	padding-top:4rem;
+	padding-left:1rem;
+	padding-right:1rem;
+	background-color:var(--buttons);
+}
+
+.auth-card{
+	width:100%;
+	max-width:640px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+/* Marca */
+.brand{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:.5rem;
+	margin-bottom:2rem;
+}
+.brand-text{
+	font-weight:700;
+	font-size:1.75rem;
+	color:var(--blanc);
+}
+
+/* Título */
+.form-title{
+	margin:.6rem 0 1.2rem;
+	color:var(--gris-fosc);
+	font-size:1.5rem;
+	font-weight:600; /* semibold como login */
+}
+
+/* Formulario (un solo campo) */
+.form{
+	width:100%;
+	max-width:560px;
+}
+
+/* Campo email con icono */
+.input-group{
+	position:relative;
+	display:flex;
+	align-items:center;
+	background:var(--blanc);
+	border-radius:var(--radius-campo);
+	box-shadow:var(--sombra-suave);
+	margin:.625rem 0;
+	border:1px solid var(--gris-suau);
+	overflow:hidden;
+}
+.input-group .icon{
+	position:absolute;
+	left:.5rem;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	opacity:.75;
+	background:none;
+}
+.input-group input{
+	width:100%;
+	border:none;
+	outline:none;
+	background:transparent;
+	font-size:.875rem;
+	color:var(--gris-fosc);
+	height:1.75rem;
+	padding-left:2rem;
+}
+.input-group input::placeholder{ color:var(--gris-mitja); }
+
+/* Botón (mismo look que login) */
+.btn-primary{
+	display:block;
+	margin:1.125rem auto .625rem;
+	padding:.75rem 1.75rem;
+	border-radius:1.25rem;
+	background:var(--blanc);
+	color:var(--gris-fosc);
+	border:none;
+	font-weight:700;
+	letter-spacing:.3px;
+	box-shadow:var(--sombra-media);
+	cursor:pointer;
+	text-transform:uppercase;
+	transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+	width:80%;
+	max-width:320px;
+	text-align:center;
+}
+.btn-primary:hover{
+	transform:translateY(-1px);
+	box-shadow:0 10px 22px rgba(0,0,0,.1);
+}
+.btn-primary:active{
+	transform:translateY(0);
+	opacity:.9;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:768px){
+	.desktop-only{ display:none; }
+	.mobile-only{ display:block; }
+
+	.brand-text{ font-size:1.5rem; }
+	.form-title{ font-size:1.3rem; }
+
+	.input-group{ justify-content:flex-start; }
+	.input-group .icon{ left:.75rem; }
+	.input-group input{
+		padding-left:2.5rem;
+		text-align:left;
+	}
+
+	/* más arriba pero con menos aire que en desktop para evitar scroll extra */
+	.auth{ padding-top:3rem; }
+}
