@@ -88,6 +88,10 @@ def contacto():
 def registro():
     return render_template("registro.html")
 
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
 
 @app.context_processor
 def utility_processor():

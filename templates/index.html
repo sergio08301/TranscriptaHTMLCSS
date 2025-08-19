@@ -22,7 +22,9 @@
                 {{ _("Converteix imatges tipogràfiques en text editable, classificat i exportable, sense necessitat de saber usar intel·ligència artificial. Transcriu, classifica i transforma imatges tipogràfiques en dades útils amb la màxima confiança i sense coneixements tècnics.") }}
             </p>
             <div class="hero-buttons">
-                <button class="btn-primary">{{ _("TRANSCRIU GRATIS") }}</button>
+                <a href="{{ url_for('login') }}">
+                    <button class="btn-primary">{{ _("TRANSCRIU GRATIS") }}</button>
+                </a>
                 <a href="{{ url_for_lang('contacto') }}" class="btn-secondary">
                     {{ _("DEMO PERSONALITZADA") }}
                 </a>
@@ -411,7 +413,6 @@
         <a href="{{ url_for_lang('contacto') }}" class="btn btn-contacte">{{ _("CONTACTE DIRECTE") }}</a>
     </div>
     </section>
-    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>
 

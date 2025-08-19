@@ -39,11 +39,14 @@ body {
 
 /* === Layout general de la página de registro === */
 .auth {
-  min-height: calc(100vh - 80px); /* dejando espacio para el header fijo */
-  display: grid;
-  place-items: center;
-  padding: 2rem 1rem 3rem;
-  background-color: var(--buttons); /* fondo turquesa principal */
+    min-height:calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--buttons);
 }
 
 /* Tarjeta principal */
@@ -155,7 +158,7 @@ body {
 /* Enlace inferior */
 .alt-link {
   text-align: center;
-  color: var(--blanc);
+  color: var(--gris-mitja);
   font-size: 0.8125rem;
   margin-top: 0.25rem;
 }
@@ -207,37 +210,51 @@ body {
 
 
 
+@media (max-width: 768px){
+	/* subimos menos el contenido y dejamos algo de aire abajo por el notch */
+	.auth{
+		align-items: flex-start;
+		padding-top: 1.25rem; /* antes 4rem */
+		padding-bottom: max(1rem, env(safe-area-inset-bottom));
+	}
 
+	/* ancho cómodo en móvil */
+	.auth-card{
+		max-width: 420px;
+	}
 
-@media (max-width: 768px) {
-  .desktop-only { display: none; }
-  .mobile-only { display: block; }
+	/* marca y título más compactos */
+	.brand{
+		gap: .35rem;
+		margin-bottom: .25rem;
+	}
+	.form-title{
+		margin: .3rem 0 .8rem;
+		font-size: 1.125rem;
+	}
 
+	/* campos con menos separación vertical */
+	.input-group{
+		margin: .45rem 0;
+	}
 
-  body {
-    font-family: Arial, sans-serif;
-    color: var(--gris-fosc);
-  }
+	/* botón a todo el ancho del formulario y con menos margen */
+	.btn-primary{
+		width: 100%;
+		max-width: none;
+		margin: .9rem auto .25rem;
+	}
 
-  .desktop-only { display: none; }
-  .mobile-only { display: block; }
+	/* enlace final más cerca del botón */
+	.alt-link{
+		margin-top: .2rem;
+		font-size: .8rem;
+	}
+}
 
-  .brand-text {
-    font-size: 1.5rem;
-  }
-  .form-title {
-    font-size: 1rem;
-  }
-    .input-group {
-    justify-content: flex-start; /* asegura alineación a la izquierda */
-  }
+/* Si quieres que en pantallas MUY pequeñas (≤360px) sea aún más denso */
+@media (max-width: 360px){
+	.auth{ padding-top: .75rem; }
+	.input-group{ margin: .35rem 0; }
 
-  .input-group .icon {
-    left: 0.75rem; /* ligeramente más cerca del borde */
-  }
-
-  .input-group input {
-    padding-left: 2.5rem; /* espacio fijo para el icono */
-    text-align: left; /* texto siempre alineado a la izquierda */
-  }
 }

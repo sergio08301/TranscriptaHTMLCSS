@@ -20,14 +20,6 @@
             </button>
         </a>
 
-        <a href="{{ url_for_lang('registro') }}" class="icon-btn" aria-label="User">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11" cy="11" r="10" stroke="#333333" stroke-width="1.5"/>
-                <circle cx="11" cy="8" r="3" fill="#333333"/>
-                <path d="M4 18C4 15 8 13 11 13C14 13 18 15 18 18" fill="#333333"/>
-            </svg>
-        </a>
-
         <div class="lang-switcher desktop-only" id="lang-desktop">
           <button class="lang-btn" aria-haspopup="true" aria-expanded="false">
             <img src="{{ url_for('static', filename='img/flag-' ~ (get_locale() or 'ca') ~ '.svg') }}" alt="Idioma actual" width="20" height="14">
@@ -48,14 +40,19 @@
 
         <!-- Botón menú -->
         <button class="menu-btn" id="menu-toggle">
-                    <!-- Icono hamburguesa -->
-                <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <line x1="3" y1="12" x2="21" y2="12"/>
-                    <line x1="3" y1="18" x2="21" y2="18"/>
-                </svg>
-                <span class="menu-text">{{ _("Menú") }}</span>
-                <span class="arrow-down">▼</span>
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <span class="menu-text">{{ _("Menú") }}</span>
+          <span class="arrow-down">
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
         </button>
 
         <!-- Menú Desktop -->
@@ -151,5 +148,48 @@
 
   document.addEventListener('click', () => { menu.style.display = 'none'; btn.setAttribute('aria-expanded','false'); });
 })();
+
+    (function(){
+    const btn = document.getElementById('menu-toggle');
+    const desktopMenu = document.getElementById('desktop-menu');
+    const mobileMenu  = document.getElementById('mobile-menu');
+
+    if(!btn) return;
+
+
+    const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+    function closeAll(){
+        btn.classList.remove('open');
+        if(desktopMenu){ desktopMenu.classList.remove('open'); desktopMenu.style.display = 'none'; }
+        if(mobileMenu){  mobileMenu.classList.remove('open');  mobileMenu.style.display  = 'none'; }
+        btn.setAttribute('aria-expanded','false');
+    }
+
+    function openMenu(menuEl){
+        btn.classList.add('open');
+        menuEl.classList.add('open');
+        menuEl.style.display = menuEl.classList.contains('mobile-menu') ? 'flex' : 'block';
+        btn.setAttribute('aria-expanded','true');
+    }
+
+    btn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        const menuEl = isMobile() ? mobileMenu : desktopMenu;
+        if(!menuEl) return;
+
+        const isOpen = menuEl.classList.contains('open');
+        if(isOpen){ closeAll(); } else { closeAll(); openMenu(menuEl); }
+    });
+
+
+    document.addEventListener('click', (e)=>{
+        const clickedInsideMenu = e.target.closest('.menu-dropdown') || e.target.closest('#menu-toggle');
+        if(!clickedInsideMenu) closeAll();
+    });
+
+
+    window.addEventListener('resize', closeAll);
+	})();
     </script>
 </header>
