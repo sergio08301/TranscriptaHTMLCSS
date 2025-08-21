@@ -1,0 +1,328 @@
+:root{
+	--agora-blau:#39A9E2;
+	--gris-fosc:#333333;
+	--blanc:#FFFFFF;
+	--gris-clar:#F4F4F4;
+	--buttons:#16BAC5;
+	--gris-mitja:#666666;
+	--gris-suau:#ECECEC;
+	--blau-mitja:#01151F;
+	--blau-fosc:#1C9EE0;
+	--button-hover:#14CFDB;
+	--turquesa-clar:#14CFDB;
+	--groc:#EAB308;
+
+	--radius-campo:8px;
+	--radius-card:14px;
+	--sombra-suave:0 4px 10px rgba(0,0,0,.06);
+	--sombra-media:0 8px 20px rgba(0,0,0,.08);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{
+	padding-top:80px;                /* header fijo */
+	font-family:Arial, sans-serif;
+	color:var(--gris-fosc);
+	background:var(--gris-clar);
+}
+
+.auth{
+	min-height:calc(100vh - 80px);
+	display:flex;
+	justify-content:center;
+	align-items:flex-start;
+	padding-top: clamp(2rem, 12vh, 6rem); /* un poco por encima del centro */
+	padding-left:1rem;
+	padding-right:1rem;
+}
+
+.auth-card{
+	width:100%;
+	max-width:720px;                 /* un punto más ancho que perfil */
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:1rem;
+}
+
+.form-title{
+	margin:.4rem 0 1.4rem;
+	font-size:1.25rem;
+	font-weight:600;
+	color:var(--gris-fosc);
+}
+
+/* ===== Tarjetas ===== */
+.card{
+	width:100%;
+	max-width:520px;
+	background:var(--blanc);
+	border-radius:var(--radius-card);
+	box-shadow:var(--sombra-suave);
+	padding:1.1rem 1.25rem;
+}
+
+.card + .card{ margin-top:.75rem; }
+
+.card-head{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:.75rem;
+	margin-bottom:.25rem;
+}
+
+.card-title{
+	font-size:1rem;
+	font-weight:700;
+	color:var(--gris-fosc);
+}
+
+.chevron{
+	border:none;
+	background:transparent;
+	padding:.25rem;
+	cursor:pointer;
+	border-radius:8px;
+}
+
+/* ===== Contenido del Plan ===== */
+.plan-rows{
+	display:grid;
+	grid-template-columns: 1fr auto;
+	row-gap:.5rem;
+	column-gap:1.25rem;
+	margin:.35rem 0 0.9rem;
+}
+
+.row{
+	display:contents; /* permite que label/value usen la grid */
+}
+.row-label{
+	color:var(--gris-fosc);
+	font-size:.9rem;
+}
+.row-value{
+	color:var(--gris-fosc);
+	font-size:.9rem;
+	font-weight:600;
+}
+
+/* ===== Botón ===== */
+.btn-primary{
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	gap:.5rem;
+	padding:.55rem 1.1rem;
+	border:none;
+	border-radius:9999px;
+	font-weight:700;
+	cursor:pointer;
+	box-shadow:var(--sombra-media);
+	background:var(--blanc);
+	color:var(--gris-fosc);
+	text-transform:none;
+	transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+}
+.btn-primary:hover{ transform:translateY(-1px); box-shadow:0 10px 22px rgba(0,0,0,.1); }
+.btn-primary:active{ transform:translateY(0); opacity:.95; }
+
+.btn-filled{
+	background:var(--buttons);
+	color:var(--blanc);
+}
+.btn-filled:hover{ background:var(--button-hover); }
+
+.btn-small{
+	align-self:center;
+	min-width: 190px;
+}
+
+/* ===== Historial ===== */
+.history-toggle{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:.75rem;
+	cursor:pointer;
+	padding:.25rem 0;
+}
+
+.history-hint{
+	font-size:.95rem;
+	color:var(--gris-fosc);
+}
+
+.chevron{
+	flex:0 0 auto;
+	transition: transform .15s ease;
+}
+
+/* si más tarde cambias aria-expanded a true, podrás rotar la flecha */
+.history-toggle[aria-expanded="true"] .chevron{
+	transform: rotate(180deg);
+}
+.history-panel {
+	margin-top:.75rem;
+	animation: fadeIn .2s ease;
+}
+
+@keyframes fadeIn {
+	from { opacity:0; transform: translateY(-5px); }
+	to { opacity:1; transform: translateY(0); }
+}
+.history-panel{ margin-top:.75rem; }
+
+.history-table{
+	width:100%;
+	border-collapse:separate;
+	border-spacing:0;
+	background: var(--blanc);
+	border-radius: 10px;
+	overflow:hidden;
+	box-shadow: var(--sombra-suave);
+}
+
+.history-table thead th{
+	background: #f7f7f7;
+	font-weight: 700;
+	font-size: .9rem;
+	color: var(--gris-fosc);
+	text-align: left;
+	padding: .6rem .8rem;
+	border-bottom: 1px solid var(--gris-suau);
+}
+
+.history-table tbody td{
+	padding: .6rem .8rem;
+	font-size: .9rem;
+	color: var(--gris-fosc);
+	border-bottom: 1px solid var(--gris-suau);
+}
+
+.history-table tbody tr:last-child td{
+	border-bottom: none;
+}
+
+.history-table a{
+	color: var(--agora-blau);
+	text-decoration: none;
+}
+.history-table a:hover{ text-decoration: underline; }
+
+.col-right{ text-align: right; }
+
+/* filas resaltadas según estado */
+.row-warn{
+	background: #fde8e8; /* rojo muy claro */
+}
+.row-ok{
+	background: #e9f5fb; /* azul muy claro */
+}
+
+.row-empty td{
+	text-align: center;
+	color: var(--gris-mitja);
+}
+
+/* enlace Ver más */
+.history-more{
+	display:block;
+	text-align:center;
+	margin-top:.35rem;
+	color: var(--agora-blau);
+	text-decoration:none;
+}
+.history-more:hover{ text-decoration: underline; }
+/* --- bajo el header, sin colapsos --- */
+body { padding-top: 80px; }                  /* alto real de tu header */
+
+/* El contenedor principal: espacio arriba y abajo y SIN colapso de márgenes */
+.auth{
+  align-items: flex-start;
+  padding-top: clamp(2rem, 12vh, 6rem);      /* hueco bajo el header */
+  padding-bottom: 2rem;
+}
+
+/* Evita colapso de márgenes con el primer hijo (cualquiera) */
+.auth-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;                                /* separación entre título y tarjetas */
+  padding-top: .1px;                          /* rompe el colapso del primer margin */
+  /* alternativamente podrías usar: overflow: auto; */
+}
+
+/* Orden explícito: primero el plan, luego el historial */
+.card--plan{ order: 1; }
+.card--history{ order: 2; }
+
+/* Las tarjetas no deben ser sticky/absolute accidentalmente */
+.card{ position: static; margin: 0; }         /* el gap del .auth-card gestiona la separación */
+
+/* separaciones internas coherentes */
+.form-title{ margin: .4rem 0 1rem; }
+.card + .card{ margin-top: 0; }               /* lo maneja el gap */
+
+
+.card{
+  padding: 1.5rem clamp(5rem, 3.8vw, 1.75rem); /* ↑ padding-inline */
+}
+.card-title {
+  font-size: 1.3rem;
+  padding-bottom:.5rem;
+}
+
+/* +separación entre etiqueta y valor y remate a la derecha */
+.plan-rows{
+  grid-template-columns: 1fr auto;
+  column-gap: 2rem;                 /* antes ~1.25rem */
+}
+
+.row-value{
+  justify-self: end;                /* alinea a la derecha */
+  padding-right: 0.25rem;            /* pequeño colchón con el borde */
+}
+
+.card--plan{
+	display: flex;              /* << clave */
+	flex-direction: column;
+	align-items: stretch;       /* filas a ancho completo */
+}
+
+.card--plan .plan-rows{
+	width: 100%;
+	margin-bottom: .75rem;
+}
+
+/* Centra el botón dentro de la tarjeta */
+.card--plan .btn-primary{
+	align-self: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+	.auth{
+		padding-left: clamp(1rem, 6vw, 1.5rem);
+		padding-right: clamp(1rem, 6vw, 1.5rem);
+		padding-top: clamp(1.25rem, 8vh, 2.5rem);
+	}
+	.auth-card{
+		max-width: 640px;
+	}
+	.card{
+		max-width:none;
+		padding:2.5rem 2.5rem;
+	}
+	.plan-rows{
+		column-gap:.75rem;
+	}
+	.btn-small{
+		min-width: auto;
+		width: 100%;
+	}
+
+  .plan-rows{ column-gap: 1.25rem; }
+}

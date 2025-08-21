@@ -96,6 +96,76 @@ def login():
 def recupera():
     return render_template("recupera.html")
 
+
+_ = lambda s: s
+@app.route('/perfil', methods=['GET', 'POST'])
+def perfil():
+	# Simulamos datos de usuario venidos de BDD
+	user = {
+		"name": "Hernan",
+		"phone": "123456789",
+		"address": "Carrer carrer",
+		"email": "hernan@hernan.com",
+		"email_verified": False,  # <-- controla el aviso
+	}
+
+	plan = {
+		"name": "Premium",
+		"pages_left": 43,
+		"pages_quota": 500,
+	}
+
+	# Placeholders y textos de UI (centralizados)
+	placeholders = {
+		"name": _("Nom"),
+		"phone": _("Telèfon"),
+		"address": _("Adreça"),
+		"email": _("Email"),
+	}
+
+	ui = {
+		"title": _("El Meu Perfil"),
+		"save_button": _("GUARDAR CANVIS"),
+		"email_pending": _("Email pendent de verificació"),
+		"change_password": _("Modifica la teva contrasenya"),
+	}
+
+	if request.method == 'POST':
+		# aquí procesas y guardas
+		# user.update({...})
+		# flash(_("Canvis desats"), "success")
+		pass
+
+	return render_template(
+		'perfil.html',
+		user=user,
+		plan=plan,
+		placeholders=placeholders,
+		ui=ui
+	)
+
+@app.route('/plan', endpoint='plan')
+def plan():
+    plan = {
+        "name": "Premium",
+        "pages_used": 43,
+        "pages_quota": 500,
+        "renewal": "28/07/2025",
+    }
+
+    # Ejemplo de historial (simula lo que te llegará del backend/DB)
+    history = [
+        {"date": "24/07/2025 10:09", "name": "page_186_right.pdf", "url": "#", "sent": 8, "ok": 8, "warn": 0},
+        {"date": "24/07/2025 09:40", "name": "page_185_right.pdf", "url": "#", "sent": 6, "ok": 5, "warn": 1},
+        {"date": "24/07/2025 09:35", "name": "page_184_right.pdf", "url": "#", "sent": 6, "ok": 4, "warn": 0},
+        {"date": "24/07/2025 09:28", "name": "page_183_right.pdf", "url": "#", "sent": 8, "ok": 4, "warn": 1},
+        {"date": "24/07/2025 09:10", "name": "page_182_right.pdf", "url": "#", "sent": 10,"ok":10,"warn": 0},
+        {"date": "24/07/2025 08:55", "name": "page_181_right.pdf", "url": "#", "sent": 8, "ok": 8, "warn": 0},
+        {"date": "24/07/2025 08:42", "name": "page_180_right.pdf", "url": "#", "sent": 12,"ok":12,"warn": 0},
+    ]
+    return render_template('plan.html', plan=plan, history=history)
+
+
 @app.context_processor
 def utility_processor():
     def url_for_lang(endpoint, **values):

@@ -1,0 +1,214 @@
+:root{
+	--agora-blau:#39A9E2;
+	--gris-fosc:#333333;
+	--blanc:#FFFFFF;
+	--gris-clar:#F4F4F4;
+	--buttons:#16BAC5;
+	--gris-mitja:#666666;
+	--gris-suau:#ECECEC;
+	--blau-mitja:#01151F;
+	--blau-fosc:#1C9EE0;
+	--button-hover:#14CFDB;
+	--turquesa-clar:#14CFDB;
+	--groc:#EAB308;
+
+	--radius-campo:8px;
+	--sombra-suave:0 4px 10px rgba(0,0,0,.06);
+	--sombra-media:0 8px 20px rgba(0,0,0,.08);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{
+	padding-top:80px; /* header fijo */
+	font-family:Arial, sans-serif;
+	color:var(--gris-fosc);
+	background:var(--gris-clar);
+}
+
+/* helpers */
+.desktop-only{ display:block; }
+.mobile-only{ display:none; }
+
+/* ===== Layout (alineado arriba como en login retocado) ===== */
+.auth{
+	min-height:calc(100vh - 80px);
+	display:flex;
+	justify-content:center;
+	align-items: flex-start;
+	padding-top: clamp(2rem, 12vh, 8rem);
+	padding-bottom: max(2rem, env(safe-area-inset-bottom));
+
+}
+
+.auth-card{
+	width:100%;
+	max-width:640px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+/* Marca */
+.brand{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:.5rem;
+	margin-bottom:.5rem;
+}
+.brand-text{
+	font-weight:700;
+	font-size:1.75rem;
+	color:var(--buttons);
+}
+
+/* Título */
+.form-title{
+	margin:.6rem 0 1.2rem;
+	color:var(--gris-fosc);
+	font-size:1.5rem;
+	font-weight:600;
+}
+
+/* Formulario: algo más estrecho como en la maqueta */
+.form{
+	width:100%;
+	max-width:420px;
+}
+
+/* Campos (mismo look que login/registro) */
+.input-group{
+	position:relative;
+	display:flex;
+	align-items:center;
+	background:var(--blanc);
+	border-radius:var(--radius-campo);
+	box-shadow:var(--sombra-suave);
+	margin:1rem 0;
+	border:1px solid var(--gris-suau);
+	overflow:hidden;
+}
+.input-group .icon{
+	position:absolute;
+	left:.5rem;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	opacity:.75;
+}
+.input-group input{
+	width:100%;
+	border:none;
+	outline:none;
+	background:transparent;
+	font-size:.9rem;
+	color:var(--gris-fosc);
+	height:1.8rem;
+	padding-left:2rem;
+}
+.input-group input::placeholder{ color:var(--gris-mitja); }
+
+/* Línea de plan */
+.plan-info{
+	margin:.35rem 0 1rem;
+	font-size:.82rem;
+	color:var(--gris-mitja);
+	text-align:center;
+}
+.plan-info strong{ color:var(--gris-fosc); font-weight:700; }
+.plan-info .sep{ margin:0 .5rem; opacity:.5; }
+
+/* Botón turquesa lleno (variante local) */
+.btn-primary{
+	display:block;
+	margin: .5rem auto 1rem;
+	padding:.75rem 1.75rem;
+	border-radius:1.25rem;
+	border:none;
+	font-weight:700;
+	letter-spacing:.3px;
+	cursor:pointer;
+	text-transform:uppercase;
+	transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease, background .12s ease, color .12s ease;
+	width:100%;
+	max-width:320px;
+	text-align:center;
+	box-shadow:var(--sombra-media);
+	background:var(--blanc);
+	color:var(--gris-fosc);
+}
+.btn-primary:hover{ transform:translateY(-1px); box-shadow:0 10px 22px rgba(0,0,0,.10); }
+.btn-primary:active{ transform:translateY(0); opacity:.95; }
+
+/* variante “filled” para este flujo */
+.btn-filled{
+	background:var(--buttons);
+	color:var(--blanc);
+	box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+.btn-filled:hover{
+	background:var(--button-hover);
+	box-shadow:0 10px 22px rgba(0,0,0,.14);
+}
+
+/* Aviso */
+.notice{
+	margin-top:.5rem;
+	text-align:center;
+	font-size:.85rem;
+	color:var(gris-mitja);
+}
+.notice .warn{ margin-right:.25rem;
+color:red}
+
+/* Link inferior (solo link, sin texto gris extra) */
+.alt-link{
+	text-align:center;
+	font-size:.85rem;
+	margin-top:1rem;
+}
+.alt-link a{
+	color:var(--agora-blau);
+	text-decoration:none;
+	border-bottom:1px dotted rgba(57,169,226,.7);
+}
+.alt-link a:hover{ opacity:.9; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+	/* acolchado lateral de toda la vista */
+	.auth{
+		padding-left: clamp(1rem, 6vw, 1.5rem);   /* 16–24px */
+		padding-right: clamp(1rem, 6vw, 1.5rem);
+	}
+
+	/* aseguramos que el contenido use esos gutters */
+	.auth-card{
+		width: 100%;
+		max-width: 640px;
+		padding-left: clamp(1rem, 6vw, 1.5rem);
+		padding-right: clamp(1rem, 6vw, 1.5rem);
+	}
+
+	/* el formulario no fuerza anchuras que anulen los gutters */
+	.form{
+		width: 100%;
+		max-width: none;              /* ocupa el ancho disponible con padding */
+	}
+
+	/* armonizamos márgenes para que todo quede centrado y respire */
+	.input-group,
+	.plan-info,
+	.btn-primary,
+	.notice,
+	.alt-link{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+    .plan-info{
+        margin-left:-2rem;
+        margin-right:-2rem;
+    }
+
+}
