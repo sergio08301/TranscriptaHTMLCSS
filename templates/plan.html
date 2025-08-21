@@ -44,6 +44,7 @@
 			</article>
 
 			<!-- Tarjeta: Historial -->
+			<!-- Bloque 1: tarjeta solo con título + toggle -->
 			<article class="card card--history">
 				<div class="card-head">
 					<h2 class="card-title">{{ _('Historial') }}</h2>
@@ -51,54 +52,43 @@
 
 				<div class="history-toggle" role="button" aria-expanded="false" aria-controls="history-panel">
 					<span class="history-hint">{{ _('Desplega la informació') }}</span>
-					<svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
-						 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 						<path d="M7 10l5 5 5-5" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
 				</div>
+			</article>
 
-				<!-- Contenido colapsable (opcional, oculto por ahora) -->
-				<div id="history-panel" class="history-panel" hidden>
-					<table class="history-table">
-						<thead>
-							<tr>
-								<th>{{ _('Data') }}</th>
-								<th>{{ _('Document') }}</th>
-								<th class="col-right">{{ _('Enviades') }}</th>
-								<th class="col-right">✔</th>
-								<th class="col-right">⚠</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% if history and history|length > 0 %}
-								{% for it in history %}
-									{#
-									   Añadimos clases para resaltar:
-									   - fila con warn>0 → .row-warn (tinte rojo claro)
-									   - si ok == sent → .row-ok (tinte azul claro)
-									#}
-									<tr class="
-										{% if it.warn > 0 %}row-warn{% elif it.ok == it.sent %}row-ok{% endif %}
-									">
-										<td>{{ it.date }}</td>
-										<td><a href="{{ it.url }}">{{ it.name }}</a></td>
-										<td class="col-right">{{ it.sent }}</td>
-										<td class="col-right">{{ it.ok }}</td>
-										<td class="col-right">{{ it.warn }}</td>
-									</tr>
-								{% endfor %}
-							{% else %}
-								<tr class="row-empty">
-									<td colspan="5">{{ _('No hi ha moviments encara') }}</td>
-								</tr>
-							{% endif %}
-						</tbody>
-					</table>
-
-					<a href="#" class="history-more">{{ _('Veure +') }}</a>
+			<!-- Bloque 2 y 3: FUERA de la tarjeta anterior -->
+			<div id="history-panel" class="history-panel" hidden>
+					<!-- Cabecera de columnas -->
+					<!-- BLOQUE 2: cabecera columnas -->
+				<div class="history-headbar history-cols">
+					<div class="hcell w-date">{{ _('Data') }}</div>
+					<div class="hcell w-doc">{{ _('Document') }}</div>
+					<div class="hcell w-sent col-right">{{ _('Enviades') }}</div>
+					<div class="hcell w-ok  col-right">✓</div>
+					<div class="hcell w-warn col-right">⚠</div>
 				</div>
 
-			</article>
+				<!-- BLOQUE 3: lista -->
+				<div class="history-list">
+					{% if history and history|length %}
+						{% for it in history %}
+							<div class="hrow history-cols
+								{% if it.warn > 0 %}row-warn{% elif it.ok == it.sent %}row-ok{% endif %}">
+								<div class="cell w-date">{{ it.date }}</div>
+								<div class="cell w-doc"><a href="{{ it.url }}">{{ it.name }}</a></div>
+								<div class="cell w-sent col-right">{{ it.sent }}</div>
+								<div class="cell w-ok   col-right">{{ it.ok }}</div>
+								<div class="cell w-warn col-right">{{ it.warn }}</div>
+							</div>
+						{% endfor %}
+					{% else %}
+						<div class="hrow row-empty">{{ _('No hi ha moviments encara') }}</div>
+					{% endif %}
+					<a href="#" class="history-more">{{ _('Veure +') }}</a>
+				</div>
+			</div>
 		</section>
 	</main>
 	<script>

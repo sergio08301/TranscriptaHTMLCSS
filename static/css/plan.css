@@ -1,4 +1,5 @@
 :root{
+	/* Paleta del proyecto */
 	--agora-blau:#39A9E2;
 	--gris-fosc:#333333;
 	--blanc:#FFFFFF;
@@ -12,44 +13,58 @@
 	--turquesa-clar:#14CFDB;
 	--groc:#EAB308;
 
+	/* UI */
 	--radius-campo:8px;
 	--radius-card:14px;
 	--sombra-suave:0 4px 10px rgba(0,0,0,.06);
 	--sombra-media:0 8px 20px rgba(0,0,0,.08);
+
+	/* Historial (desktop) — ajustados para que todo quepa */
+	--col-date: 140px;
+	--col-doc: 150px;
+	--col-sent: 80px;
+	--col-ok:   32px;
+	--col-warn: 32px;
+	--history-gap: .5rem;      /* separación entre columnas */
+	--history-xpad: .5rem;     /* padding horizontal en cabecera y filas */
+	  --ok-color: var(--blau-fosc);        /* azul corporativo (checks correctos) */
+  --warn-color: #E05353;               /* rojo para errores */
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
+
 body{
-	padding-top:80px;                /* header fijo */
+	padding-top:80px; /* header fijo */
 	font-family:Arial, sans-serif;
 	color:var(--gris-fosc);
 	background:var(--gris-clar);
 }
 
+/* ===== Layout general ===== */
 .auth{
 	min-height:calc(100vh - 80px);
 	display:flex;
 	justify-content:center;
 	align-items:flex-start;
-	padding-top: clamp(2rem, 12vh, 6rem); /* un poco por encima del centro */
+	padding-top:clamp(2rem, 12vh, 6rem);
 	padding-left:1rem;
 	padding-right:1rem;
 }
 
 .auth-card{
 	width:100%;
-	max-width:720px;                 /* un punto más ancho que perfil */
+	max-width:720px;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	gap:1rem;
+	padding-top:.1px; /* anticolapso de márgenes */
 }
 
 .form-title{
-	margin:.4rem 0 1.4rem;
+	margin:.4rem 0 1.2rem;
 	font-size:1.25rem;
 	font-weight:600;
-	color:var(--gris-fosc);
 }
 
 /* ===== Tarjetas ===== */
@@ -57,58 +72,38 @@ body{
 	width:100%;
 	max-width:520px;
 	background:var(--blanc);
+	border:1px solid var(--gris-suau);
 	border-radius:var(--radius-card);
 	box-shadow:var(--sombra-suave);
-	padding:1.1rem 1.25rem;
-}
-
-.card + .card{ margin-top:.75rem; }
-
-.card-head{
-	display:flex;
-	align-items:center;
-	justify-content:space-between;
-	gap:.75rem;
-	margin-bottom:.25rem;
+	padding:1.1rem clamp(1.6rem, 4vw, 2.2rem);
 }
 
 .card-title{
-	font-size:1rem;
+	margin:0;
+	font-size:1.3rem;
 	font-weight:700;
 	color:var(--gris-fosc);
 }
 
-.chevron{
-	border:none;
-	background:transparent;
-	padding:.25rem;
-	cursor:pointer;
-	border-radius:8px;
+/* ===== Tarjeta: Plan actual ===== */
+.card--plan{
+	display:flex;
+	flex-direction:column;
 }
 
-/* ===== Contenido del Plan ===== */
 .plan-rows{
 	display:grid;
-	grid-template-columns: 1fr auto;
+	grid-template-columns:1fr auto;
+	column-gap:2rem;
 	row-gap:.5rem;
-	column-gap:1.25rem;
-	margin:.35rem 0 0.9rem;
+	margin-top:.4rem;
+	margin-bottom:.75rem;
 }
+.row{ display:contents; }
+.row-label{ font-size:.95rem; color:var(--gris-fosc); }
+.row-value{ font-size:.95rem; color:var(--gris-fosc); justify-self:end; padding-right:.25rem; }
 
-.row{
-	display:contents; /* permite que label/value usen la grid */
-}
-.row-label{
-	color:var(--gris-fosc);
-	font-size:.9rem;
-}
-.row-value{
-	color:var(--gris-fosc);
-	font-size:.9rem;
-	font-weight:600;
-}
-
-/* ===== Botón ===== */
+/* Botón */
 .btn-primary{
 	display:inline-flex;
 	align-items:center;
@@ -122,25 +117,18 @@ body{
 	box-shadow:var(--sombra-media);
 	background:var(--blanc);
 	color:var(--gris-fosc);
+	transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease, opacity .12s ease;
 	text-transform:none;
-	transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
 }
 .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 10px 22px rgba(0,0,0,.1); }
 .btn-primary:active{ transform:translateY(0); opacity:.95; }
-
-.btn-filled{
-	background:var(--buttons);
-	color:var(--blanc);
-}
+.btn-filled{ background:var(--buttons); color:var(--blanc); }
 .btn-filled:hover{ background:var(--button-hover); }
+.btn-small{ min-width:190px; }
+.card--plan .btn-primary{ align-self:center; margin-top:.4rem; }
 
-.btn-small{
-	align-self:center;
-	min-width: 190px;
-}
-
-/* ===== Historial ===== */
-.history-toggle{
+/* ===== Tarjeta: Historial (bloque 1: título + toggle) ===== */
+.card--history .history-toggle{
 	display:flex;
 	align-items:center;
 	justify-content:space-between;
@@ -148,181 +136,170 @@ body{
 	cursor:pointer;
 	padding:.25rem 0;
 }
+.history-hint{ font-size:.95rem; color:var(--gris-fosc); }
+.chevron{ flex:0 0 auto; transition:transform .15s ease; }
+.history-toggle[aria-expanded="true"] .chevron{ transform:rotate(180deg); }
 
-.history-hint{
-	font-size:.95rem;
+/* ===== Historial: bloques 2 y 3 (fuera de la card) ===== */
+.history-panel{
+	width:100%;
+	max-width:520px;
+	margin:.5rem auto 0;
+
+}
+.history-list{
+  margin-top: 1rem ;   /* ajusta 12–20px a tu gusto */
+}
+
+/* Rejilla de 5 columnas — cabecera y filas comparten EXACTA plantilla */
+.history-cols{
+	display:grid;
+	grid-template-columns:
+		var(--col-date)
+		var(--col-doc)
+		var(--col-sent)
+		var(--col-ok)
+		var(--col-warn);
+	align-items:center;
+	column-gap:var(--history-gap);
+	width:100%;
+}
+
+.w-date{ grid-column:1; }
+.w-doc { grid-column:2; }
+.w-sent{ grid-column:3; }
+.w-ok  { grid-column:4; }
+.w-warn{ grid-column:5; }
+.col-right{ text-align:right; }
+
+/* Bloque 2: cabecera */
+.history-headbar{
+	background:var(--blanc);
+	border:1px solid var(--gris-suau);
+	border-radius:12px;
+	box-shadow:var(--sombra-suave);
+	padding:.55rem var(--history-xpad);
+}
+.history-headbar .hcell{
+	font-weight:700;
+	font-size:.9rem;
+	white-space:nowrap;
+}
+
+/* Bloque 3: lista */
+.history-list{
+  display: grid;
+  grid-auto-rows: min-content;
+  row-gap: 8px;                    /* ← separador blanco */
+  padding: 8px;                    /* borde blanco interior */
+  background: var(--blanc);
+  border-radius: 12px;
+
+
+  /* anulamos lo que hubiera antes */
+  overflow: visible !important;
+}
+.hrow{
+	padding:.6rem var(--history-xpad);
+	border-bottom:1px solid var(--gris-suau);
+	font-size:.9rem;
 	color:var(--gris-fosc);
 }
+.hrow:last-child{ border-bottom:none; }
 
-.chevron{
-	flex:0 0 auto;
-	transition: transform .15s ease;
+.hrow a{ color:var(--agora-blau); text-decoration:none; }
+.hrow a:hover{ text-decoration:underline; }
+
+/* Estados */
+.row-warn{ background:#FDEAEA; }
+.row-ok  { background:#EAF6FF; }
+.row-empty{
+	text-align:center;
+	color:var(--gris-mitja);
+	padding:.6rem var(--history-xpad);
 }
 
-/* si más tarde cambias aria-expanded a true, podrás rotar la flecha */
-.history-toggle[aria-expanded="true"] .chevron{
-	transform: rotate(180deg);
-}
-.history-panel {
-	margin-top:.75rem;
-	animation: fadeIn .2s ease;
-}
-
-@keyframes fadeIn {
-	from { opacity:0; transform: translateY(-5px); }
-	to { opacity:1; transform: translateY(0); }
-}
-.history-panel{ margin-top:.75rem; }
-
-.history-table{
-	width:100%;
-	border-collapse:separate;
-	border-spacing:0;
-	background: var(--blanc);
-	border-radius: 10px;
-	overflow:hidden;
-	box-shadow: var(--sombra-suave);
-}
-
-.history-table thead th{
-	background: #f7f7f7;
-	font-weight: 700;
-	font-size: .9rem;
-	color: var(--gris-fosc);
-	text-align: left;
-	padding: .6rem .8rem;
-	border-bottom: 1px solid var(--gris-suau);
-}
-
-.history-table tbody td{
-	padding: .6rem .8rem;
-	font-size: .9rem;
-	color: var(--gris-fosc);
-	border-bottom: 1px solid var(--gris-suau);
-}
-
-.history-table tbody tr:last-child td{
-	border-bottom: none;
-}
-
-.history-table a{
-	color: var(--agora-blau);
-	text-decoration: none;
-}
-.history-table a:hover{ text-decoration: underline; }
-
-.col-right{ text-align: right; }
-
-/* filas resaltadas según estado */
-.row-warn{
-	background: #fde8e8; /* rojo muy claro */
-}
-.row-ok{
-	background: #e9f5fb; /* azul muy claro */
-}
-
-.row-empty td{
-	text-align: center;
-	color: var(--gris-mitja);
-}
-
-/* enlace Ver más */
+/* Ver más */
 .history-more{
 	display:block;
 	text-align:center;
-	margin-top:.35rem;
-	color: var(--agora-blau);
+	padding:.5rem 0 .65rem;
+	color:var(--agora-blau);
 	text-decoration:none;
+	grid-column: 1 / -1;
+    margin-top: 2px;
 }
-.history-more:hover{ text-decoration: underline; }
-/* --- bajo el header, sin colapsos --- */
-body { padding-top: 80px; }                  /* alto real de tu header */
+.history-more:hover{ text-decoration:underline; }
 
-/* El contenedor principal: espacio arriba y abajo y SIN colapso de márgenes */
-.auth{
-  align-items: flex-start;
-  padding-top: clamp(2rem, 12vh, 6rem);      /* hueco bajo el header */
-  padding-bottom: 2rem;
-}
-
-/* Evita colapso de márgenes con el primer hijo (cualquiera) */
-.auth-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;                                /* separación entre título y tarjetas */
-  padding-top: .1px;                          /* rompe el colapso del primer margin */
-  /* alternativamente podrías usar: overflow: auto; */
+.history-headbar .w-sent,
+.history-list   .w-sent,
+.history-headbar .w-ok,
+.history-list   .w-ok,
+.history-headbar .w-warn,
+.history-list   .w-warn{
+	text-align: center !important;
 }
 
-/* Orden explícito: primero el plan, luego el historial */
-.card--plan{ order: 1; }
-.card--history{ order: 2; }
-
-/* Las tarjetas no deben ser sticky/absolute accidentalmente */
-.card{ position: static; margin: 0; }         /* el gap del .auth-card gestiona la separación */
-
-/* separaciones internas coherentes */
-.form-title{ margin: .4rem 0 1rem; }
-.card + .card{ margin-top: 0; }               /* lo maneja el gap */
-
-
-.card{
-  padding: 1.5rem clamp(5rem, 3.8vw, 1.75rem); /* ↑ padding-inline */
+/* Mantén 'Data' y 'Document' centrados solo en cabecera */
+.history-headbar .w-date,
+.history-headbar .w-doc{
+	text-align: center;
 }
-.card-title {
-  font-size: 1.3rem;
-  padding-bottom:.5rem;
+/* La cabecera tenía .col-right, la anulamos SOLO en header */
+.history-headbar .col-right {
+	text-align: center;
 }
 
-/* +separación entre etiqueta y valor y remate a la derecha */
-.plan-rows{
-  grid-template-columns: 1fr auto;
-  column-gap: 2rem;                 /* antes ~1.25rem */
+
+/* ===== Colores de estado ===== */
+:root{
+  --ok-color: var(--blau-fosc);     /* azul corporativo */
+  --warn-color: #E05353;            /* rojo para avisos */
 }
 
-.row-value{
-  justify-self: end;                /* alinea a la derecha */
-  padding-right: 0.25rem;            /* pequeño colchón con el borde */
+/* ✓ ACIERTOS: SIEMPRE azul, en todas las filas */
+.history-list .w-ok{
+  color: var(--ok-color) !important;
+  font-weight: 600;
+  text-align: center;               /* si decidiste centrar las numéricas */
 }
 
-.card--plan{
-	display: flex;              /* << clave */
-	flex-direction: column;
-	align-items: stretch;       /* filas a ancho completo */
+/* ⚠ AVISOS: por defecto neutro (incluye el 0) */
+.history-list .w-warn{
+  color: var(--gris-fosc);
+  font-weight: 500;
+  text-align: center;               /* si decidiste centrar las numéricas */
 }
 
-.card--plan .plan-rows{
-	width: 100%;
-	margin-bottom: .75rem;
+/* ⚠ Solo en filas con error (>0) -> rojo */
+.history-list .row-warn .w-warn{
+  color: var(--warn-color) !important;
+  font-weight: 700;
 }
 
-/* Centra el botón dentro de la tarjeta */
-.card--plan .btn-primary{
-	align-self: center;
-}
+/* Enlaces de documento según estado de la fila */
+.history-list .row-ok   .w-doc a{ color: var(--ok-color);   font-weight: 600; }
+.history-list .row-warn .w-doc a{ color: var(--warn-color); font-weight: 600; }
 
+/* (Opcional) mantener subrayado al hover respetando color de estado */
+.history-list .hrow .w-doc a:hover{ text-decoration: underline; }
 /* ===== Responsive ===== */
-@media (max-width: 768px){
+@media (max-width:768px){
 	.auth{
-		padding-left: clamp(1rem, 6vw, 1.5rem);
-		padding-right: clamp(1rem, 6vw, 1.5rem);
-		padding-top: clamp(1.25rem, 8vh, 2.5rem);
+		padding-left:clamp(1rem, 6vw, 1.5rem);
+		padding-right:clamp(1rem, 6vw, 1.5rem);
+		padding-top:clamp(1.25rem, 8vh, 2.5rem);
 	}
-	.auth-card{
-		max-width: 640px;
-	}
-	.card{
-		max-width:none;
-		padding:2.5rem 2.5rem;
-	}
-	.plan-rows{
-		column-gap:.75rem;
-	}
-	.btn-small{
-		min-width: auto;
-		width: 100%;
-	}
+	.card{ padding:1rem 1.25rem; }
+	.plan-rows{ column-gap:1.25rem; }
+	.card-title{ font-size:1.2rem; }
 
-  .plan-rows{ column-gap: 1.25rem; }
+	/* Compresión ligera para que siga cabiendo */
+	:root{
+		--col-date: 130px;
+		--col-doc:  minmax(120px, 1fr);
+		--col-sent: 72px;
+		--col-ok:   28px;
+		--col-warn: 28px;
+	}
 }
