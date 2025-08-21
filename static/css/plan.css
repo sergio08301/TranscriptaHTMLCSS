@@ -284,22 +284,75 @@ body{
 /* (Opcional) mantener subrayado al hover respetando color de estado */
 .history-list .hrow .w-doc a:hover{ text-decoration: underline; }
 /* ===== Responsive ===== */
-@media (max-width:768px){
-	.auth{
-		padding-left:clamp(1rem, 6vw, 1.5rem);
-		padding-right:clamp(1rem, 6vw, 1.5rem);
-		padding-top:clamp(1.25rem, 8vh, 2.5rem);
-	}
-	.card{ padding:1rem 1.25rem; }
-	.plan-rows{ column-gap:1.25rem; }
-	.card-title{ font-size:1.2rem; }
+/* ============== MOBILE TUNING ============== */
+/* Trunca el nombre del documento en cualquier tamaño
+   (evita que empuje las columnas numéricas) */
+.history-headbar .w-doc,
+.history-list   .w-doc{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;                 /* importante para que grid permita ellipsis */
+}
 
-	/* Compresión ligera para que siga cabiendo */
-	:root{
-		--col-date: 130px;
-		--col-doc:  minmax(120px, 1fr);
-		--col-sent: 72px;
-		--col-ok:   28px;
-		--col-warn: 28px;
-	}
+/* Números compactos y alineados */
+.history-headbar .hcell,
+.history-list .hrow{
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px){
+  :root{
+    --history-gap: .4rem;       /* menos gap entre columnas */
+    --history-xpad: .4rem;      /* menos padding horizontal */
+    --col-date: 120px;
+    --col-doc:  minmax(110px, 1fr);
+    --col-sent: 64px;
+    --col-ok:   26px;
+    --col-warn: 26px;
+  }
+  .history-headbar .hcell{ font-size: .85rem; }
+  .history-list .hrow     { font-size: .88rem; }
+}
+
+@media (max-width: 600px){
+  :root{
+    --history-gap: .35rem;
+    --history-xpad: .35rem;
+    --col-date: 112px;
+    --col-doc:  minmax(96px, 1fr);
+    --col-sent: 58px;
+    --col-ok:   24px;
+    --col-warn: 24px;
+  }
+  .card{ padding: .9rem 1rem; }
+  .card-title{ font-size: 1.1rem; }
+  .history-headbar .hcell{ font-size: .82rem; }
+  .history-list .hrow     { font-size: .86rem; }
+}
+
+@media (max-width: 420px){
+  :root{
+    --history-gap: .3rem;
+    --history-xpad: .3rem;
+    --col-date: 102px;
+    --col-doc:  minmax(88px, 1fr);
+    --col-sent: 54px;
+    --col-ok:   22px;
+    --col-warn: 22px;
+  }
+  .history-headbar .hcell{ font-size: .8rem; }
+  .history-list .hrow     { font-size: .84rem; }
+}
+
+/* Fallback de seguridad: si aun así algún móvil muy estrecho no cabe,
+   permite scroll horizontal SOLO en el bloque del historial. */
+@media (max-width: 360px){
+  .history-panel{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .history-headbar, .history-list{
+    min-width: 420px; /* anchura mínima cómoda para 5 columnas */
+  }
 }
