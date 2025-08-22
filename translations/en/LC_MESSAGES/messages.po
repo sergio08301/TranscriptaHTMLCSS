@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-08 15:03+0200\n"
+"POT-Creation-Date: 2025-08-22 09:58+0200\n"
 "PO-Revision-Date: 2025-08-05 16:40+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,85 +18,170 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/contacto.html:6
-#, fuzzy
-msgid "Contacte"
-msgstr "DIRECT CONTACT"
-
-#: templates/contacto.html:45 templates/index.html:44
-msgid "Menú"
-msgstr "Menu"
-
-#: templates/contacto.html:51 templates/contacto.html:59
-#: templates/index.html:50 templates/index.html:58
-msgid "Utilitats de la plataforma"
-msgstr "Platform utilities"
-
-#: templates/contacto.html:52 templates/contacto.html:60
-#: templates/index.html:51 templates/index.html:59
-msgid "Exemples d’ús"
-msgstr "Usage examples"
-
-#: templates/contacto.html:53 templates/contacto.html:61
-#: templates/index.html:52 templates/index.html:60
-msgid "Plans free i premium"
-msgstr "Free and premium plans"
-
-#: templates/contacto.html:54 templates/contacto.html:62
-#: templates/index.html:53 templates/index.html:61
-msgid "Funcionament i contacte"
-msgstr "How it works and contact"
-
-#: templates/contacto.html:70 templates/index.html:69
-msgid "CARREGA UN DOCUMENT"
-msgstr "UPLOAD A DOCUMENT"
-
-#: templates/contacto.html:79 templates/index.html:78
-msgid "Perfil d’usuari"
-msgstr "User profile"
-
-#: templates/contacto.html:85 templates/index.html:84
-msgid "Eina desenvolupada per"
-msgstr "Tool developed by"
-
-#: templates/contacto.html:113
-msgid "Formulari de contacte"
-msgstr "Contact form"
-
-#: templates/contacto.html:126
+#: app.py:122 templates/contacto.html:31 templates/perfil.html:33
 msgid "Nom"
 msgstr "Name"
 
-#: templates/contacto.html:131
+#: app.py:123 templates/perfil.html:48 templates/registro.html:99
+msgid "Telèfon"
+msgstr "Phone"
+
+#: app.py:124 templates/perfil.html:62
+msgid "Adreça"
+msgstr "Address"
+
+#: app.py:125 templates/recupera.html:47 templates/registro.html:64
+msgid "Email"
+msgstr "Email"
+
+#: app.py:129 templates/perfil.html:17
+msgid "El Meu Perfil"
+msgstr "My Profile"
+
+#: app.py:130 templates/perfil.html:89
+msgid "GUARDAR CANVIS"
+msgstr "SAVE CHANGES"
+
+#: app.py:131 templates/perfil.html:95
+msgid "Email pendent de verificació"
+msgstr "Email pending verification"
+
+#: app.py:132 templates/perfil.html:100
+msgid "Modifica la teva contrasenya"
+msgstr "Change your password"
+
+#: templates/carga.html:6 templates/carga.html:31
+#, fuzzy
+msgid "Transcriu el teu Document"
+msgstr "Transcribe your Document"
+
+#: templates/carga.html:34
+#, fuzzy
+msgid "Arrossega i deixa anar el document"
+msgstr "Drag and drop the document"
+
+#: templates/carga.html:35
+msgid "mecanografiat o escrit a mà"
+msgstr "typed or handwritten"
+
+#: templates/carga.html:44
+#, fuzzy
+msgid "Imatges"
+msgstr "Images"
+
+#: templates/carga.html:58
+msgid "Tria Fitxer"
+msgstr "Choose File"
+
+#: templates/carga.html:62
+msgid "Prem per seleccionar arxius o deixa’ls aquí"
+msgstr "Press to select files or drop them here"
+
+#: templates/contacto.html:6
+#, fuzzy
+msgid "Contacte"
+msgstr "Contact"
+
+#: templates/contacto.html:18
+msgid "Formulari de contacte"
+msgstr "Contact form"
+
+#: templates/contacto.html:36
 msgid "Cognoms"
 msgstr "Surname"
 
-#: templates/contacto.html:138
+#: templates/contacto.html:43
 msgid "Correu electrònic"
 msgstr "Email address"
 
-#: templates/contacto.html:143
+#: templates/contacto.html:48
 msgid "Idioma de resposta"
-msgstr "Response Language"
+msgstr "Response language"
 
-#: templates/contacto.html:153
+#: templates/contacto.html:58
 msgid "Missatge"
 msgstr "Message"
 
-#: templates/contacto.html:158
+#: templates/contacto.html:63
 #, fuzzy
 msgid "Arxiu adjunt (opcional)"
-msgstr "MUNICIPAL ARCHIVES"
+msgstr "Attached file (optional)"
 
-#: templates/contacto.html:163
+#: templates/contacto.html:68
 msgid "Enviar"
 msgstr "Send"
 
-#: templates/index.html:113
+#: templates/header.html:49
+msgid "Menú"
+msgstr "Menu"
+
+#: templates/header.html:60 templates/header.html:68
+msgid "Utilitats de la plataforma"
+msgstr "Platform utilities"
+
+#: templates/header.html:61 templates/header.html:69
+msgid "Exemples d’ús"
+msgstr "Usage examples"
+
+#: templates/header.html:62 templates/header.html:70
+msgid "Plans free i premium"
+msgstr "Free and premium plans"
+
+#: templates/header.html:63 templates/header.html:71
+msgid "Funcionament i contacte"
+msgstr "How it works and contact"
+
+#: templates/header.html:79
+msgid "CARREGA UN DOCUMENT"
+msgstr "UPLOAD A DOCUMENT"
+
+#: templates/header.html:88
+msgid "Perfil d’usuari"
+msgstr "User profile"
+
+#: templates/header.html:94
+msgid "Eina desenvolupada per"
+msgstr "Tool developed by"
+
+#: templates/history.html:4
+msgid "Historial"
+msgstr "History"
+
+#: templates/history.html:12 templates/history.html:67
+#, fuzzy
+msgid "Desplega la informació"
+msgstr "Unfold information"
+
+#: templates/history.html:24
+msgid "Data"
+msgstr "Date"
+
+#: templates/history.html:25
+msgid "Document"
+msgstr "Document"
+
+#: templates/history.html:26
+#, fuzzy
+msgid "Enviades"
+msgstr "Sent"
+
+#: templates/history.html:45
+msgid "No hi ha moviments encara"
+msgstr "No activity yet"
+
+#: templates/history.html:48
+msgid "Veure +"
+msgstr "View more"
+
+#: templates/history.html:68
+msgid "Plega la informació"
+msgstr "Collapse information"
+
+#: templates/index.html:20
 msgid "L’única plataforma de transcripció dissenyada per a documents reals"
 msgstr "The only transcription platform designed for real documents"
 
-#: templates/index.html:115
+#: templates/index.html:22
 msgid ""
 "Converteix imatges tipogràfiques en text editable, classificat i "
 "exportable, sense necessitat de saber usar intel·ligència artificial. "
@@ -108,15 +193,15 @@ msgstr ""
 " classify, and transform typographic images into useful data with maximum"
 " reliability and no technical knowledge required."
 
-#: templates/index.html:118
+#: templates/index.html:26
 msgid "TRANSCRIU GRATIS"
 msgstr "TRANSCRIBE FOR FREE"
 
-#: templates/index.html:119
+#: templates/index.html:29
 msgid "DEMO PERSONALITZADA"
 msgstr "PERSONALIZED DEMO"
 
-#: templates/index.html:125
+#: templates/index.html:36
 msgid ""
 "Oblida’t de copiar i enganxar o d’escriure instruccions a ChatGPT. "
 "Nosaltres ens encarreguem de tot."
@@ -124,11 +209,11 @@ msgstr ""
 "Forget about copying and pasting or writing instructions in ChatGPT. We "
 "take care of everything."
 
-#: templates/index.html:126
+#: templates/index.html:37
 msgid "DESCOBREIX LES SEVES UTILITATS"
 msgstr "DISCOVER ITS USES"
 
-#: templates/index.html:131
+#: templates/index.html:42
 msgid ""
 "La nostra IA no és genèrica: ha après a llegir padrons, expedients, actes"
 " i documents antics, com ho faria un lector humà expert"
@@ -136,7 +221,7 @@ msgstr ""
 "Our AI is not generic: it has learned to read census records, case files,"
 " minutes, and old documents just like an expert human reader would."
 
-#: templates/index.html:132 templates/index.html:176
+#: templates/index.html:43 templates/index.html:87
 msgid ""
 "Cada dada està vinculada amb el seu origen visual. Tu tens el control "
 "total sobre què entra a la teva base de dades."
@@ -144,11 +229,11 @@ msgstr ""
 "Each piece of data is linked to its visual source. You have full control "
 "over what goes into your database."
 
-#: templates/index.html:145
+#: templates/index.html:56
 msgid "La nostra IA no és genèrica"
 msgstr "Our AI is not generic"
 
-#: templates/index.html:146
+#: templates/index.html:57
 msgid ""
 "Ha après a llegir padrons, expedients, actes i documents antics com ho "
 "faria un lector humà expert"
@@ -156,11 +241,11 @@ msgstr ""
 "It has learned to read census records, case files, minutes, and old "
 "documents just like an expert human reader would."
 
-#: templates/index.html:157
+#: templates/index.html:68
 msgid "Sensen Prompts"
 msgstr "Without Prompts"
 
-#: templates/index.html:159
+#: templates/index.html:70
 msgid ""
 "No cal escriure instruccions ni copiar i enganxar. Nosaltres ens "
 "encarreguem de tot: estructura, format, correcció i utilitat real."
@@ -168,15 +253,15 @@ msgstr ""
 "No need to write instructions or copy and paste. We take care of "
 "everything: structure, format, correction, and real usability."
 
-#: templates/index.html:174
+#: templates/index.html:85
 msgid "Conserva l’Origen Visual"
 msgstr "Preserve the Visual Origin"
 
-#: templates/index.html:189
+#: templates/index.html:100
 msgid "Detecta Informació Rellevant"
 msgstr "Detects Relevant Information"
 
-#: templates/index.html:190
+#: templates/index.html:101
 msgid ""
 "Identifica automàticament persones, dates i relacions clau sense "
 "necessitat de configurar res"
@@ -184,11 +269,11 @@ msgstr ""
 "Automatically identifies people, dates, and key relationships without the"
 " need for any configuration."
 
-#: templates/index.html:203
+#: templates/index.html:114
 msgid "Gestió completa d’arxius"
 msgstr "Complete File Management"
 
-#: templates/index.html:205
+#: templates/index.html:116
 msgid ""
 "Organitza, etiqueta i cerca fàcilment entre lots de documents. Tot "
 "connectat entre dades, imatge i text"
@@ -196,7 +281,7 @@ msgstr ""
 "Organize, tag, and search easily through batches of documents. Everything"
 " connected between data, image, and text."
 
-#: templates/index.html:214
+#: templates/index.html:125
 msgid ""
 "Cada dada que veus està vinculada amb el seu origen visual. Tu tens el "
 "control total sobre què entra a la teva base de dades.<br><br>No cal "
@@ -208,7 +293,7 @@ msgstr ""
 "instructions or copy and paste.<br>We take care of everything: structure,"
 " format, correction, and real usability."
 
-#: templates/index.html:221
+#: templates/index.html:132
 msgid ""
 "La nostra plataforma està pensada<br>per a qui necessita processar "
 "documents reals,<br>no només jugar amb la IA."
@@ -216,17 +301,17 @@ msgstr ""
 "Our platform is designed<br>for those who need to process real "
 "documents,<br>not just play with AI."
 
-#: templates/index.html:227 templates/index.html:234
+#: templates/index.html:138 templates/index.html:145
 msgid "ARXIUS MUNICIPALS"
 msgstr "MUNICIPAL ARCHIVES"
 
-#: templates/index.html:230
+#: templates/index.html:141
 msgid "Digitalitza padrons i censos, classificats per camp i precisió verificable"
 msgstr ""
 "Digitize census and registry records, classified by field and with "
 "verifiable accuracy"
 
-#: templates/index.html:236
+#: templates/index.html:147
 msgid ""
 "Digitalitza padrons i censos antics amb classificació automàtica i "
 "precisió verificable, pensat per a arxius i administracions locals."
@@ -235,73 +320,73 @@ msgstr ""
 "classification and verifiable accuracy, designed for archives and local "
 "administrations."
 
-#: templates/index.html:246
+#: templates/index.html:157
 msgid "Cada dada es pot rastrejar fins a la imatge original. Així es treballa bé."
 msgstr ""
 "Each piece of data can be traced back to the original image. This is how "
 "proper work is done."
 
-#: templates/index.html:253 templates/index.html:260
+#: templates/index.html:164 templates/index.html:171
 msgid "GENEALOGISTES I HISTORIADORS"
 msgstr "GENEALOGISTS AND HISTORIANS"
 
-#: templates/index.html:256 templates/index.html:262
+#: templates/index.html:167 templates/index.html:173
 msgid "Troba noms, cognoms, dates clau i relacions entre persones en minuts"
 msgstr ""
 "Find names, surnames, key dates, and relationships between people in "
 "minutes"
 
-#: templates/index.html:276
+#: templates/index.html:187
 msgid "Una vida sencera en paper, ara llegible, ordenada i accessible."
 msgstr "A whole life on paper, now readable, organized, and accessible."
 
-#: templates/index.html:283 templates/index.html:290
+#: templates/index.html:194 templates/index.html:201
 msgid "ESCOLES I UNIVERSITATS"
 msgstr "SCHOOLS AND UNIVERSITIES"
 
-#: templates/index.html:286 templates/index.html:292
+#: templates/index.html:197 templates/index.html:203
 msgid "Estructura expedients antics o material d’arxiu sense personal tècnic"
 msgstr "Structure old records or archive material without technical staff"
 
-#: templates/index.html:301
+#: templates/index.html:212
 msgid "El teu equip pot transcriure sense saber programació ni IA"
 msgstr "Your team can transcribe without knowing programming or AI"
 
-#: templates/index.html:308 templates/index.html:315
+#: templates/index.html:219 templates/index.html:226
 msgid "ADMINISTRACIÓ PÚBLICA"
 msgstr "PUBLIC ADMINISTRATION"
 
-#: templates/index.html:311 templates/index.html:317
+#: templates/index.html:222 templates/index.html:228
 msgid "Converteix documents antics en bases de dades reutilitzables"
 msgstr "Convert old documents into reusable databases"
 
-#: templates/index.html:327
+#: templates/index.html:238
 msgid "Transparència, arxiu i reutilització en un sol clic."
 msgstr "Transparency, archiving, and reuse in a single click"
 
-#: templates/index.html:335 templates/index.html:342
+#: templates/index.html:246 templates/index.html:253
 msgid "ENTITATS MEMÒRIA HISTÒRICA"
 msgstr "HISTORICAL MEMORY ORGANIZATIONS"
 
-#: templates/index.html:338 templates/index.html:344
+#: templates/index.html:249 templates/index.html:255
 msgid "Preserva el patrimoni documental amb precisió i sense barreres tècniques."
 msgstr ""
 "Preserve documentary heritage with precision and without technical "
 "barriers"
 
-#: templates/index.html:357
+#: templates/index.html:268
 msgid "Donem forma digital al passat per protegir-lo en el futur."
 msgstr "We give digital form to the past to protect it for the future."
 
-#: templates/index.html:367
+#: templates/index.html:278
 msgid "Plans i tarifes"
 msgstr "Plans and pricing"
 
-#: templates/index.html:372
+#: templates/index.html:283
 msgid "QUÈ INCLOU LA PROVA GRATUÏTA?"
 msgstr "WHAT DOES THE FREE TRIAL INCLUDE?"
 
-#: templates/index.html:375
+#: templates/index.html:286
 msgid ""
 "Fes la teva primera transcripció gratis i sent el què és tenir el "
 "control.<br>Descobreix el poder d’una IA entrenada per entendre els teus "
@@ -312,107 +397,107 @@ msgstr ""
 "documents.<br><br>You don't need to know how to use AI, OCR, or "
 "programming."
 
-#: templates/index.html:379
+#: templates/index.html:290
 msgid "Processar 2 imatges tipogràfiques reals"
 msgstr "Process 2 real typographic images"
 
-#: templates/index.html:380
+#: templates/index.html:291
 msgid "Vista prèvia del text alineat amb la imatge original"
 msgstr "Preview of the text aligned with the original image"
 
-#: templates/index.html:381
+#: templates/index.html:292
 msgid "Descarregar un exemple amb sortida estructurada en Excel"
 msgstr "Download a sample with structured output in Excel"
 
-#: templates/index.html:382
+#: templates/index.html:293
 msgid "Accés complet al panell amb funcions avançades visibles"
 msgstr "Full access to the panel with visible advanced features"
 
-#: templates/index.html:383
+#: templates/index.html:294
 msgid "Usar una IA que sap què fas, sense instruir ni explicar res"
 msgstr "Use an AI that knows what you are doing without instruction or explanation"
 
-#: templates/index.html:384
+#: templates/index.html:295
 msgid "Sense targeta, sense compromís"
 msgstr "No card required, no commitment"
 
-#: templates/index.html:390
+#: templates/index.html:301
 msgid "GRATUÏT"
 msgstr "FREE"
 
-#: templates/index.html:392 templates/index.html:405
+#: templates/index.html:303 templates/index.html:316
 msgid "al mes"
 msgstr "per month"
 
-#: templates/index.html:394 templates/index.html:407
+#: templates/index.html:305 templates/index.html:318
 msgid "Crear compte"
 msgstr "Create account"
 
-#: templates/index.html:397 templates/index.html:410
+#: templates/index.html:308 templates/index.html:321
 msgid "Transcripció bàsica"
 msgstr "Basic transcription"
 
-#: templates/index.html:403
+#: templates/index.html:314
 msgid "PRO"
 msgstr "PRO"
 
-#: templates/index.html:411
+#: templates/index.html:322
 msgid "Exportació a Excel/CSV"
 msgstr "Export to Excel/CSV"
 
-#: templates/index.html:412
+#: templates/index.html:323
 msgid "Classificació automàtica per camps"
 msgstr "Automatic classification by fields"
 
-#: templates/index.html:413
+#: templates/index.html:324
 msgid "Correcció d’errors d’OCR"
 msgstr "OCR error correction"
 
-#: templates/index.html:414
+#: templates/index.html:325
 msgid "Pujada per lots"
 msgstr "Batch upload"
 
-#: templates/index.html:415
+#: templates/index.html:326
 msgid "Organització i etiquetatge de documents"
 msgstr "Document organization and labeling"
 
-#: templates/index.html:416
+#: templates/index.html:327
 msgid "Suport prioritari"
 msgstr "Priority support"
 
-#: templates/index.html:417
+#: templates/index.html:328
 msgid "Historial i recuperació"
 msgstr "History and recovery"
 
-#: templates/index.html:423
+#: templates/index.html:334
 msgid "UTILITATS"
 msgstr "UTILITIES"
 
-#: templates/index.html:424
+#: templates/index.html:335
 msgid "Descobreix tot el que pots fer amb aquesta eina"
 msgstr "Discover everything you can do with this tool"
 
-#: templates/index.html:428
+#: templates/index.html:339
 msgid "Convertir imatges en text sense esforç"
 msgstr "Convert images to text effortlessly"
 
-#: templates/index.html:429
+#: templates/index.html:340
 msgid "Treballar amb dades en eines conegudes"
 msgstr "Work with data in familiar tools"
 
-#: templates/index.html:430
+#: templates/index.html:341
 msgid "Extreure i unificar noms, dates, llocs, professors, etc."
 msgstr "Extract and unify names, dates, places, teachers, etc."
 
-#: templates/index.html:431
+#: templates/index.html:342
 msgid "Obté resultats nets fins i tot de digitalitzats difícils"
 msgstr "Get clean results even from difficult scans"
 
-#: templates/index.html:432
+#: templates/index.html:343
 msgid "Centenars de documents de cop, sense teclejar manual"
 msgstr "Hundreds of documents at once, without manual typing"
 
-#: templates/index.html:433
+#: templates/index.html:344
 msgid ""
 "Ideal per a arxius i investigadors. Manté l’arxiu digital ordenat i "
 "accessible"
@@ -420,7 +505,7 @@ msgstr ""
 "Ideal for archives and researchers. Keeps the digital archive organized "
 "and accessible"
 
-#: templates/index.html:434
+#: templates/index.html:345
 msgid ""
 "Transcriu i adapta el flux a les teves necessitats. Resolt dubtes reals "
 "amb persones, no formularis."
@@ -428,23 +513,23 @@ msgstr ""
 "Transcribe and adapt the workflow to your needs. Resolve real doubts with"
 " people, not forms."
 
-#: templates/index.html:435
+#: templates/index.html:346
 msgid "Revisa el que has fet i no perdràs res"
 msgstr "Review what you've done and you won't lose anything"
 
-#: templates/index.html:443
+#: templates/index.html:354
 msgid "Així funciona la nostra plataforma"
 msgstr "How our platform works"
 
-#: templates/index.html:449 templates/index.html:462 templates/index.html:475
+#: templates/index.html:360 templates/index.html:373 templates/index.html:386
 msgid "PAS 1"
 msgstr "STEP 1"
 
-#: templates/index.html:451 templates/index.html:464 templates/index.html:477
+#: templates/index.html:362 templates/index.html:375 templates/index.html:388
 msgid "Puja la teva imatge o document"
 msgstr "Upload your image or document"
 
-#: templates/index.html:453 templates/index.html:466 templates/index.html:479
+#: templates/index.html:364 templates/index.html:377 templates/index.html:390
 msgid ""
 "Admet imatges antigues, una foto des del mòbil o un escaneig en PDF. "
 "L’arrossegues, el puges i llest. No cal netejar la imatge ni saber si és "
@@ -454,7 +539,7 @@ msgstr ""
 "upload it, and you’re done. No need to clean the image or know if it's "
 "OCR-friendly. Our AI adapts. Accepts JPG, PNG, and PDFs."
 
-#: templates/index.html:489
+#: templates/index.html:400
 msgid ""
 "Tens molts documents per digitalitzar o necessites adaptar el flux a la "
 "teva organització?"
@@ -462,21 +547,430 @@ msgstr ""
 "Do you have many documents to digitize or need to adapt the workflow to "
 "your organization?"
 
-#: templates/index.html:490
+#: templates/index.html:401
 msgid "Oferim solucions a mida per a arxius, investigadors i administracions."
 msgstr ""
 "We offer tailored solutions for archives, researchers, and "
 "administrations."
 
-#: templates/index.html:499
+#: templates/index.html:410
 msgid "SOL·LICITA UNA DEMO GRATUITA"
 msgstr "REQUEST A FREE DEMO"
 
-#: templates/index.html:500
+#: templates/index.html:411
 msgid "DEMO GRATUITA"
 msgstr "FREE DEMO"
 
-#: templates/index.html:502
+#: templates/index.html:413
 msgid "CONTACTE DIRECTE"
 msgstr "DIRECT CONTACT"
+
+#: templates/login.html:33 templates/recupera.html:34
+#: templates/registro.html:23
+#, fuzzy
+msgid "TranscriData"
+msgstr "TranscriData"
+
+#: templates/login.html:36
+msgid "Inicia Sessió"
+msgstr "Sign In"
+
+#: templates/login.html:48 templates/registro.html:39
+#, fuzzy
+msgid "Nom d’usuari"
+msgstr "Username"
+
+#: templates/login.html:58
+#, fuzzy
+msgid "Contrasenya"
+msgstr "Password"
+
+#: templates/login.html:61
+msgid "ACCEDEIX"
+msgstr "LOG IN"
+
+#: templates/login.html:63
+msgid "No tens compte?"
+msgstr "Don't have an account?"
+
+#: templates/login.html:63
+msgid "Registra't aquí"
+msgstr "Sign up here"
+
+#: templates/login.html:64
+msgid "Has oblidat la teva contrasenya?"
+msgstr "Forgot your password?"
+
+#: templates/login.html:64
+msgid "Restaura-la aquí"
+msgstr "Reset it here"
+
+#: templates/perfil.html:82
+msgid "Pla actual:"
+msgstr "Current plan:"
+
+#: templates/perfil.html:84
+msgid "Pàgines disponibles:"
+msgstr "Pages available:"
+
+#: templates/plan.html:16
+msgid "El Meu Pla"
+msgstr "My Plan"
+
+#: templates/plan.html:26
+msgid "Pàgines Usades"
+msgstr "Pages Used"
+
+#: templates/plan.html:30
+msgid "Renovació"
+msgstr "Renewal"
+
+#: templates/plan.html:43
+msgid "Millora el teu pla"
+msgstr "Upgrade your plan"
+
+#: templates/recupera.html:37
+msgid "Restableix Contrasenya"
+msgstr "Reset Password"
+
+#: templates/recupera.html:50
+msgid "CONFIRMAR"
+msgstr "CONFIRM"
+
+#: templates/registro.html:26
+#, fuzzy
+msgid "Crea un Compte"
+msgstr "Create an Account"
+
+#: templates/registro.html:52
+#, fuzzy
+msgid "Nom i Cognom"
+msgstr "Full Name"
+
+#: templates/registro.html:75
+msgid "Contrasenya (8 caràcters incloent-hi números i signes)"
+msgstr "Password (8 characters including numbers and symbols)"
+
+#: templates/registro.html:86
+msgid "Confirma la teva Contrasenya"
+msgstr "Confirm your Password"
+
+#: templates/registro.html:92
+#, fuzzy
+msgid "País"
+msgstr "Country"
+
+#: templates/registro.html:107
+msgid "REGISTRA’T"
+msgstr "SIGN UP"
+
+#: templates/registro.html:109
+msgid "Ja tens compte?"
+msgstr "Already have an account?"
+
+#: templates/registro.html:109
+msgid "aquí"
+msgstr "here"
+
+#: venv/lib/python3.10/site-packages/click/_termui_impl.py:600
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/_termui_impl.py:604
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1084
+#: venv/lib/python3.10/site-packages/click/core.py:1121
+#, python-brace-format
+msgid "{text} {deprecated_message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1140
+msgid "Options"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1202
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1221
+#, python-brace-format
+msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1405
+msgid "Aborted!"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1779
+msgid "Commands"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1810
+msgid "Missing command."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1888
+#, python-brace-format
+msgid "No such command {name!r}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2303
+msgid "Value must be an iterable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2324
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2404
+#, python-brace-format
+msgid ""
+"DeprecationWarning: The {param_type} {name!r} is "
+"deprecated.{extra_message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2807
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2810
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2814
+msgid "required"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2870
+msgid "(dynamic)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:522
+msgid "Show the version and exit."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:548
+msgid "Show this message and exit."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:50
+#: venv/lib/python3.10/site-packages/click/exceptions.py:89
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:81
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:130
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:132
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:190
+msgid "Missing argument"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:192
+msgid "Missing option"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:194
+msgid "Missing parameter"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:196
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:203
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:223
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:235
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:282
+msgid "unknown error"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:289
+#, python-brace-format
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:200
+#, python-brace-format
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:383
+#, python-brace-format
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:444
+#, python-brace-format
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/shell_completion.py:326
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/shell_completion.py:333
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:162
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:178
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:180
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:191
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:247
+msgid "Error: invalid input"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:866
+msgid "Press any key to continue..."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:332
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:369
+#, python-brace-format
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:460
+#, python-brace-format
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:482
+#, python-brace-format
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:538
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:679
+#, python-brace-format
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:703
+#, python-brace-format
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:893
+msgid "file"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:895
+msgid "directory"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:897
+msgid "path"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:944
+#, python-brace-format
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:953
+#, python-brace-format
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:961
+#, python-brace-format
+msgid "{name} {filename!r} is a directory."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:970
+#, python-brace-format
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:979
+#, python-brace-format
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:988
+#, python-brace-format
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:1055
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
 

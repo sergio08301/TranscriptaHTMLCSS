@@ -1,0 +1,228 @@
+:root{
+  /* Anchos por defecto (puedes ajustarlos donde lo importes) */
+  --col-date: 140px;
+  --col-doc:  150px;
+  --col-sent: 80px;
+  --col-ok:   32px;
+  --col-warn: 32px;
+
+  --history-gap: .5rem;
+  --history-xpad: .5rem;
+
+  /* Colores de estado (usa tu paleta global para el resto) */
+  --ok-color:   var(--blau-fosc, #1C9EE0);
+  --warn-color: #E05353;
+}
+
+/* --- Botón / cabecera del historial --- */
+.card--history .history-toggle{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+  cursor:pointer;
+  padding:.25rem 0;
+  background:none;
+  border:none;
+}
+.history-hint{ font-size:.95rem; color:var(--gris-fosc); }
+.chevron{ flex:0 0 auto; transition:transform .15s ease; }
+.history-toggle[aria-expanded="true"] .chevron{ transform:rotate(180deg); }
+
+/* --- Panel --- */
+.history-panel{
+  width:100%;
+  max-width:520px;
+  margin:.5rem auto 0;
+}
+.history-panel[hidden]{ display:none !important; }
+
+/* Rejilla común */
+.history-cols{
+  display:grid;
+  grid-template-columns:
+    var(--col-date)
+    var(--col-doc)
+    var(--col-sent)
+    var(--col-ok)
+    var(--col-warn);
+  align-items:center;
+  column-gap:var(--history-gap);
+  width:100%;
+}
+.w-date{ grid-column:1; } .w-doc{ grid-column:2; }
+.w-sent{ grid-column:3; } .w-ok{ grid-column:4; } .w-warn{ grid-column:5; }
+
+/* Cabecera */
+.history-headbar{
+  background:var(--blanc);
+  border:1px solid var(--gris-suau);
+  border-radius:12px;
+  box-shadow:var(--sombra-suave);
+  padding:.55rem var(--history-xpad);
+}
+.history-headbar .hcell{
+  font-weight:700;
+  font-size:.9rem;
+  white-space:nowrap;
+  text-align:center; /* títulos centrados en sus columnas */
+}
+
+/* Lista con separadores blancos */
+.history-list{
+  display:grid;
+  grid-auto-rows:min-content;
+  row-gap:8px;             /* separador blanco entre filas */
+  padding:8px;             /* borde blanco interior del bloque */
+  background:var(--blanc);
+  border-radius:12px;
+  box-shadow:var(--sombra-suave);
+  overflow:visible !important;
+  margin-top:1rem;         /* espacio con la cabecera */
+}
+.hrow{
+  padding:.6rem var(--history-xpad);
+  font-size:.9rem;
+  color:var(--gris-fosc);
+  border-radius:10px;
+}
+.hrow a{ color:var(--agora-blau); text-decoration:none; }
+.hrow a:hover{ text-decoration:underline; }
+
+/* Estados visuales */
+.row-ok  { background:#EAF6FF; }
+.row-warn{ background:#FDEAEA; }
+.row-empty{ text-align:center; color:var(--gris-mitja); padding:.6rem var(--history-xpad); }
+
+/* Alineación numérica centrada */
+.history-headbar .w-sent, .history-list .w-sent,
+.history-headbar .w-ok,   .history-list .w-ok,
+.history-headbar .w-warn, .history-list .w-warn{ text-align:center; }
+
+/* Enlaces según estado */
+.history-list .w-ok      { color:var(--ok-color) !important; font-weight:600; }
+.history-list .w-warn    { color:var(--gris-fosc); font-weight:500; }
+.history-list .row-warn .w-warn{ color:var(--warn-color) !important; font-weight:700; }
+.history-list .row-ok   .w-doc a{ color:var(--ok-color);   font-weight:600; }
+.history-list .row-warn .w-doc a{ color:var(--warn-color); font-weight:600; }
+
+/* Truncado del documento (no empuja números) */
+.history-headbar .w-doc, .history-list .w-doc{
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0;
+}
+
+
+/* ======= HISTORIAL: ancho y paddings consistentes en todas las páginas ======= */
+
+/* Ancho fijo del widget y centrado (igual que en plan) */
+.card--history{
+  max-width: 520px;
+  margin-inline: auto;
+  /* variable para alinear todo con el mismo sangrado */
+  padding-top:1rem;
+  --hx-pad: 4rem;
+}
+
+
+.card--history .card-head{
+  padding: 12px var(--hx-pad) 6px;
+}
+.card--history .history-toggle{
+  display: flex;
+  align-items: center;           /* centra verticalmente */
+  justify-content: space-between;/* texto a la izq., flecha a la dcha. */
+  gap: .75rem;
+
+  width: 100%;
+  padding: 6px var(--hx-pad) 12px; /* << mismo padding lateral que el título */
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  text-align: left;               /* texto pegado al lado izquierdo del área útil */
+}
+
+.card--history .history-toggle .history-hint{
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Flecha y animación de giro */
+.card--history .history-toggle .chevron{
+  flex: 0 0 auto;
+  transform: rotate(0deg);
+  transition: transform .2s ease;
+}
+.card--history .history-toggle[aria-expanded="true"] .chevron{
+  transform: rotate(180deg);
+}
+
+
+.card--history .history-bar{          padding: 0 var(--hx-pad) 12px; }
+.card--history .t-head,
+.card--history .history-table-head{   padding: 8px var(--hx-pad); }
+.card--history .t-body,
+.card--history .history-table-body{   padding: 0 var(--hx-pad) 10px; }
+
+/* Fila "Desplega la informació" + chevron a la derecha */
+.card--history .history-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: 0 var(--hx-pad) 12px;
+}
+.card--history .history-hint{ margin: 0; }
+
+/* Encabezado de columnas del listado */
+.card--history .t-head,
+.card--history .history-table-head{
+  padding: 8px var(--hx-pad);
+}
+
+/* Cuerpo del listado (filas) */
+.card--history .t-body,
+.card--history .history-table-body{
+  padding: 0 var(--hx-pad) 10px;
+}
+
+/* (opcional) separación superior estándar respecto al bloque anterior */
+.card--history{ margin-top: 1rem; }
+.card-title{ font-size:1.1rem; }
+
+/* -------- Responsive -------- */
+@media (max-width:768px){
+  :root{
+    --history-gap:.4rem; --history-xpad:.4rem;
+    --col-date:120px; --col-doc:minmax(110px,1fr);
+    --col-sent:64px;  --col-ok:26px; --col-warn:26px;
+  }
+  .history-headbar .hcell{ font-size:.85rem; }
+  .history-list .hrow    { font-size:.88rem; }
+}
+@media (max-width:600px){
+  :root{
+    --history-gap:.35rem; --history-xpad:.35rem;
+    --col-date:112px; --col-doc:minmax(96px,1fr);
+    --col-sent:58px;  --col-ok:24px; --col-warn:24px;
+  }
+  .card{ padding:.9rem 1rem; }
+  .card-title{ font-size:1.1rem; }
+  .history-headbar .hcell{ font-size:.82rem; }
+  .history-list .hrow    { font-size:.86rem; }
+}
+@media (max-width:420px){
+  :root{
+    --history-gap:.3rem; --history-xpad:.3rem;
+    --col-date:102px; --col-doc:minmax(88px,1fr);
+    --col-sent:54px;  --col-ok:22px; --col-warn:22px;
+  }
+  .history-headbar .hcell{ font-size:.8rem; }
+  .history-list .hrow    { font-size:.84rem; }
+}
+/* Fallback ultra-estrecho: scroll horizontal solo del bloque */
+@media (max-width:360px){
+  .history-panel{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .history-headbar, .history-list{ min-width:420px; }
+}

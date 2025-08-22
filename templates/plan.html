@@ -5,7 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>El Meu Pla</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/plan.css') }}">
+
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
 </head>
 <body>
 	{% include 'header.html' %}
@@ -31,7 +37,7 @@
 					</div>
 				</div>
 
-				<button class="btn-primary btn-filled btn-small" type="button">
+				<a class="btn-primary btn-filled btn-small" href="{{ url_for_lang('carga') }}">
 					<span class="btn-ico" aria-hidden="true">
 						<!-- icono tarjeta -->
 						<svg width="20" height="12" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,73 +46,10 @@
 						</svg>
 					</span>
 					{{ _('Millora el teu pla') }}
-				</button>
+				</a>
 			</article>
-
-			<!-- Tarjeta: Historial -->
-			<!-- Bloque 1: tarjeta solo con título + toggle -->
-			<article class="card card--history">
-				<div class="card-head">
-					<h2 class="card-title">{{ _('Historial') }}</h2>
-				</div>
-
-				<div class="history-toggle" role="button" aria-expanded="false" aria-controls="history-panel">
-					<span class="history-hint">{{ _('Desplega la informació') }}</span>
-					<svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-						<path d="M7 10l5 5 5-5" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</div>
-			</article>
-
-			<!-- Bloque 2 y 3: FUERA de la tarjeta anterior -->
-			<div id="history-panel" class="history-panel" hidden>
-					<!-- Cabecera de columnas -->
-					<!-- BLOQUE 2: cabecera columnas -->
-				<div class="history-headbar history-cols">
-					<div class="hcell w-date">{{ _('Data') }}</div>
-					<div class="hcell w-doc">{{ _('Document') }}</div>
-					<div class="hcell w-sent col-right">{{ _('Enviades') }}</div>
-					<div class="hcell w-ok  col-right">✓</div>
-					<div class="hcell w-warn col-right">⚠</div>
-				</div>
-
-				<!-- BLOQUE 3: lista -->
-				<div class="history-list">
-					{% if history and history|length %}
-						{% for it in history %}
-							<div class="hrow history-cols
-								{% if it.warn > 0 %}row-warn{% elif it.ok == it.sent %}row-ok{% endif %}">
-								<div class="cell w-date">{{ it.date }}</div>
-								<div class="cell w-doc"><a href="{{ it.url }}">{{ it.name }}</a></div>
-								<div class="cell w-sent col-right">{{ it.sent }}</div>
-								<div class="cell w-ok   col-right">{{ it.ok }}</div>
-								<div class="cell w-warn col-right">{{ it.warn }}</div>
-							</div>
-						{% endfor %}
-					{% else %}
-						<div class="hrow row-empty">{{ _('No hi ha moviments encara') }}</div>
-					{% endif %}
-					<a href="#" class="history-more">{{ _('Veure +') }}</a>
-				</div>
-			</div>
+			{% include 'history.html' %}
 		</section>
 	</main>
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			const toggle = document.querySelector(".history-toggle");
-			const panel = document.querySelector("#history-panel");
-			const hint = toggle.querySelector(".history-hint");
-
-			toggle.addEventListener("click", () => {
-				const expanded = toggle.getAttribute("aria-expanded") === "true";
-
-				toggle.setAttribute("aria-expanded", !expanded);
-				panel.hidden = expanded;
-
-				// Cambiar texto
-				hint.textContent = expanded ? "Desplega la informació" : "Plega la informació";
-			});
-		});
-	</script>
 </body>
 </html>

@@ -18,17 +18,6 @@
 	--radius-card:14px;
 	--sombra-suave:0 4px 10px rgba(0,0,0,.06);
 	--sombra-media:0 8px 20px rgba(0,0,0,.08);
-
-	/* Historial (desktop) — ajustados para que todo quepa */
-	--col-date: 140px;
-	--col-doc: 150px;
-	--col-sent: 80px;
-	--col-ok:   32px;
-	--col-warn: 32px;
-	--history-gap: .5rem;      /* separación entre columnas */
-	--history-xpad: .5rem;     /* padding horizontal en cabecera y filas */
-	  --ok-color: var(--blau-fosc);        /* azul corporativo (checks correctos) */
-  --warn-color: #E05353;               /* rojo para errores */
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -58,7 +47,7 @@ body{
 	flex-direction:column;
 	align-items:center;
 	gap:1rem;
-	padding-top:.1px; /* anticolapso de márgenes */
+	padding-top:.1px; /* anti-colapso de márgenes */
 }
 
 .form-title{
@@ -103,7 +92,7 @@ body{
 .row-label{ font-size:.95rem; color:var(--gris-fosc); }
 .row-value{ font-size:.95rem; color:var(--gris-fosc); justify-self:end; padding-right:.25rem; }
 
-/* Botón */
+/* Botones del plan */
 .btn-primary{
 	display:inline-flex;
 	align-items:center;
@@ -125,234 +114,25 @@ body{
 .btn-filled{ background:var(--buttons); color:var(--blanc); }
 .btn-filled:hover{ background:var(--button-hover); }
 .btn-small{ min-width:190px; }
-.card--plan .btn-primary{ align-self:center; margin-top:.4rem; }
 
-/* ===== Tarjeta: Historial (bloque 1: título + toggle) ===== */
-.card--history .history-toggle{
-	display:flex;
-	align-items:center;
-	justify-content:space-between;
-	gap:.75rem;
-	cursor:pointer;
-	padding:.25rem 0;
-}
-.history-hint{ font-size:.95rem; color:var(--gris-fosc); }
-.chevron{ flex:0 0 auto; transition:transform .15s ease; }
-.history-toggle[aria-expanded="true"] .chevron{ transform:rotate(180deg); }
-
-/* ===== Historial: bloques 2 y 3 (fuera de la card) ===== */
-.history-panel{
-	width:100%;
-	max-width:520px;
-	margin:.5rem auto 0;
-
-}
-.history-list{
-  margin-top: 1rem ;   /* ajusta 12–20px a tu gusto */
+/* Centrado del botón dentro de la tarjeta de plan */
+.card--plan .btn-primary{
+	align-self:center;
+	margin-top:.4rem;
 }
 
-/* Rejilla de 5 columnas — cabecera y filas comparten EXACTA plantilla */
-.history-cols{
-	display:grid;
-	grid-template-columns:
-		var(--col-date)
-		var(--col-doc)
-		var(--col-sent)
-		var(--col-ok)
-		var(--col-warn);
-	align-items:center;
-	column-gap:var(--history-gap);
-	width:100%;
-}
-
-.w-date{ grid-column:1; }
-.w-doc { grid-column:2; }
-.w-sent{ grid-column:3; }
-.w-ok  { grid-column:4; }
-.w-warn{ grid-column:5; }
-.col-right{ text-align:right; }
-
-/* Bloque 2: cabecera */
-.history-headbar{
-	background:var(--blanc);
-	border:1px solid var(--gris-suau);
-	border-radius:12px;
-	box-shadow:var(--sombra-suave);
-	padding:.55rem var(--history-xpad);
-}
-.history-headbar .hcell{
-	font-weight:700;
-	font-size:.9rem;
-	white-space:nowrap;
-}
-
-/* Bloque 3: lista */
-.history-list{
-  display: grid;
-  grid-auto-rows: min-content;
-  row-gap: 8px;                    /* ← separador blanco */
-  padding: 8px;                    /* borde blanco interior */
-  background: var(--blanc);
-  border-radius: 12px;
-
-
-  /* anulamos lo que hubiera antes */
-  overflow: visible !important;
-}
-.hrow{
-	padding:.6rem var(--history-xpad);
-	border-bottom:1px solid var(--gris-suau);
-	font-size:.9rem;
-	color:var(--gris-fosc);
-}
-.hrow:last-child{ border-bottom:none; }
-
-.hrow a{ color:var(--agora-blau); text-decoration:none; }
-.hrow a:hover{ text-decoration:underline; }
-
-/* Estados */
-.row-warn{ background:#FDEAEA; }
-.row-ok  { background:#EAF6FF; }
-.row-empty{
-	text-align:center;
-	color:var(--gris-mitja);
-	padding:.6rem var(--history-xpad);
-}
-
-/* Ver más */
-.history-more{
-	display:block;
-	text-align:center;
-	padding:.5rem 0 .65rem;
-	color:var(--agora-blau);
+a.btn-primary{
 	text-decoration:none;
-	grid-column: 1 / -1;
-    margin-top: 2px;
-}
-.history-more:hover{ text-decoration:underline; }
-
-.history-headbar .w-sent,
-.history-list   .w-sent,
-.history-headbar .w-ok,
-.history-list   .w-ok,
-.history-headbar .w-warn,
-.history-list   .w-warn{
-	text-align: center !important;
 }
 
-/* Mantén 'Data' y 'Document' centrados solo en cabecera */
-.history-headbar .w-date,
-.history-headbar .w-doc{
-	text-align: center;
-}
-/* La cabecera tenía .col-right, la anulamos SOLO en header */
-.history-headbar .col-right {
-	text-align: center;
-}
-
-
-/* ===== Colores de estado ===== */
-:root{
-  --ok-color: var(--blau-fosc);     /* azul corporativo */
-  --warn-color: #E05353;            /* rojo para avisos */
-}
-
-/* ✓ ACIERTOS: SIEMPRE azul, en todas las filas */
-.history-list .w-ok{
-  color: var(--ok-color) !important;
-  font-weight: 600;
-  text-align: center;               /* si decidiste centrar las numéricas */
-}
-
-/* ⚠ AVISOS: por defecto neutro (incluye el 0) */
-.history-list .w-warn{
-  color: var(--gris-fosc);
-  font-weight: 500;
-  text-align: center;               /* si decidiste centrar las numéricas */
-}
-
-/* ⚠ Solo en filas con error (>0) -> rojo */
-.history-list .row-warn .w-warn{
-  color: var(--warn-color) !important;
-  font-weight: 700;
-}
-
-/* Enlaces de documento según estado de la fila */
-.history-list .row-ok   .w-doc a{ color: var(--ok-color);   font-weight: 600; }
-.history-list .row-warn .w-doc a{ color: var(--warn-color); font-weight: 600; }
-
-/* (Opcional) mantener subrayado al hover respetando color de estado */
-.history-list .hrow .w-doc a:hover{ text-decoration: underline; }
 /* ===== Responsive ===== */
-/* ============== MOBILE TUNING ============== */
-/* Trunca el nombre del documento en cualquier tamaño
-   (evita que empuje las columnas numéricas) */
-.history-headbar .w-doc,
-.history-list   .w-doc{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;                 /* importante para que grid permita ellipsis */
-}
-
-/* Números compactos y alineados */
-.history-headbar .hcell,
-.history-list .hrow{
-  font-variant-numeric: tabular-nums;
-}
-
-@media (max-width: 768px){
-  :root{
-    --history-gap: .4rem;       /* menos gap entre columnas */
-    --history-xpad: .4rem;      /* menos padding horizontal */
-    --col-date: 120px;
-    --col-doc:  minmax(110px, 1fr);
-    --col-sent: 64px;
-    --col-ok:   26px;
-    --col-warn: 26px;
-  }
-  .history-headbar .hcell{ font-size: .85rem; }
-  .history-list .hrow     { font-size: .88rem; }
-}
-
-@media (max-width: 600px){
-  :root{
-    --history-gap: .35rem;
-    --history-xpad: .35rem;
-    --col-date: 112px;
-    --col-doc:  minmax(96px, 1fr);
-    --col-sent: 58px;
-    --col-ok:   24px;
-    --col-warn: 24px;
-  }
-  .card{ padding: .9rem 1rem; }
-  .card-title{ font-size: 1.1rem; }
-  .history-headbar .hcell{ font-size: .82rem; }
-  .history-list .hrow     { font-size: .86rem; }
-}
-
-@media (max-width: 420px){
-  :root{
-    --history-gap: .3rem;
-    --history-xpad: .3rem;
-    --col-date: 102px;
-    --col-doc:  minmax(88px, 1fr);
-    --col-sent: 54px;
-    --col-ok:   22px;
-    --col-warn: 22px;
-  }
-  .history-headbar .hcell{ font-size: .8rem; }
-  .history-list .hrow     { font-size: .84rem; }
-}
-
-/* Fallback de seguridad: si aun así algún móvil muy estrecho no cabe,
-   permite scroll horizontal SOLO en el bloque del historial. */
-@media (max-width: 360px){
-  .history-panel{
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .history-headbar, .history-list{
-    min-width: 420px; /* anchura mínima cómoda para 5 columnas */
-  }
+@media (max-width:768px){
+	.auth{
+		padding-left:clamp(1rem, 6vw, 1.5rem);
+		padding-right:clamp(1rem, 6vw, 1.5rem);
+		padding-top:clamp(1.25rem, 8vh, 2.5rem);
+	}
+	.card{ padding:1rem 1.25rem; }
+	.plan-rows{ column-gap:1.25rem; }
+	.card-title{ font-size:1.2rem; }
 }

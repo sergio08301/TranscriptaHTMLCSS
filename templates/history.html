@@ -1,0 +1,73 @@
+<!-- Historial (componente reutilizable) -->
+<section class="card card--history">
+	<div class="card-head">
+		<h2 class="card-title">{{ _('Historial') }}</h2>
+	</div>
+
+	<!-- Botón toggle -->
+	<button class="history-toggle"
+	        type="button"
+	        aria-expanded="false"
+	        aria-controls="history-panel">
+		<span class="history-hint">{{ _('Desplega la informació') }}</span>
+		<svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+		     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path d="M7 10l5 5 5-5" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</button>
+</section>
+
+<!-- Panel (fuera de la card) -->
+<div id="history-panel" class="history-panel" hidden>
+	<!-- Cabecera -->
+	<div class="history-headbar history-cols">
+		<div class="hcell w-date">{{ _('Data') }}</div>
+		<div class="hcell w-doc">{{ _('Document') }}</div>
+		<div class="hcell w-sent">{{ _('Enviades') }}</div>
+		<div class="hcell w-ok">✓</div>
+		<div class="hcell w-warn">⚠</div>
+	</div>
+
+	<!-- Lista -->
+	<div class="history-list">
+		{% if history and history|length %}
+			{% for it in history %}
+				<div class="hrow history-cols
+					{% if it.warn > 0 %}row-warn{% elif it.ok == it.sent %}row-ok{% endif %}">
+					<div class="cell w-date">{{ it.date }}</div>
+					<div class="cell w-doc"><a href="{{ it.url }}" title="{{ it.name }}">{{ it.name }}</a></div>
+					<div class="cell w-sent">{{ it.sent }}</div>
+					<div class="cell w-ok">{{ it.ok }}</div>
+					<div class="cell w-warn">{{ it.warn }}</div>
+				</div>
+			{% endfor %}
+		{% else %}
+			<div class="hrow row-empty">{{ _('No hi ha moviments encara') }}</div>
+		{% endif %}
+
+		<a href="#" class="history-more">{{ _('Veure +') }}</a>
+	</div>
+</div>
+
+<!-- JS del acordeón (auto-instalable) -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.history-toggle').forEach(btn => {
+		const panelId = btn.getAttribute('aria-controls') || 'history-panel';
+		const panel   = document.getElementById(panelId);
+		if (!panel) return;
+
+		const hint = btn.querySelector('.history-hint');
+		btn.addEventListener('click', () => {
+			const expanded = btn.getAttribute('aria-expanded') === 'true';
+			btn.setAttribute('aria-expanded', String(!expanded));
+			panel.hidden = expanded;
+			if (hint) {
+				hint.textContent = expanded
+				  ? "{{ _('Desplega la informació') }}"
+				  : "{{ _('Plega la informació') }}";
+			}
+		});
+	});
+});
+</script>
